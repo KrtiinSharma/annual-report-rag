@@ -74,7 +74,7 @@ REPORTS: list[Report] = [
     Report(
         "tcs",
         "FY24",
-        "https://www.bseindia.com/xml-data/corpfiling/AttachLive/d57e49b6-fd89-4fa8-b591-4f590100db1e.pdf",
+        "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2023-24/ar/annual-report-2023-2024.pdf",
     ),
 ]
 
