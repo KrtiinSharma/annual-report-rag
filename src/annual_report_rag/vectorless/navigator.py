@@ -56,10 +56,11 @@ def _toc(nodes: list[Node]) -> str:
     lines = []
     for n in nodes:
         line = f"[{n.id}] {n.title} (pages {n.start}-{n.end})"
+        # kept short: 31 sections must fit the smallest fallback model's per-minute token limit
         if n.summary:
-            line += f"\n    {n.summary}"
-        elif n.headings:
-            line += f"\n    headings: {'; '.join(n.headings[:8])}"
+            line += f"\n    {n.summary[:240]}"
+        if n.headings:
+            line += f"\n    headings: {'; '.join(h[:40] for h in n.headings[:5])}"
         lines.append(line)
     return "\n".join(lines)
 

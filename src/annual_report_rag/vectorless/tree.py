@@ -201,10 +201,14 @@ def summarise(nodes: list[Node], pages: list[ParsedPage], report) -> None:
             end=node.end,
             text=text,
         )
-        try:
-            node.summary = llm.invoke(prompt).content.strip()
-        except Exception as exc:
-            print(f"  summary failed for node {node.id}: {exc}")
+        # Index building can wait out per-minute rate limits (the fast model fails fast for queries)
+        for attempt in range(4):
+            try:
+                node.summary = llm.invoke(prompt).content.strip()
+                break
+            except Exception as exc:
+                print(f"  summary attempt {attempt + 1} failed for node {node.id}: {exc}")
+                time.sleep(20 * (attempt + 1))
         print(f"  [{node.id}] p{node.start}-{node.end} {node.title[:50]}")
 
 
