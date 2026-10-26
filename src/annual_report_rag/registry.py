@@ -68,7 +68,11 @@ REPORTS: list[Report] = [
         "FY24",
         "https://nsearchives.nseindia.com/annual_reports/AR_24753_INDIGO_2023_2024_31072024222919.pdf",
     ),
-    Report("indigo", "FY25", COMPANIES["indigo"].ir_page),
+    Report(
+        "indigo",
+        "FY25",
+        "https://www.goindigo.in/content/dam/goindigo/investor-relations/policies/2025/Annual_Report_FY25.pdf",
+    ),
     Report("infosys", "FY24", COMPANIES["infosys"].ir_page),
     Report("infosys", "FY25", COMPANIES["infosys"].ir_page),
     Report(
