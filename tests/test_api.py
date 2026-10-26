@@ -11,6 +11,8 @@ def test_reports_and_health_work_without_an_index():
         assert {c["slug"] for c in body["companies"]} >= {"indigo", "infosys", "tcs"}
         assert body["examples"]
         assert client.get("/api/health").json()["status"] == "ok"
+        root = client.get("/", follow_redirects=False)
+        assert root.status_code == 307 and root.headers["location"] == "/docs"
 
 
 def test_validation_and_unknown_resources():

@@ -13,7 +13,7 @@ from dataclasses import asdict
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from pydantic import BaseModel, Field
 
 from annual_report_rag.config import get_settings
@@ -99,6 +99,11 @@ def _indexed_reports() -> set[str]:
 
 def _tree_reports() -> list[str]:
     return sorted(p.stem for p in settings.tree_dir.glob("*.json"))
+
+
+@app.get("/", include_in_schema=False)
+def root():
+    return RedirectResponse("/docs")
 
 
 @app.get("/api/health")
