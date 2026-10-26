@@ -14,7 +14,16 @@ jobs:
           version: "0.13.1"
       - run: uv sync --frozen
       - run: uv run ruff check src tests scripts
-      - run: uv run pytest -q
+      # On failure, surface the end of the pytest output as an annotation on the run page
+      - name: pytest
+        run: |
+          set +e
+          uv run pytest -v -p faulthandler 2>&1 | tee pytest.log
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then
+            echo "::error title=pytest failed (exit $status)::$(tail -n 40 pytest.log | sed -e ':a' -e 'N' -e '$!ba' -e 's/%/%25/g' -e 's/\n/%0A/g')"
+          fi
+          exit $status
 
   frontend:
     runs-on: ubuntu-latest
