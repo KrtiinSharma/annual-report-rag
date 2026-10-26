@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     groq_api_key: str = ""
     answer_model: str = "openai/gpt-oss-120b"
     fast_model: str = "openai/gpt-oss-20b"
-    judge_model: str = "openai/gpt-oss-20b"
+    judge_model: str = "qwen/qwen3.8-27b"
 
     # LangSmith (picked up by langchain automatically when set in the environment)
     langsmith_api_key: str = ""

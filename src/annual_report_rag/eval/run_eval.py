@@ -87,28 +87,34 @@ def make_target(args):
     return lambda q: answer_question(q, filters, opts)
 
 
-def evaluate_one(target, q: Question) -> dict:
-    t = time.perf_counter()
-    result = target(q.question)
-    latency = time.perf_counter() - t
-    ranked = [(c.report_id, c.page) for c in result.citations]
-    cited = [(c.report_id, c.page) for c in result.citations if c.cited]
-    scores = ragas_metrics.score(q.question, result.answer, result.contexts, q.reference)
-    return {
-        "id": q.id,
-        "question": q.question,
-        "answer": result.answer,
-        "reference": q.reference,
-        "pages": ranked,
-        "cited_pages": cited,
-        "latency_s": round(latency, 2),
-        "cited_page_hit": float(any(p in q.pages for p in cited)),
-        **page_metrics(q, ranked),
-        **scores,
-    }
+def evaluate_one(target, q: Question, previous: dict | None = None) -> dict:
+    """Answer and score one question. A previous row that has an answer but no RAGAS scores
+    (e.g. the judge hit a rate limit) is only re-scored, which saves the answer tokens."""
+    if previous and previous.get("answer") and previous.get("contexts"):
+        row = dict(previous)
+    else:
+        t = time.perf_counter()
+        result = target(q.question)
+        latency = time.perf_counter() - t
+        ranked = [(c.report_id, c.page) for c in result.citations]
+        cited = [(c.report_id, c.page) for c in result.citations if c.cited]
+        row = {
+            "id": q.id,
+            "question": q.question,
+            "answer": result.answer,
+            "reference": q.reference,
+            "pages": ranked,
+            "cited_pages": cited,
+            "contexts": result.contexts,
+            "latency_s": round(latency, 2),
+            "cited_page_hit": float(any(p in q.pages for p in cited)),
+            **page_metrics(q, ranked),
+        }
+    row.update(ragas_metrics.score(q.question, row["answer"], row["contexts"], q.reference))
+    return row
 
 
-def run_with_langsmith(target, questions, args, done: dict) -> None:
+def run_with_langsmith(target, questions, args, done: dict, partial: dict) -> None:
     """Run through langsmith.evaluate so each question is a traced run with RAGAS feedback."""
     from langsmith import Client, evaluate
 
@@ -116,7 +122,7 @@ def run_with_langsmith(target, questions, args, done: dict) -> None:
 
     def ls_target(inputs: dict) -> dict:
         q = by_id[inputs["id"]]
-        row = evaluate_one(target, q)
+        row = evaluate_one(target, q, partial.get(q.id))
         done[q.id] = row
         save(args, done)
         return {"answer": row["answer"], "pages": row["pages"]}
@@ -163,20 +169,21 @@ def cmd_run(args) -> None:
     if args.limit:
         questions = questions[: args.limit]
     path = results_path(args.name)
-    done = {}
+    done, partial = {}, {}
     if path.exists():
-        done = {r["id"]: r for r in json.loads(path.read_text(encoding="utf-8"))["rows"]}
-        done = {k: v for k, v in done.items() if v.get("faithfulness") is not None}
+        rows = {r["id"]: r for r in json.loads(path.read_text(encoding="utf-8"))["rows"]}
+        done = {k: v for k, v in rows.items() if v.get("faithfulness") is not None}
+        partial = {k: v for k, v in rows.items() if k not in done}
     target = make_target(args)
     print(f"{args.name}: {len(questions)} questions, {len(done)} already scored")
 
     if os.environ.get("LANGSMITH_API_KEY") and not args.local:
-        run_with_langsmith(target, questions, args, done)
+        run_with_langsmith(target, questions, args, done, partial)
     else:
         for q in questions:
             if q.id in done:
                 continue
-            done[q.id] = evaluate_one(target, q)
+            done[q.id] = evaluate_one(target, q, partial.get(q.id))
             save(args, done)
             row = done[q.id]
             print(f"  {q.id}: faith={row['faithfulness']} recall={row['context_recall']}")
