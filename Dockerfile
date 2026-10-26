@@ -1,4 +1,4 @@
-# Backend image for a Hugging Face Docker Space (also runs anywhere: docker run -p 7860:7860).
+# Backend image for Google Cloud Run (also runs anywhere: docker run -p 7860:7860).
 FROM python:3.11-slim
 
 ENV PYTHONUNBUFFERED=1 \
@@ -22,7 +22,7 @@ RUN uv run --no-sync python -c "from annual_report_rag.retrieval.models import g
 COPY data ./data
 COPY docs/results ./docs/results
 
-# Spaces run as uid 1000; Chroma needs write access to its sqlite file
+# Run as an unprivileged user; Chroma needs write access to its sqlite file
 RUN useradd -m -u 1000 user && chown -R user /app
 USER user
 

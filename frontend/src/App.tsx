@@ -81,7 +81,7 @@ export default function App() {
   const [showControls, setShowControls] = useState(false)
 
   useEffect(() => {
-    // A sleeping Hugging Face Space can take a minute to wake up.
+    // Cloud Run scales to zero; the first request after a quiet spell starts a new instance.
     const slow = setTimeout(() => setWaking(true), 2500)
     const load = (attempt: number) =>
       api

@@ -1,7 +1,7 @@
 name: Deploy frontend to GitHub Pages
 
 # Set the repository variable API_URL (Settings -> Secrets and variables -> Actions -> Variables)
-# to the Hugging Face Space URL, e.g. https://<user>-annual-report-analyst.hf.space
+# to the Cloud Run URL printed by scripts/deploy_cloudrun.py, e.g. https://annual-report-api-xxxx.a.run.app
 on:
   push:
     branches: [main]

@@ -14,7 +14,7 @@ functional and technical requirements.
 | **Retrieval** | BM25 + vector search, Reciprocal Rank Fusion, cross-encoder reranker, multi-query rewriting, company/year filters |
 | **Vectorless RAG** | contents-tree index + LLM navigation for one long report, compared with vector RAG |
 | **Evaluation** | LangSmith tracing, 30–50 question dataset, RAGAS faithfulness / relevancy / context precision / recall |
-| **Serving** | FastAPI on Hugging Face Spaces, React UI on GitHub Pages |
+| **Serving** | FastAPI on Google Cloud Run, React UI on GitHub Pages |
 
 ## Quick start
 
@@ -48,22 +48,26 @@ Cross-company comparisons work on growth rates and ratios; absolute Infosys figu
 uv run arr-eval upload                                   # questions -> LangSmith dataset
 uv run arr-eval retrieval --strategy fixed               # chunking comparison (no LLM)
 uv run arr-eval retrieval --strategy structure
-uv run arr-eval run --name hybrid-structure              # RAGAS, logged as a LangSmith experiment
-uv run arr-eval run --name hybrid-fixed --strategy fixed
+uv run arr-eval run --name hybrid-structure --subset sample   # RAGAS, logged to LangSmith
 uv run arr-eval run --name vectorless --mode vectorless --subset vectorless
 uv run arr-eval run --name vector-indigo --subset vectorless --companies indigo --years FY24
 uv run arr-eval report                                   # docs/results/RESULTS.md
 ```
 
-Runs resume where they stopped, which helps with Groq's free-tier daily token limits.
+Groq's free tier allows 200K tokens per model per day and one judged question costs ~10K judge
+tokens, so RAGAS runs on a fixed 20-question sample (`--subset sample`) plus the 17 vectorless
+questions; the chunking comparison (`retrieval`) uses all 48. Runs resume where they stopped, and a
+row whose judging hit the limit is re-scored without regenerating its answer.
 Results: [docs/results/RESULTS.md](docs/results/RESULTS.md).
 
 ## Deployment (free)
 
-- **Backend**: `uv run python scripts/deploy_space.py --space <hf-user>/annual-report-analyst --origins https://<github-user>.github.io`
-  creates a Docker Space, uploads code + indexes + PDFs, and sets the API keys as Space secrets.
+- **Backend** on Google Cloud Run (scales to zero; free within the monthly allowance):
+  `uv run python scripts/deploy_cloudrun.py --project <gcp-project> --origins https://<github-user>.github.io`
+  builds the Dockerfile with Cloud Build (code + indexes + PDFs, see `.gcloudignore`) and sets the
+  API keys from `.env` as environment variables. Needs the gcloud CLI and billing enabled.
 - **Frontend**: the `pages.yml` workflow builds `frontend/` and publishes it to GitHub Pages.
-  Set the repository variable `API_URL` to the Space URL, and set Pages → Source to "GitHub Actions".
+  Set the repository variable `API_URL` to the Cloud Run URL, and Pages → Source to "GitHub Actions".
 
 ## Project layout
 

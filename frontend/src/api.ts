@@ -1,4 +1,4 @@
-// Backend base URL: empty in dev (Vite proxies /api), the Hugging Face Space URL in production.
+// Backend base URL: empty in dev (Vite proxies /api), the Cloud Run URL in production.
 export const API_URL = (import.meta.env.VITE_API_URL ?? '').replace(/\/$/, '')
 
 export interface Company {

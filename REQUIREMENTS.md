@@ -133,7 +133,7 @@ Read from environment / `.env` (never committed):
 |----|-------------|
 | NFR-1 | Total hosting and model cost: ₹0 (free tiers only). |
 | NFR-2 | p50 answer latency under ~8 s on the free host, excluding cold start. |
-| NFR-3 | Embedding and reranking run on CPU in under 2 GB RAM. |
+| NFR-3 | Embedding and reranking run on CPU in under 1 GB RAM (reranker batches of 4). |
 | NFR-4 | API keys stay server-side. The public API has a simple per-IP rate limit to protect the free LLM quota. |
 | NFR-5 | Ingestion is idempotent and can be re-run. Index artifacts are rebuilt from PDFs with one command. |
 | NFR-6 | Groq free-tier rate limits are handled with retries/backoff. Evaluation can run in batches (`--limit`, resume). |
@@ -141,8 +141,8 @@ Read from environment / `.env` (never committed):
 ### TR-6 Deployment (free)
 | Part | Host | Notes |
 |------|------|-------|
-| Backend | Hugging Face Spaces (Docker SDK, free CPU: 2 vCPU / 16 GB) | Index files shipped with the Space. Secrets set in Space settings. Sleeps after 48 h idle and wakes on the next request. |
-| Frontend | GitHub Pages via GitHub Actions | `VITE_API_URL` points to the Space. |
+| Backend | Google Cloud Run (Docker, 1 vCPU / 2 GB, scales to zero) | Index files baked into the image. API keys set as service environment variables. Free within the monthly allowance; the first request after idling starts an instance (~15 s). Hugging Face Docker Spaces were the first choice but became PRO-only in 2026. |
+| Frontend | GitHub Pages via GitHub Actions | `VITE_API_URL` points to the Cloud Run service. |
 | CI | GitHub Actions | Lint + unit tests + frontend build on push. |
 
 ### TR-7 Testing

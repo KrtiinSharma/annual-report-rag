@@ -1,0 +1,23 @@
+# Files uploaded by `gcloud run deploy --source .` (scripts/deploy_cloudrun.py).
+# Unlike .gitignore, the prebuilt indexes and PDFs ARE uploaded: the image ships with them.
+# Secrets never are: API keys go in as Cloud Run environment variables.
+.env
+.env.*
+!.env.example
+
+.git/
+.github/
+.claude/
+.venv/
+.cache/
+**/__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+frontend/
+tests/
+deploy/
+scripts/
+data/eval/
+docs/*
+!docs/results/
