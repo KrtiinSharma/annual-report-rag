@@ -23,6 +23,7 @@ class Citation:
     score: float
     source_url: str
     cited: bool
+    matched_by: list[str]  # which retrievers/queries found it, e.g. ["bm25:q0#2", "vector:q1#1"]
 
 
 def format_context(docs: list[Document]) -> str:
@@ -48,7 +49,12 @@ def cited_ids(answer: str, n: int) -> set[int]:
     return {i for i in ids if 1 <= i <= n}
 
 
-def build_citations(answer: str, docs: list[Document], scores: list[float]) -> list[Citation]:
+def build_citations(
+    answer: str,
+    docs: list[Document],
+    scores: list[float],
+    matched_by: list[list[str]] | None = None,
+) -> list[Citation]:
     used = cited_ids(answer, len(docs))
     out = []
     for i, (d, score) in enumerate(zip(docs, scores, strict=True), start=1):
@@ -68,6 +74,7 @@ def build_citations(answer: str, docs: list[Document], scores: list[float]) -> l
                 score=round(score, 4),
                 source_url=report.url if report else "",
                 cited=i in used,
+                matched_by=matched_by[i - 1] if matched_by else [],
             )
         )
     return out

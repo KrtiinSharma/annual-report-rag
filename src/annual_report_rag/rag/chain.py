@@ -66,7 +66,9 @@ def answer_question(
     timings = {**result.timings, "generate": time.perf_counter() - t}
     timings["total"] = time.perf_counter() - started
 
-    citations = build_citations(answer, docs, [h.score for h in result.hits])
+    citations = build_citations(
+        answer, docs, [h.score for h in result.hits], [h.sources for h in result.hits]
+    )
     plan = [
         {"queries": tg.queries, "company": tg.company, "fiscal_year": tg.fiscal_year}
         for tg in result.plan.targets
