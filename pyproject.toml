@@ -34,6 +34,7 @@ eval = [
 
 [dependency-groups]
 dev = [
+    "huggingface-hub>=1.33.0",
     "pytest>=8",
     "ruff>=0.6",
 ]
