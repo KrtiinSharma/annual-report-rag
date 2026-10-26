@@ -7,7 +7,12 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langsmith import traceable
 
-from annual_report_rag.rag.citations import Citation, build_citations, format_context
+from annual_report_rag.rag.citations import (
+    Citation,
+    build_citations,
+    format_context,
+    normalise_citations,
+)
 from annual_report_rag.retrieval.filters import Filters
 from annual_report_rag.retrieval.hybrid import RetrievalOptions, retrieve
 from annual_report_rag.retrieval.models import get_llm
@@ -19,7 +24,9 @@ Rules:
   e.g. [2] or [1][4].
 - Quote figures exactly as reported, with units (₹ crore, ₹ million, US$, %). Say whether a
   figure is standalone or consolidated when the passage says so.
+- For "revenue", use "Revenue from operations" (or "Revenues" in a Form 20-F), not "Total income".
 - When asked for growth and both years' figures are available, compute it and show the arithmetic.
+  Use only figures printed in the passages; never back-calculate a missing year from a growth rate.
 - When comparing companies, give each company's figures, then the comparison. A short Markdown table
   helps for multi-company or multi-year comparisons.
 - If the passages do not contain the answer, say what is missing. Do not use outside knowledge.
@@ -61,6 +68,7 @@ def answer_question(
     if docs:
         chain = PROMPT | get_llm("answer") | StrOutputParser()
         answer = chain.invoke({"context": format_context(docs), "question": question})
+        answer = normalise_citations(answer)
     else:
         answer = "I could not find anything relevant in the selected reports."
     timings = {**result.timings, "generate": time.perf_counter() - t}

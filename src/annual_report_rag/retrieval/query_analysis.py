@@ -72,7 +72,9 @@ Question: {question}
 Return one target per company and fiscal year the question needs. If the question compares
 companies, make a separate target for each. If no year is given, use the latest report year.
 If the question is not about a specific company, set company to null.
-Write the queries in the wording an annual report would use."""
+Write 2-3 queries per target in the wording an annual report would use, and make one of them the
+exact financial line item (e.g. "Revenue from operations", "Profit after tax", "Total income").
+Infosys reports are Form 20-F filings: they say "fiscal 2024", "Revenues" and "Net profit"."""
 
 
 @traceable(name="plan_queries")
@@ -80,11 +82,11 @@ def plan_queries(question: str, user_filters: Filters, use_llm: bool = True) -> 
     fallback = rule_based_filters(question).narrow(user_filters)
     if use_llm:
         try:
-            from annual_report_rag.retrieval.models import get_llm
+            from annual_report_rag.retrieval.models import get_structured_llm
 
-            planner = get_llm("fast").with_structured_output(QueryPlan)
+            planner = get_structured_llm("fast", QueryPlan)
             plan = planner.invoke(PROMPT.format(catalogue=_catalogue(), question=question))
-            return _sanitise(plan, question, user_filters)
+            return _cover_named_companies(_sanitise(plan, question, user_filters), fallback)
         except Exception as exc:  # rate limits, malformed tool calls
             print(f"query planning failed, using rules: {exc}")
     return _single_target(question, fallback)
@@ -128,6 +130,25 @@ def _sanitise(plan: QueryPlan, question: str, user_filters: Filters) -> QueryPla
             SearchTarget(queries=[question, *queries], company=company, fiscal_year=year)
         )
     return QueryPlan(targets=targets) if targets else _single_target(question, user_filters)
+
+
+def _cover_named_companies(plan: QueryPlan, named: Filters) -> QueryPlan:
+    """Add a target for any company the question names that the planner left out.
+
+    LLM planners occasionally drop one side of a comparison; the alias rules never do.
+    """
+    planned = {t.company for t in plan.targets}
+    missing = [c for c in named.companies if c not in planned]
+    if not missing:
+        return plan
+    years = named.fiscal_years or sorted({t.fiscal_year for t in plan.targets if t.fiscal_year})
+    template = plan.targets[0].queries if plan.targets else []
+    extra = [
+        SearchTarget(queries=template, company=c, fiscal_year=y)
+        for c in missing
+        for y in (years or [None])
+    ]
+    return QueryPlan(targets=[*plan.targets, *extra][:6])
 
 
 def target_filters(target: SearchTarget, user_filters: Filters) -> Filters:

@@ -35,3 +35,11 @@ def get_llm(kind: str = "answer", temperature: float = 0.0):
     return ChatGroq(
         model=model, temperature=temperature, api_key=s.groq_api_key, max_retries=6, **extra
     )
+
+
+def get_structured_llm(kind: str, schema):
+    """A chat model that returns `schema` objects.
+
+    Uses Groq's JSON-schema mode: gpt-oss sometimes answers in prose when forced to call a tool.
+    """
+    return get_llm(kind).with_structured_output(schema, method="json_schema")

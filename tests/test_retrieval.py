@@ -87,3 +87,34 @@ def test_citation_parsing_handles_lists_and_ranges():
 
     answer = "Revenue rose [1], margins fell [2, 4] and costs grew [5-6]. See [99]."
     assert cited_ids(answer, 6) == {1, 2, 4, 5, 6}
+
+
+def test_planner_targets_cover_every_named_company():
+    from annual_report_rag.retrieval.filters import Filters
+    from annual_report_rag.retrieval.query_analysis import (
+        QueryPlan,
+        SearchTarget,
+        _cover_named_companies,
+    )
+
+    plan = QueryPlan(targets=[SearchTarget(queries=["q"], company="infosys", fiscal_year="FY24")])
+    covered = _cover_named_companies(plan, Filters.of(["indigo", "infosys"], ["FY24"]))
+    assert [(t.company, t.fiscal_year) for t in covered.targets] == [
+        ("infosys", "FY24"),
+        ("indigo", "FY24"),
+    ]
+
+
+def test_gpt_oss_citation_brackets_are_normalised():
+    from annual_report_rag.rag.citations import cited_ids, normalise_citations
+
+    answer = normalise_citations("Revenue grew 26.6% 【3】; see also 【2†L4-L9】 and 【1, 4】.")
+    assert answer == "Revenue grew 26.6% [3]; see also [2] and [1, 4]."
+    assert cited_ids(answer, 5) == {1, 2, 3, 4}
+
+
+def test_split_number_cells_are_cleaned():
+    from annual_report_rag.rag.citations import clean_table_text
+
+    row = "| Revenues | 18,562 | 2 | 18,212 | 2 | 1.9 | 9 % | (0.3 | 3 ) |"
+    assert clean_table_text(row) == "| Revenues | 18,562 | 18,212 | 1.9% | (0.3) |"
