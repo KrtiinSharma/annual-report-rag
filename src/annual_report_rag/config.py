@@ -14,9 +14,9 @@ class Settings(BaseSettings):
 
     # LLMs (Groq)
     groq_api_key: str = ""
-    answer_model: str = "llama-3.3-70b-versatile"
-    fast_model: str = "llama-3.1-8b-instant"
-    judge_model: str = "llama-3.1-8b-instant"
+    answer_model: str = "openai/gpt-oss-120b"
+    fast_model: str = "openai/gpt-oss-20b"
+    judge_model: str = "openai/gpt-oss-20b"
 
     # LangSmith (picked up by langchain automatically when set in the environment)
     langsmith_api_key: str = ""

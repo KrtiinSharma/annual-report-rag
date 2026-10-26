@@ -4,7 +4,7 @@ const STEPS = [
   ['Plan', 'An LLM splits the question into one search per company and year, and rewrites each search in annual-report wording.'],
   ['Retrieve', 'BM25 keyword search and bge-small vector search run with company/year filters, then Reciprocal Rank Fusion merges them.'],
   ['Rerank', 'A cross-encoder rescores the fused candidates. The best passages from each search are interleaved so every company is covered.'],
-  ['Answer', 'Llama 3.3 70B on Groq answers only from the numbered passages and cites them, and every citation links to the PDF page.'],
+  ['Answer', 'gpt-oss-120b on Groq answers only from the numbered passages and cites them, and every citation links to the PDF page.'],
 ]
 
 export function AboutView() {

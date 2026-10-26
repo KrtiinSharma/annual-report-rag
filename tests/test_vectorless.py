@@ -8,9 +8,8 @@ def make_pages(n=60):
     for i in range(1, n + 1):
         els = [Element("text", f"body text of page {i}", 10)]
         if i in (1, 5, 40):
-            els.insert(
-                0, Element("heading", {1: "Cover", 5: "Directors' Report", 40: "Notes"}[i], 24)
-            )
+            title = {1: "Cover", 5: "Chairman's Message", 40: "Highlights"}[i]
+            els.insert(0, Element("heading", title, 24))
         if i % 3 == 0:
             els.insert(0, Element("heading", f"Sub heading {i}", 14))
         pages.append(ParsedPage(i, els))
@@ -20,6 +19,19 @@ def make_pages(n=60):
 def test_heading_sections_use_largest_headings():
     starts = _heading_sections(make_pages())
     assert [p for _, p in starts] == [1, 5, 40]
+
+
+def test_heading_sections_match_statutory_parts_by_name():
+    pages = make_pages()
+    # body-sized headings, which the size rule alone would miss
+    pages[19].elements.insert(0, Element("heading", "Report on Corporate Governance", 11))
+    pages[29].elements.insert(0, Element("heading", "Standalone Balance Sheet", 11))
+    starts = _heading_sections(pages)
+    assert starts[:2] == [("Cover", 1), ("Chairman's Message", 5)]
+    assert ("Corporate Governance Report", 20) in starts
+    assert ("Standalone Financial Statements", 30) in starts
+    # once the statutory parts begin, decorative big headings no longer open sections
+    assert all(p != 40 for _, p in starts)
 
 
 def test_long_sections_are_split_and_grouped():

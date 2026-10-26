@@ -30,4 +30,8 @@ def get_llm(kind: str = "answer", temperature: float = 0.0):
 
     s = get_settings()
     model = {"answer": s.answer_model, "fast": s.fast_model, "judge": s.judge_model}[kind]
-    return ChatGroq(model=model, temperature=temperature, api_key=s.groq_api_key, max_retries=6)
+    # gpt-oss models reason before answering; "low" keeps latency and token use down
+    extra = {"reasoning_effort": "low"} if "gpt-oss" in model else {}
+    return ChatGroq(
+        model=model, temperature=temperature, api_key=s.groq_api_key, max_retries=6, **extra
+    )

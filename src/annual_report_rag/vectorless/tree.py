@@ -14,6 +14,7 @@ contents page, picks the relevant pages, and answers from the full text of those
 
 import argparse
 import json
+import re
 import time
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
@@ -56,16 +57,50 @@ def _outline_sections(pdf: Path, n_pages: int) -> list[tuple[str, int]]:
     return toc if len(toc) >= MIN_OUTLINE_ENTRIES else []
 
 
+# The statutory parts every Indian annual report has, in their usual wording. Their headings are
+# often body-sized, so they are matched by name rather than by font size.
+CANONICAL = [
+    ("Management Discussion and Analysis", r"management.{0,6}discussion"),
+    ("Board's Report", r"(board.?s report|report of the board|directors.? report)"),
+    ("Corporate Governance Report", r"corporate governance report|report on corporate governance"),
+    ("Business Responsibility and Sustainability Report", r"business responsibility"),
+    ("Independent Auditor's Report", r"independent auditor"),
+    ("Standalone Financial Statements", r"standalone (balance sheet|statement of profit)"),
+    ("Notes to Standalone Financial Statements", r"notes .{0,25}standalone financial"),
+    ("Consolidated Financial Statements", r"consolidated (balance sheet|statement of profit)"),
+    ("Notes to Consolidated Financial Statements", r"notes .{0,25}consolidated financial"),
+    ("Notice of Annual General Meeting", r"^notice\b"),
+]
+
+
+def _canonical(page: ParsedPage) -> str | None:
+    heads = [e.text for e in page.elements if e.kind == "heading"][:4]
+    for text in heads:
+        t = " ".join(text.split()).lower()
+        for name, pattern in CANONICAL:
+            if re.search(pattern, t):
+                return name
+    return None
+
+
 def _heading_sections(pages: list[ParsedPage]) -> list[tuple[str, int]]:
-    """Section starts = pages whose largest heading is in the top size tier of the document."""
+    """Section starts = pages opening a statutory part (by name) or with a top-tier heading."""
     sizes = sorted({e.size for p in pages for e in p.elements if e.kind == "heading"}, reverse=True)
     if not sizes:
         return [("Report", 1)]
     threshold = sizes[len(sizes) // 4]  # top quarter of distinct heading sizes
     starts: list[tuple[str, int]] = []
+    current = None
     for p in pages:
+        name = _canonical(p)
+        if name and name != current:
+            current = name
+            if starts and p.page - starts[-1][1] < 2:
+                starts.pop()  # a statutory start wins over a decorative heading just before it
+            starts.append((name, p.page))
+            continue
         big = [e for e in p.elements if e.kind == "heading" and e.size >= threshold]
-        if big and (not starts or p.page - starts[-1][1] >= 2):
+        if big and current is None and (not starts or p.page - starts[-1][1] >= 2):
             starts.append((big[0].text.replace("\n", " ")[:90], p.page))
     if not starts or starts[0][1] != 1:
         starts.insert(0, ("Cover and contents", 1))

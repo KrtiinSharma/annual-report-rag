@@ -4,7 +4,7 @@ Ask questions across the annual reports of Indian listed companies and get answe
 **page-level citations**. For example: *"Compare the revenue growth of InterGlobe Aviation and
 Infosys in FY24"*.
 
-Built with LangChain, Groq (Llama 3.3 70B), FastEmbed, Chroma, LangSmith and RAGAS, with a
+Built with LangChain, Groq (gpt-oss-120b), FastEmbed, Chroma, LangSmith and RAGAS, with a
 FastAPI backend and a React frontend. See [REQUIREMENTS.md](REQUIREMENTS.md) for the full
 functional and technical requirements.
 

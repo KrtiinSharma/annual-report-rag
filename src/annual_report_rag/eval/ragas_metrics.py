@@ -20,7 +20,7 @@ def _judge():
 
     s = get_settings()
     client = AsyncOpenAI(api_key=s.groq_api_key, base_url=GROQ_OPENAI_URL, max_retries=8)
-    return llm_factory(s.judge_model, client=client, temperature=0.0, max_tokens=2048)
+    return llm_factory(s.judge_model, client=client, temperature=0.0, max_tokens=4096)
 
 
 @lru_cache
