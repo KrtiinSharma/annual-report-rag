@@ -73,8 +73,16 @@ REPORTS: list[Report] = [
         "FY25",
         "https://www.goindigo.in/content/dam/goindigo/investor-relations/policies/2025/Annual_Report_FY25.pdf",
     ),
-    Report("infosys", "FY24", COMPANIES["infosys"].ir_page),
-    Report("infosys", "FY25", COMPANIES["infosys"].ir_page),
+    Report(
+        "infosys",
+        "FY24",
+        "https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/infosys-ar-24.pdf",
+    ),
+    Report(
+        "infosys",
+        "FY25",
+        "https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/infosys-ar-25.pdf",
+    ),
     Report(
         "tcs",
         "FY24",
