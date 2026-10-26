@@ -49,6 +49,19 @@ def env_vars(origins: str) -> dict[str, str]:
     return out
 
 
+def index_in_use() -> list[str]:
+    """Chroma writes to its SQLite file even on reads; uploading it mid-write ships a broken
+    index, so nothing that opens it (evaluation, local API) may run during a deploy."""
+    import psutil
+
+    busy = []
+    for p in psutil.process_iter(["pid", "cmdline"]):
+        cmd = " ".join(p.info["cmdline"] or [])
+        if any(t in cmd for t in ("arr-eval", "arr-serve", "uvicorn annual_report_rag")):
+            busy.append(f"{p.info['pid']}: {cmd[:80]}")
+    return busy
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", required=True)
@@ -56,6 +69,8 @@ def main() -> None:
     parser.add_argument("--origins", default="", help="allowed CORS origin(s), comma-separated")
     args = parser.parse_args()
 
+    if busy := index_in_use():
+        raise SystemExit("stop these first, they have the index open:\n  " + "\n  ".join(busy))
     gcloud("services", "enable", *APIS, "--project", args.project)
 
     # Keys go through a temporary YAML file so they never appear on a command line or in logs.
