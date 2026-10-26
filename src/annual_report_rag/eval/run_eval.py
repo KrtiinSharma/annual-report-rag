@@ -191,6 +191,9 @@ def save(args, rows: dict) -> None:
 
 
 def cmd_run(args) -> None:
+    # every scored answer must come from the configured answer model: a rate-limited question
+    # fails and is retried on the next run instead of being answered by a fallback model
+    get_settings().llm_fallbacks = False
     questions = load_questions()
     if args.subset == "vectorless":
         questions = [q for q in questions if q.vectorless]

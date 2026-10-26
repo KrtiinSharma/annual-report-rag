@@ -52,7 +52,8 @@ def get_llm(kind: str = "answer", temperature: float = 0.0):
 def _with_fallbacks(kind: str, build):
     from groq import RateLimitError
 
-    others = [build(k) for k in FALLBACKS.get(kind, [])]
+    fallbacks = FALLBACKS.get(kind, []) if get_settings().llm_fallbacks else []
+    others = [build(k) for k in fallbacks]
     primary = build(kind)
     return (
         primary.with_fallbacks(others, exceptions_to_handle=(RateLimitError,))

@@ -17,6 +17,9 @@ class Settings(BaseSettings):
     answer_model: str = "openai/gpt-oss-120b"
     fast_model: str = "openai/gpt-oss-20b"
     judge_model: str = "qwen/qwen3.8-27b"
+    # Answer with other models when the answer model hits its daily limit. Off for evaluation,
+    # so every scored answer comes from the same model.
+    llm_fallbacks: bool = True
 
     # LangSmith (picked up by langchain automatically when set in the environment)
     langsmith_api_key: str = ""
