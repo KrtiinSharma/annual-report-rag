@@ -32,8 +32,10 @@ def get_llm(kind: str = "answer", temperature: float = 0.0):
     model = {"answer": s.answer_model, "fast": s.fast_model, "judge": s.judge_model}[kind]
     # gpt-oss models reason before answering; "low" keeps latency and token use down
     extra = {"reasoning_effort": "low"} if "gpt-oss" in model else {}
+    # The planner has a rule-based fallback, so it should fail fast rather than wait out a limit
+    retries = 1 if kind == "fast" else 6
     return ChatGroq(
-        model=model, temperature=temperature, api_key=s.groq_api_key, max_retries=6, **extra
+        model=model, temperature=temperature, api_key=s.groq_api_key, max_retries=retries, **extra
     )
 
 

@@ -66,6 +66,8 @@ Results: [docs/results/RESULTS.md](docs/results/RESULTS.md).
   `uv run python scripts/deploy_cloudrun.py --project <gcp-project> --origins https://<github-user>.github.io`
   builds the Dockerfile with Cloud Build (code + indexes + PDFs, see `.gcloudignore`) and sets the
   API keys from `.env` as environment variables. Needs the gcloud CLI and billing enabled.
+  On a new project, first let the default build account build from source (one-time):
+  `gcloud projects add-iam-policy-binding <gcp-project> --member="serviceAccount:<project-number>-compute@developer.gserviceaccount.com" --role="roles/cloudbuild.builds.builder"`
 - **Frontend**: the `pages.yml` workflow builds `frontend/` and publishes it to GitHub Pages.
   Set the repository variable `API_URL` to the Cloud Run URL, and Pages → Source to "GitHub Actions".
 
