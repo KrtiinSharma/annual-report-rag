@@ -9,7 +9,11 @@ from functools import lru_cache
 
 from annual_report_rag.config import get_settings
 
-METRICS = ("faithfulness", "answer_relevancy", "context_precision", "context_recall")
+# Context precision is left out: it makes one judge call per passage, which the Groq free tier
+# cannot afford, and the page-level hit@k / MRR against reference pages measure ranking directly.
+METRICS = ("faithfulness", "answer_relevancy", "context_recall")
+JUDGE_MAX_CONTEXTS = 6  # passages shown to the judge (cited ones first, see run_eval)
+JUDGE_MAX_CHARS = 1500
 GROQ_OPENAI_URL = "https://api.groq.com/openai/v1"
 
 
@@ -49,7 +53,6 @@ def _embeddings():
 def _metrics():
     from ragas.metrics.collections import (
         AnswerRelevancy,
-        ContextPrecision,
         ContextRecall,
         Faithfulness,
     )
@@ -58,22 +61,18 @@ def _metrics():
     return {
         "faithfulness": Faithfulness(llm=llm),
         "answer_relevancy": AnswerRelevancy(llm=llm, embeddings=_embeddings(), strictness=2),
-        "context_precision": ContextPrecision(llm=llm),
         "context_recall": ContextRecall(llm=llm),
     }
 
 
 async def ascore(question: str, answer: str, contexts: list[str], reference: str) -> dict:
     m = _metrics()
-    contexts = contexts or ["(no context retrieved)"]
+    contexts = [c[:JUDGE_MAX_CHARS] for c in contexts[:JUDGE_MAX_CONTEXTS]] or ["(no context)"]
     calls = {
         "faithfulness": m["faithfulness"].ascore(
             user_input=question, response=answer, retrieved_contexts=contexts
         ),
         "answer_relevancy": m["answer_relevancy"].ascore(user_input=question, response=answer),
-        "context_precision": m["context_precision"].ascore(
-            user_input=question, reference=reference, retrieved_contexts=contexts
-        ),
         "context_recall": m["context_recall"].ascore(
             user_input=question, reference=reference, retrieved_contexts=contexts
         ),

@@ -2,7 +2,7 @@
 
     uv run arr-eval upload                                  # push questions to LangSmith
     uv run arr-eval retrieval --strategy fixed              # hit@k / MRR, no LLM needed
-    uv run arr-eval run --name hybrid-structure             # full RAG + RAGAS, logged to LangSmith
+    uv run arr-eval run --name hybrid-structure --subset sample   # RAG + RAGAS on 20 questions
     uv run arr-eval run --name hybrid-fixed --strategy fixed
     uv run arr-eval run --name hybrid-no-rerank --no-rerank
     uv run arr-eval run --name vectorless --mode vectorless --subset vectorless
@@ -68,6 +68,31 @@ def eval_retrieval(questions: list[Question], strategy: str, multi_query: bool) 
 
 # --------------------------------------------------------------------------- full RAG + RAGAS
 
+# A fixed 20-question sample for RAGAS (every company, year and question kind). Judging all 48 in
+# every configuration needs more tokens than Groq's free tier gives per day.
+SAMPLE_IDS = {
+    "indigo24-revenue",
+    "indigo24-passengers",
+    "indigo24-cask",
+    "indigo24-dividend",
+    "indigo24-scope1",
+    "indigo24-aog",
+    "indigo25-revenue",
+    "indigo25-dividend",
+    "indigo25-cask",
+    "tcs24-revenue",
+    "tcs24-dividend",
+    "tcs24-employees",
+    "tcs24-growth-why",
+    "infosys24-revenue",
+    "infosys24-employees",
+    "infosys25-revenue",
+    "infosys25-leaders",
+    "cmp-indigo-infosys-growth",
+    "cmp-indigo-yoy",
+    "cmp-headcount",
+}
+
 
 def make_target(args):
     if args.mode == "vectorless":
@@ -98,6 +123,9 @@ def evaluate_one(target, q: Question, previous: dict | None = None) -> dict:
         latency = time.perf_counter() - t
         ranked = [(c.report_id, c.page) for c in result.citations]
         cited = [(c.report_id, c.page) for c in result.citations if c.cited]
+        # the judge sees a few passages, so put the ones the answer actually cited first
+        order = sorted(range(len(result.citations)), key=lambda i: not result.citations[i].cited)
+        contexts = [result.contexts[i] for i in order]
         row = {
             "id": q.id,
             "question": q.question,
@@ -105,7 +133,7 @@ def evaluate_one(target, q: Question, previous: dict | None = None) -> dict:
             "reference": q.reference,
             "pages": ranked,
             "cited_pages": cited,
-            "contexts": result.contexts,
+            "contexts": contexts,
             "latency_s": round(latency, 2),
             "cited_page_hit": float(any(p in q.pages for p in cited)),
             **page_metrics(q, ranked),
@@ -166,6 +194,8 @@ def cmd_run(args) -> None:
     questions = load_questions()
     if args.subset == "vectorless":
         questions = [q for q in questions if q.vectorless]
+    elif args.subset == "sample":
+        questions = [q for q in questions if q.id in SAMPLE_IDS]
     if args.limit:
         questions = questions[: args.limit]
     path = results_path(args.name)
@@ -232,7 +262,7 @@ def main() -> None:
     p.add_argument("--mode", default="hybrid", choices=["hybrid", "vectorless"])
     p.add_argument("--report", default="indigo_FY24", help="report used by vectorless mode")
     p.add_argument("--strategy", default="structure", choices=["fixed", "structure"])
-    p.add_argument("--subset", choices=["all", "vectorless"], default="all")
+    p.add_argument("--subset", choices=["all", "sample", "vectorless"], default="all")
     p.add_argument("--companies", nargs="*")
     p.add_argument("--years", nargs="*")
     p.add_argument("--no-bm25", action="store_true")

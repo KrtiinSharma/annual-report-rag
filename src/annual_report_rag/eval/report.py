@@ -7,7 +7,6 @@ from annual_report_rag.config import get_settings
 RAG_COLS = [
     ("faithfulness", "Faithfulness"),
     ("answer_relevancy", "Answer relevancy"),
-    ("context_precision", "Context precision"),
     ("context_recall", "Context recall"),
     ("hit@5", "Page hit@5"),
     ("cited_page_hit", "Cited page hit"),

@@ -4,7 +4,6 @@ import { api, type Experiment } from '../api'
 const RAGAS = [
   ['faithfulness', 'Faithfulness', 'Answer claims supported by the retrieved passages'],
   ['answer_relevancy', 'Answer relevancy', 'Answer addresses the question asked'],
-  ['context_precision', 'Context precision', 'Relevant passages ranked above irrelevant ones'],
   ['context_recall', 'Context recall', 'Reference answer covered by the retrieved passages'],
 ] as const
 
