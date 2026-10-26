@@ -1,5 +1,6 @@
 """Runtime settings, read from environment variables or a local `.env` file."""
 
+import os
 from functools import lru_cache
 from pathlib import Path
 
@@ -63,4 +64,10 @@ class Settings(BaseSettings):
 
 @lru_cache
 def get_settings() -> Settings:
-    return Settings()
+    settings = Settings()
+    # LangChain and the LangSmith SDK read tracing settings from os.environ, not from .env.
+    if settings.langsmith_api_key:
+        os.environ.setdefault("LANGSMITH_API_KEY", settings.langsmith_api_key)
+        os.environ.setdefault("LANGSMITH_PROJECT", settings.langsmith_project)
+        os.environ.setdefault("LANGSMITH_TRACING", str(settings.langsmith_tracing).lower())
+    return settings

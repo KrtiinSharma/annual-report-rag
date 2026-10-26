@@ -80,3 +80,10 @@ def test_rule_based_plan_splits_comparisons_per_company():
         ("indigo", "FY24"),
         ("tcs", "FY24"),
     }
+
+
+def test_citation_parsing_handles_lists_and_ranges():
+    from annual_report_rag.rag.citations import cited_ids
+
+    answer = "Revenue rose [1], margins fell [2, 4] and costs grew [5-6]. See [99]."
+    assert cited_ids(answer, 6) == {1, 2, 4, 5, 6}
