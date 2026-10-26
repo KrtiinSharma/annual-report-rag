@@ -34,6 +34,14 @@ Company and exchange sites block scripted downloads, so `arr-download` prints th
 missing report. Save each PDF into `data/pdfs/` with the name it prints, for example
 `indigo_FY24.pdf`. The corpus is defined in [`registry.py`](src/annual_report_rag/registry.py).
 
+| Report | Document | Currency |
+|---|---|---|
+| InterGlobe Aviation (IndiGo) FY24, FY25 | Annual report | ₹ |
+| TCS FY24 | Integrated annual report | ₹ |
+| Infosys FY24, FY25 | Form 20-F (annual report filed with the US SEC, IFRS) | US$ |
+
+Cross-company comparisons work on growth rates and ratios; absolute Infosys figures are in US$.
+
 ## Evaluation
 
 ```bash

@@ -2,6 +2,9 @@
 
 To add a report: append a `Report`, put the PDF at `data/pdfs/<report.file>` (or let
 `arr-download` fetch it), then re-run `arr-ingest`.
+
+Infosys is represented by its Form 20-F (the annual report it files with the US SEC: IFRS,
+figures in US$), not the Indian annual report, so its numbers are in US$ while the others are in ₹.
 """
 
 from dataclasses import dataclass
@@ -76,12 +79,12 @@ REPORTS: list[Report] = [
     Report(
         "infosys",
         "FY24",
-        "https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/infosys-ar-24.pdf",
+        "https://www.infosys.com/investors/reports-filings/annual-report/form20f/documents/form20f-2024.pdf",
     ),
     Report(
         "infosys",
         "FY25",
-        "https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/infosys-ar-25.pdf",
+        "https://www.infosys.com/investors/reports-filings/annual-report/form20f/documents/form20f-2025.pdf",
     ),
     Report(
         "tcs",
