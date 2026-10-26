@@ -15,7 +15,7 @@ from annual_report_rag.rag.citations import (
 )
 from annual_report_rag.retrieval.filters import Filters
 from annual_report_rag.retrieval.hybrid import RetrievalOptions, retrieve
-from annual_report_rag.retrieval.models import get_llm
+from annual_report_rag.retrieval.models import get_chat_model
 
 SYSTEM = """You are a financial analyst answering questions about Indian companies' annual reports.
 
@@ -66,7 +66,7 @@ def answer_question(
 
     t = time.perf_counter()
     if docs:
-        chain = PROMPT | get_llm("answer") | StrOutputParser()
+        chain = PROMPT | get_chat_model("answer") | StrOutputParser()
         answer = chain.invoke({"context": format_context(docs), "question": question})
         answer = normalise_citations(answer)
     else:

@@ -137,6 +137,26 @@ def reports():
     }
 
 
+async def _answer(fn, *args):
+    """Run a pipeline, turning failures into JSON errors.
+
+    An unhandled exception would become a bare 500 without CORS headers, which the browser only
+    reports as "Failed to fetch".
+    """
+    from groq import RateLimitError
+
+    try:
+        return await run_in_threadpool(fn, *args)
+    except RateLimitError as exc:
+        print(f"LLM rate limit: {str(exc)[:200]}")
+        raise HTTPException(
+            503, "The free LLM quota is used up for the moment. Please try again in a few minutes."
+        ) from exc
+    except Exception as exc:
+        print(f"answer failed: {type(exc).__name__}: {exc}")
+        raise HTTPException(500, "Something went wrong answering that question.") from exc
+
+
 @app.post("/api/ask")
 async def ask(body: AskRequest, request: Request):
     rate_limit(request)
@@ -150,7 +170,7 @@ async def ask(body: AskRequest, request: Request):
         use_multi_query=body.use_multi_query,
     )
     filters = Filters.of(body.companies, body.fiscal_years)
-    result = await run_in_threadpool(answer_question, body.question, filters, opts)
+    result = await _answer(answer_question, body.question, filters, opts)
     return result.to_dict()
 
 
@@ -161,7 +181,7 @@ async def ask_vectorless(body: VectorlessRequest, request: Request):
         raise HTTPException(404, f"no vectorless index for {body.report_id}")
     from annual_report_rag.vectorless.navigator import answer_vectorless
 
-    result = await run_in_threadpool(answer_vectorless, body.question, body.report_id)
+    result = await _answer(answer_vectorless, body.question, body.report_id)
     return result.to_dict()
 
 

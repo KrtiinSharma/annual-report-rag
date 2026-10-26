@@ -18,7 +18,7 @@ from annual_report_rag.ingest.pdf_parser import load_pages
 from annual_report_rag.rag.chain import PROMPT, AnswerResult
 from annual_report_rag.rag.citations import build_citations, format_context, normalise_citations
 from annual_report_rag.registry import REPORTS_BY_ID
-from annual_report_rag.retrieval.models import get_llm, get_structured_llm
+from annual_report_rag.retrieval.models import get_chat_model, get_structured_llm
 from annual_report_rag.vectorless.tree import Node, Tree, load_tree
 
 MAX_SECTIONS = 3
@@ -150,7 +150,7 @@ def answer_vectorless(question: str, report_id: str) -> AnswerResult:
     ]
 
     t = time.perf_counter()
-    chain = PROMPT | get_llm("answer") | StrOutputParser()
+    chain = PROMPT | get_chat_model("answer") | StrOutputParser()
     answer = normalise_citations(
         chain.invoke({"context": format_context(docs), "question": question})
     )

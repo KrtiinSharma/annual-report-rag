@@ -107,14 +107,42 @@ def _heading_sections(pages: list[ParsedPage]) -> list[tuple[str, int]]:
     return starts
 
 
-def _page_headings(page: ParsedPage, limit: int = 6) -> list[str]:
+def _heading_key(text: str) -> str:
+    """Headings compared without digits, so "56 Annual Report 2023-24" matches every page's."""
+    return re.sub(r"[\d\s]+", " ", text).strip().lower()
+
+
+def _running_headers(pages: list[ParsedPage]) -> set[str]:
+    """Headings repeated on many pages are page headers/footers, not content."""
+    counts: dict[str, int] = {}
+    for p in pages:
+        for key in {_heading_key(e.text) for e in p.elements if e.kind == "heading"}:
+            counts[key] = counts.get(key, 0) + 1
+    limit = max(8, len(pages) // 20)
+    return {k for k, c in counts.items() if c > limit}
+
+
+# Numbered sub-sections ("4. Operational Performance", "B. Inducting aircraft") are often set in
+# body-size bold, so they are picked from the text rather than by font size.
+NUMBERED = re.compile(r"^(?:\d{1,2}|[A-H])\.\s+([A-Z][A-Za-z ,&'’()/-]{3,60})$")
+
+
+def _page_headings(page: ParsedPage, skip: set[str] = frozenset(), limit: int = 6) -> list[str]:
+    candidates = [e.text for e in page.elements if e.kind == "heading"]
+    candidates += [
+        line.strip()
+        for e in page.elements
+        if e.kind == "text"
+        for line in e.text.splitlines()
+        if NUMBERED.match(line.strip())
+    ]
     seen, out = set(), []
-    for e in page.elements:
-        if e.kind == "heading":
-            h = e.text.replace("\n", " ")[:80]
-            if h.lower() not in seen:
-                seen.add(h.lower())
-                out.append(h)
+    for text in candidates:
+        h = " ".join(text.split())[:80]
+        key = _heading_key(h)
+        if key and key not in seen and key not in skip:
+            seen.add(key)
+            out.append(h)
     return out[:limit]
 
 
@@ -132,12 +160,13 @@ def build_nodes(starts: list[tuple[str, int]], pages: list[ParsedPage]) -> list[
             suffix = f" (pages {s}-{e})" if end - start + 1 > MAX_SECTION_PAGES else ""
             bounds.append((title + suffix, s, e))
 
+    skip = _running_headers(pages)
     nodes = []
     for i, (title, start, end) in enumerate(bounds, start=1):
         node = Node(id=str(i), title=title, start=start, end=end)
         for j, s in enumerate(range(start, end + 1, GROUP_PAGES), start=1):
             e = min(end, s + GROUP_PAGES - 1)
-            heads = [h for pg in range(s, e + 1) for h in _page_headings(by_page[pg])]
+            heads = [h for pg in range(s, e + 1) for h in _page_headings(by_page[pg], skip)]
             node.children.append(Node(id=f"{i}.{j}", title="", start=s, end=e, headings=heads[:10]))
         node.headings = [h for c in node.children for h in c.headings][:12]
         nodes.append(node)
@@ -145,7 +174,8 @@ def build_nodes(starts: list[tuple[str, int]], pages: list[ParsedPage]) -> list[
 
 
 SUMMARY_PROMPT = """Summarise this section of {company}'s {year} annual report in 2 sentences.
-Mention the kinds of facts and figures it contains (e.g. revenue, fleet size, risks, board).
+List the kinds of facts and figures it contains (e.g. revenue, profit, passengers, fleet,
+employees, emissions, dividend, risks, board), naming the most important ones.
 
 Section title: {title} (pages {start}-{end})
 
@@ -158,7 +188,11 @@ def summarise(nodes: list[Node], pages: list[ParsedPage], report) -> None:
     llm = get_llm("fast")
     by_page = {p.page: p for p in pages}
     for node in nodes:
-        text = "\n".join(by_page[pg].text for pg in range(node.start, node.end + 1))[:3500]
+        # sample every page so facts later in a section (e.g. operations after the financial
+        # results in the Board's Report) reach the summary, not just its first page
+        span = range(node.start, node.end + 1)
+        per_page = max(300, 4000 // len(span))
+        text = "\n".join(by_page[pg].text[:per_page] for pg in span)[:4000]
         prompt = SUMMARY_PROMPT.format(
             company=company_name(report.company),
             year=report.fiscal_year,
