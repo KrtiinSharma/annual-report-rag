@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Secrets
+.env
+
+# Data (PDFs and built indexes are large; rebuild with `uv run arr-ingest`)
+data/pdfs/
+data/index/
+data/processed/
+.cache/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
