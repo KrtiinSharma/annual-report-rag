@@ -18,14 +18,15 @@
   "no_rerank": false,
   "no_multi_query": false,
   "local": false,
+  "rescore": false,
   "answer_model": "claude-haiku-5-5",
   "judge_model": "claude-haiku-5-5"
  },
  "n": 17,
  "aggregate": {
-  "faithfulness": 0.655,
-  "answer_relevancy": 0.825,
-  "context_recall": 0.8431,
+  "faithfulness": 0.7207,
+  "answer_relevancy": 0.8278,
+  "context_recall": 0.8235,
   "hit@1": 0.5882,
   "hit@5": 0.8235,
   "mrr": 0.6588,
@@ -89,8 +90,8 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.75,
-   "answer_relevancy": 0.8800153987326489,
+   "faithfulness": 1.0,
+   "answer_relevancy": 0.8163756551309833,
    "context_recall": 1.0
   },
   {
@@ -210,7 +211,7 @@
    "hit@10": 1.0,
    "mrr": 1.0,
    "faithfulness": 1.0,
-   "answer_relevancy": 0.8614517014901026,
+   "answer_relevancy": 0.8601593546353994,
    "context_recall": 1.0
   },
   {
@@ -270,7 +271,7 @@
    "hit@10": 1.0,
    "mrr": 1.0,
    "faithfulness": 0.8,
-   "answer_relevancy": 0.8969007119317741,
+   "answer_relevancy": 0.9113952914469821,
    "context_recall": 1.0
   },
   {
@@ -325,8 +326,8 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.8571428571428571,
-   "answer_relevancy": 0.9097464094097916,
+   "faithfulness": 0.875,
+   "answer_relevancy": 0.9075338792781219,
    "context_recall": 1.0
   },
   {
@@ -381,7 +382,7 @@
    "hit@5": 0.0,
    "hit@10": 0.0,
    "mrr": 0.0,
-   "faithfulness": 0.5,
+   "faithfulness": 0.7,
    "answer_relevancy": 0.0,
    "context_recall": 0.0
   },
@@ -453,8 +454,8 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 0.5,
-   "faithfulness": 0.25,
-   "answer_relevancy": 0.9570618062428469,
+   "faithfulness": 0.2857142857142857,
+   "answer_relevancy": 0.9535609764414876,
    "context_recall": 0.0
   },
   {
@@ -514,7 +515,7 @@
    "hit@10": 1.0,
    "mrr": 0.25,
    "faithfulness": 1.0,
-   "answer_relevancy": 0.8487926930480286,
+   "answer_relevancy": 0.8419584957046005,
    "context_recall": 1.0
   },
   {
@@ -573,9 +574,9 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 0.25,
-   "faithfulness": 0.7647058823529411,
-   "answer_relevancy": 0.8335956855841036,
-   "context_recall": 1.0
+   "faithfulness": 0.2777777777777778,
+   "answer_relevancy": 0.8416972018908762,
+   "context_recall": 0.6666666666666666
   },
   {
    "id": "indigo24-employees",
@@ -633,8 +634,8 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.14285714285714285,
-   "answer_relevancy": 0.8335359258028084,
+   "faithfulness": 0.16666666666666666,
+   "answer_relevancy": 0.8333149878491987,
    "context_recall": 1.0
   },
   {
@@ -697,8 +698,8 @@
    "hit@5": 0.0,
    "hit@10": 0.0,
    "mrr": 0.0,
-   "faithfulness": 0.6923076923076923,
-   "answer_relevancy": 0.8566406993839275,
+   "faithfulness": 0.8666666666666667,
+   "answer_relevancy": 0.938573945004997,
    "context_recall": 1.0
   },
   {
@@ -765,8 +766,8 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 0.2,
-   "faithfulness": 0.45,
-   "answer_relevancy": 0.9157528719864453,
+   "faithfulness": 0.23529411764705882,
+   "answer_relevancy": 0.928151973257322,
    "context_recall": 1.0
   },
   {
@@ -842,7 +843,7 @@
    "hit@10": 0.0,
    "mrr": 0.0,
    "faithfulness": 0.8571428571428571,
-   "answer_relevancy": 0.7980649734551605,
+   "answer_relevancy": 0.7969785590672525,
    "context_recall": 0.3333333333333333
   },
   {
@@ -897,7 +898,7 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.3333333333333333,
+   "faithfulness": 1.0,
    "answer_relevancy": 0.9041348551535603,
    "context_recall": 1.0
   },
@@ -961,8 +962,8 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.3333333333333333,
-   "answer_relevancy": 0.8172401322950555,
+   "faithfulness": 0.3125,
+   "answer_relevancy": 0.8317869377161439,
    "context_recall": 1.0
   },
   {
@@ -1025,8 +1026,8 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.8333333333333334,
-   "answer_relevancy": 0.8734482998106147,
+   "faithfulness": 1.0,
+   "answer_relevancy": 0.8710149436430701,
    "context_recall": 1.0
   },
   {
@@ -1081,8 +1082,8 @@
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.5714285714285714,
-   "answer_relevancy": 0.9539584308286655,
+   "faithfulness": 0.875,
+   "answer_relevancy": 0.9499881869889296,
    "context_recall": 1.0
   }
  ]

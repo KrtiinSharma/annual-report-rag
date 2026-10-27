@@ -7,6 +7,7 @@
     uv run arr-eval run --name hybrid-no-rerank --no-rerank
     uv run arr-eval run --name vectorless --mode vectorless --subset vectorless
     uv run arr-eval run --name vector-on-indigo --subset vectorless --companies indigo --years FY24
+    uv run arr-eval run --name vectorless ... --rescore     # re-judge saved answers only
     uv run arr-eval report                                  # docs/results/summary.json + RESULTS.md
 
 Every run writes docs/results/<name>.json. Re-running with the same name resumes: questions that
@@ -213,6 +214,8 @@ def cmd_run(args) -> None:
         rows = {r["id"]: r for r in json.loads(path.read_text(encoding="utf-8"))["rows"]}
         done = {k: v for k, v in rows.items() if v.get("faithfulness") is not None}
         partial = {k: v for k, v in rows.items() if k not in done}
+        if args.rescore:  # judge the saved answers again, e.g. after changing the judge
+            done, partial = {}, rows
     target = make_target(args)
     print(f"{args.name}: {len(questions)} questions, {len(done)} already scored")
 
@@ -280,6 +283,7 @@ def main() -> None:
     p.add_argument("--no-multi-query", action="store_true")
     p.add_argument("--limit", type=int, default=0)
     p.add_argument("--local", action="store_true", help="do not log to LangSmith")
+    p.add_argument("--rescore", action="store_true", help="re-judge saved answers, no new ones")
     p.set_defaults(func=cmd_run)
 
     p = sub.add_parser("report")

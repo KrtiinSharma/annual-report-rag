@@ -15,7 +15,8 @@ from annual_report_rag.config import get_settings
 # cannot afford, and the page-level hit@k / MRR against reference pages measure ranking directly.
 METRICS = ("faithfulness", "answer_relevancy", "context_recall")
 JUDGE_MAX_CONTEXTS = 6  # passages shown to the judge (cited ones first, see run_eval)
-JUDGE_MAX_CHARS = 1500
+# vectorless passes whole pages (median ~2,800 chars); a lower cap hides facts from the judge
+JUDGE_MAX_CHARS = 4000
 GROQ_OPENAI_URL = "https://api.groq.com/openai/v1"
 
 
