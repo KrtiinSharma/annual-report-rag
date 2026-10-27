@@ -1,6 +1,7 @@
 """Where chunks live: a JSONL file per strategy (source for BM25) and a Chroma collection."""
 
 import json
+import threading
 from functools import lru_cache
 from pathlib import Path
 
@@ -49,8 +50,19 @@ def chunk_id(doc: Document) -> str:
     return f"{m['report_id']}:{m['strategy']}:{m['page']}:{m['chunk_index']}"
 
 
-@lru_cache
+# The API warm-up thread and the first request can open the index at the same moment, and two
+# Chroma clients created concurrently break each other ("RustBindingsAPI ... no attribute
+# 'bindings'", then KeyError on the path), so creation is serialised.
+_open_lock = threading.Lock()
+
+
 def get_vectorstore(strategy: str):
+    with _open_lock:
+        return _open_vectorstore(strategy)
+
+
+@lru_cache
+def _open_vectorstore(strategy: str):
     from langchain_chroma import Chroma
 
     from annual_report_rag.retrieval.models import get_embeddings
