@@ -158,7 +158,8 @@ export default function App() {
         </div>
       </header>
 
-      {waking && !catalog && (
+      {/* the Evaluation tab is static, so it doesn't need to announce the server */}
+      {waking && !catalog && tab !== 'eval' && (
         <div className="border-b border-line bg-accent-soft px-4 py-2 text-center text-sm text-accent">
           Waking up the free server… this can take up to a minute the first time.
         </div>

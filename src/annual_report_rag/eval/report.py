@@ -1,8 +1,18 @@
-"""Collect docs/results/*.json into summary.json (served to the UI) and RESULTS.md."""
+"""Collect docs/results/*.json into summary.json (served by the API), RESULTS.md, and
+frontend/src/data/eval.json (bundled into the site, so the Evaluation page needs no server)."""
 
 import json
 
-from annual_report_rag.config import get_settings
+from annual_report_rag.config import ROOT, get_settings
+from annual_report_rag.eval.dataset import load_questions
+
+SITE_DATA = ROOT / "frontend" / "src" / "data" / "eval.json"
+# per-question fields the site shows; the retrieved passages are left out to keep it small
+ROW_FIELDS = (
+    *("id", "question", "answer", "reference", "cited_pages"),
+    *("faithfulness", "answer_relevancy", "context_recall", "hit@5", "cited_page_hit"),
+    *("latency_s", "tokens"),
+)
 
 RAG_COLS = [
     ("faithfulness", "Faithfulness"),
@@ -58,6 +68,7 @@ def write_report():
         for e in experiments
     ]
     (results_dir / "summary.json").write_text(json.dumps(summary, indent=1), encoding="utf-8")
+    write_site_data(summary, experiments)
 
     rag = [e for e in experiments if e["kind"] == "rag"]
     retrieval = [e for e in experiments if e["kind"] == "retrieval"]
@@ -69,3 +80,19 @@ def write_report():
     path = results_dir / "RESULTS.md"
     path.write_text("\n".join(md), encoding="utf-8")
     return path
+
+
+def write_site_data(summary: list[dict], experiments: list[dict]) -> None:
+    gold = {q.id: [list(p) for p in q.pages] for q in load_questions()}
+    rows = {
+        e["name"]: [
+            {k: r.get(k) for k in ROW_FIELDS} | {"reference_pages": gold.get(r["id"], [])}
+            for r in e["rows"]
+        ]
+        for e in experiments
+        if e["kind"] == "rag"
+    }
+    SITE_DATA.parent.mkdir(parents=True, exist_ok=True)
+    SITE_DATA.write_text(
+        json.dumps({"experiments": summary, "rows": rows}, ensure_ascii=False), encoding="utf-8"
+    )
