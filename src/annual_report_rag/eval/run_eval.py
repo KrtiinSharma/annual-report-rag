@@ -161,6 +161,8 @@ def run_with_langsmith(target, questions, args, done: dict, partial: dict) -> No
         return {"results": [{"key": k, "score": row[k]} for k in keys if row.get(k) is not None]}
 
     todo = {q.id for q in questions if q.id not in done}
+    if not todo:
+        return
     data = [
         e for e in Client().list_examples(dataset_name=DATASET_NAME) if e.inputs.get("id") in todo
     ]
@@ -182,7 +184,11 @@ def save(args, rows: dict) -> None:
     payload = {
         "name": args.name,
         "kind": "rag",
-        "config": {k: v for k, v in vars(args).items() if k not in ("func", "limit")},
+        "config": {
+            **{k: v for k, v in vars(args).items() if k not in ("func", "limit")},
+            "answer_model": get_settings().answer_model,
+            "judge_model": get_settings().judge_model,
+        },
         "n": len(rows_list),
         "aggregate": {k: mean(r.get(k) for r in rows_list) for k in keys},
         "rows": rows_list,

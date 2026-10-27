@@ -78,7 +78,7 @@ Infosys in FY24"* and get an answer grounded in the reports, with **page-level c
 |-------|--------|-----|
 | Language | Python 3.11, managed with `uv` | Reproducible installs |
 | Orchestration | LangChain (`langchain-core`, `langchain-community`, `langchain-groq`) | Required by the brief |
-| LLM | Groq: `openai/gpt-oss-120b` for answers, `openai/gpt-oss-20b` for rewriting, `qwen/qwen3.8-27b` as a last-resort fallback; Claude Haiku 5.5 (Anthropic API) as the RAGAS judge (configurable) | Free tier, fast |
+| LLM | Groq: `openai/gpt-oss-120b` for answers, `openai/gpt-oss-20b` for rewriting, `qwen/qwen3.8-27b` as a last-resort fallback; Claude Haiku 5.5 (Anthropic API) answers and judges the RAGAS runs (configurable) | Free tier, fast |
 | PDF parsing | PyMuPDF (`pymupdf`) — text blocks with font sizes, `find_tables()` for tables, `get_toc()` for outlines | Fast, handles tables, pure wheel |
 | Embeddings | `BAAI/bge-small-en-v1.5` via FastEmbed (ONNX, CPU) | Free, runs locally and on a free CPU host |
 | Vector store | Chroma (persistent, metadata `where` filters) | Native filtering |

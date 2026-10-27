@@ -137,7 +137,7 @@ export function EvalView() {
       <section>
         <h2 className="text-lg font-semibold text-ink">End-to-end quality (RAGAS)</h2>
         <p className="mb-4 text-sm text-ink-2">
-          Each run answers the test questions and is scored by RAGAS with a Groq judge. Every run is also an experiment in LangSmith.
+          Each run answers the test questions with Claude Haiku 5.5 and is scored by RAGAS with Claude Haiku 5.5 as the judge. Every run is also an experiment in LangSmith.
         </p>
         <Table rows={rag} cols={[...RAGAS, ['hit@5', 'Page hit@5', 'A reference page is among the top 5 passages']]} extra />
       </section>

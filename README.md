@@ -54,10 +54,17 @@ uv run arr-eval run --name vector-indigo --subset vectorless --companies indigo 
 uv run arr-eval report                                   # docs/results/RESULTS.md
 ```
 
-Groq's free tier allows 200K tokens per model per day and one judged question costs ~10K judge
-tokens, so RAGAS runs on a fixed 20-question sample (`--subset sample`) plus the 17 vectorless
-questions; the chunking comparison (`retrieval`) uses all 48. Runs resume where they stopped, and a
-row whose judging hit the limit is re-scored without regenerating its answer.
+The RAGAS runs answer with Claude Haiku 5.5 (`ANSWER_MODEL=claude-haiku-5-5`) and judge with the
+same model: Groq's free 200K tokens/day ran out after ~16 evaluated questions, and the whole
+evaluation costs well under $1 on Claude. The live site keeps answering with gpt-oss-120b on Groq.
+RAGAS runs on a fixed 20-question sample (`--subset sample`) plus the 17 vectorless questions; the
+chunking comparison (`retrieval`) uses all 48. Runs resume where they stopped, and a row whose
+judging failed is re-scored without regenerating its answer.
+
+```bash
+ANSWER_MODEL=claude-haiku-5-5 uv run arr-eval run --name hybrid-structure --subset sample
+```
+
 Results: [docs/results/RESULTS.md](docs/results/RESULTS.md).
 
 ## Deployment (free)

@@ -1,0 +1,131 @@
+[
+ {
+  "name": "hybrid-structure",
+  "kind": "rag",
+  "config": {
+   "name": "hybrid-structure",
+   "mode": "hybrid",
+   "report": "indigo_FY24",
+   "strategy": "structure",
+   "subset": "sample",
+   "companies": null,
+   "years": null,
+   "no_bm25": false,
+   "no_vector": false,
+   "no_rerank": false,
+   "no_multi_query": false,
+   "local": false,
+   "answer_model": "claude-haiku-5-5",
+   "judge_model": "claude-haiku-5-5"
+  },
+  "n": 20,
+  "aggregate": {
+   "faithfulness": 0.7123,
+   "answer_relevancy": 0.8741,
+   "context_recall": 0.8142,
+   "hit@1": 0.55,
+   "hit@5": 0.75,
+   "mrr": 0.6167,
+   "cited_page_hit": 0.7,
+   "latency_s": 11.434
+  }
+ },
+ {
+  "name": "retrieval-fixed",
+  "kind": "retrieval",
+  "config": {
+   "strategy": "fixed",
+   "multi_query": false
+  },
+  "n": 48,
+  "aggregate": {
+   "hit@1": 0.4792,
+   "hit@3": 0.625,
+   "hit@5": 0.6875,
+   "hit@10": 0.7292,
+   "mrr": 0.5681
+  }
+ },
+ {
+  "name": "retrieval-structure",
+  "kind": "retrieval",
+  "config": {
+   "strategy": "structure",
+   "multi_query": false
+  },
+  "n": 48,
+  "aggregate": {
+   "hit@1": 0.4583,
+   "hit@3": 0.6042,
+   "hit@5": 0.6875,
+   "hit@10": 0.7708,
+   "mrr": 0.5556
+  }
+ },
+ {
+  "name": "vector-indigo",
+  "kind": "rag",
+  "config": {
+   "name": "vector-indigo",
+   "mode": "hybrid",
+   "report": "indigo_FY24",
+   "strategy": "structure",
+   "subset": "vectorless",
+   "companies": [
+    "indigo"
+   ],
+   "years": [
+    "FY24"
+   ],
+   "no_bm25": false,
+   "no_vector": false,
+   "no_rerank": false,
+   "no_multi_query": false,
+   "local": false,
+   "answer_model": "claude-haiku-5-5",
+   "judge_model": "claude-haiku-5-5"
+  },
+  "n": 17,
+  "aggregate": {
+   "faithfulness": 0.655,
+   "answer_relevancy": 0.825,
+   "context_recall": 0.8431,
+   "hit@1": 0.5882,
+   "hit@5": 0.8235,
+   "mrr": 0.6588,
+   "cited_page_hit": 0.8235,
+   "latency_s": 9.1271
+  }
+ },
+ {
+  "name": "vectorless",
+  "kind": "rag",
+  "config": {
+   "name": "vectorless",
+   "mode": "vectorless",
+   "report": "indigo_FY24",
+   "strategy": "structure",
+   "subset": "vectorless",
+   "companies": null,
+   "years": null,
+   "no_bm25": false,
+   "no_vector": false,
+   "no_rerank": false,
+   "no_multi_query": false,
+   "local": false,
+   "answer_model": "claude-haiku-5-5",
+   "judge_model": "claude-haiku-5-5"
+  },
+  "n": 17,
+  "aggregate": {
+   "faithfulness": 0.4956,
+   "answer_relevancy": 0.7821,
+   "context_recall": 0.3333,
+   "hit@1": 0.0588,
+   "hit@5": 0.4118,
+   "mrr": 0.1814,
+   "cited_page_hit": 0.4118,
+   "latency_s": 6.6741
+  }
+ }
+]

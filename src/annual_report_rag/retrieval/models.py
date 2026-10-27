@@ -34,11 +34,26 @@ RETRIES = {"answer": 2, "fast": 1, "fallback": 2}
 @lru_cache
 def get_llm(kind: str = "answer", temperature: float = 0.0):
     """kind: "answer" (final answers), "fast" (query rewriting, routing, tree summaries) or
-    "fallback" (last-resort answers). All on Groq; the RAGAS judge lives in eval/ragas_metrics."""
-    from langchain_groq import ChatGroq
-
+    "fallback" (last-resort answers). Groq models, or Claude when the model name starts with
+    "claude"; the RAGAS judge lives in eval/ragas_metrics."""
     s = get_settings()
     model = {"answer": s.answer_model, "fast": s.fast_model, "fallback": s.fallback_model}[kind]
+    if model.startswith("claude"):
+        from langchain_anthropic import ChatAnthropic
+
+        if not s.anthropic_api_key:
+            raise SystemExit(f"{kind} model is {model}: set ANTHROPIC_API_KEY in .env")
+        # no temperature: current Claude models reject sampling parameters
+        return ChatAnthropic(
+            model=model,
+            api_key=s.anthropic_api_key,
+            max_tokens=4096,
+            reasoning_effort="low",
+            max_retries=RETRIES[kind] + 4,
+        )
+
+    from langchain_groq import ChatGroq
+
     # gpt-oss models reason before answering; "low" keeps latency and token use down
     extra = {"reasoning_effort": "low"} if "gpt-oss" in model else {}
     return ChatGroq(
