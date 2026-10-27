@@ -1,7 +1,9 @@
-"""RAGAS metrics (v0.4 collections API) judged by a Groq model.
+"""RAGAS metrics (v0.4 collections API).
 
-Groq exposes an OpenAI-compatible endpoint, so the RAGAS judge is an AsyncOpenAI client pointed at
-Groq. Embeddings for answer relevancy reuse the local FastEmbed model.
+The judge is Claude Haiku 5.5 through the Anthropic SDK by default (JUDGE_MODEL=claude-...,
+ANTHROPIC_API_KEY): judging is most of an evaluation's tokens, and Groq's free tier caps each model
+at 200K tokens a day. Any other JUDGE_MODEL is called on Groq through its OpenAI-compatible
+endpoint. Embeddings for answer relevancy reuse the local FastEmbed model.
 """
 
 import asyncio
@@ -19,10 +21,23 @@ GROQ_OPENAI_URL = "https://api.groq.com/openai/v1"
 
 @lru_cache
 def _judge():
-    from openai import AsyncOpenAI
     from ragas.llms import llm_factory
 
     s = get_settings()
+    if s.judge_model.startswith("claude"):
+        from anthropic import AsyncAnthropic
+
+        if not s.anthropic_api_key:
+            raise SystemExit("JUDGE_MODEL is a Claude model: set ANTHROPIC_API_KEY in .env")
+        client = AsyncAnthropic(api_key=s.anthropic_api_key, max_retries=8)
+        llm = llm_factory(s.judge_model, provider="anthropic", client=client, max_tokens=4096)
+        # RAGAS adds temperature/top_p by default; the Claude API rejects sampling parameters
+        for key in ("temperature", "top_p", "top_k"):
+            llm.model_args.pop(key, None)
+        return llm
+
+    from openai import AsyncOpenAI
+
     client = AsyncOpenAI(api_key=s.groq_api_key, base_url=GROQ_OPENAI_URL, max_retries=8)
     return llm_factory(s.judge_model, client=client, temperature=0.0, max_tokens=4096)
 

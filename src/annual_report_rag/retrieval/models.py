@@ -25,19 +25,20 @@ def get_cross_encoder():
 
 # Groq's free tier caps each model at 200K tokens/day. When the answer model hits its cap, answers
 # come from these instead (each model has its own quota), so the site keeps working.
-FALLBACKS = {"answer": ["fast", "judge"]}
+FALLBACKS = {"answer": ["fast", "fallback"]}
 # The planner has a rule-based fallback and the answer model has fallback models, so both should
-# fail fast on a rate limit rather than wait it out; the RAGAS judge can afford to wait.
-RETRIES = {"answer": 2, "fast": 1, "judge": 6}
+# fail fast on a rate limit rather than wait it out.
+RETRIES = {"answer": 2, "fast": 1, "fallback": 2}
 
 
 @lru_cache
 def get_llm(kind: str = "answer", temperature: float = 0.0):
-    """kind: "answer" (final answers), "fast" (query rewriting, routing) or "judge" (RAGAS)."""
+    """kind: "answer" (final answers), "fast" (query rewriting, routing, tree summaries) or
+    "fallback" (last-resort answers). All on Groq; the RAGAS judge lives in eval/ragas_metrics."""
     from langchain_groq import ChatGroq
 
     s = get_settings()
-    model = {"answer": s.answer_model, "fast": s.fast_model, "judge": s.judge_model}[kind]
+    model = {"answer": s.answer_model, "fast": s.fast_model, "fallback": s.fallback_model}[kind]
     # gpt-oss models reason before answering; "low" keeps latency and token use down
     extra = {"reasoning_effort": "low"} if "gpt-oss" in model else {}
     return ChatGroq(

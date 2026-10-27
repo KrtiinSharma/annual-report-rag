@@ -30,6 +30,7 @@ dependencies = [
 eval = [
     "ragas>=0.2",
     "pandas>=2.2",
+    "anthropic>=2.3.0",
 ]
 
 [dependency-groups]

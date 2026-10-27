@@ -16,10 +16,14 @@ class Settings(BaseSettings):
     groq_api_key: str = ""
     answer_model: str = "openai/gpt-oss-120b"
     fast_model: str = "openai/gpt-oss-20b"
-    judge_model: str = "qwen/qwen3.8-27b"
+    fallback_model: str = "qwen/qwen3.8-27b"  # last-resort answer model (own Groq quota)
     # Answer with other models when the answer model hits its daily limit. Off for evaluation,
     # so every scored answer comes from the same model.
     llm_fallbacks: bool = True
+
+    # RAGAS judge: Claude (Anthropic API) when the model starts with "claude", otherwise Groq
+    judge_model: str = "claude-haiku-5-5"
+    anthropic_api_key: str = ""
 
     # LangSmith (picked up by langchain automatically when set in the environment)
     langsmith_api_key: str = ""
