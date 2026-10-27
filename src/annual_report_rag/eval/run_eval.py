@@ -119,9 +119,14 @@ def evaluate_one(target, q: Question, previous: dict | None = None) -> dict:
     if previous and previous.get("answer") and previous.get("contexts"):
         row = dict(previous)
     else:
+        from langchain_core.callbacks import get_usage_metadata_callback
+
         t = time.perf_counter()
-        result = target(q.question)
+        # counts the tokens of every LLM call (query planning, node selection, answer)
+        with get_usage_metadata_callback() as usage:
+            result = target(q.question)
         latency = time.perf_counter() - t
+        calls = usage.usage_metadata.values()
         ranked = [(c.report_id, c.page) for c in result.citations]
         cited = [(c.report_id, c.page) for c in result.citations if c.cited]
         # the judge sees a few passages, so put the ones the answer actually cited first
@@ -136,6 +141,9 @@ def evaluate_one(target, q: Question, previous: dict | None = None) -> dict:
             "cited_pages": cited,
             "contexts": contexts,
             "latency_s": round(latency, 2),
+            "input_tokens": sum(u["input_tokens"] for u in calls),
+            "output_tokens": sum(u["output_tokens"] for u in calls),
+            "tokens": sum(u["total_tokens"] for u in calls),
             "cited_page_hit": float(any(p in q.pages for p in cited)),
             **page_metrics(q, ranked),
         }
@@ -181,7 +189,11 @@ def save(args, rows: dict) -> None:
     path = results_path(args.name)
     path.parent.mkdir(parents=True, exist_ok=True)
     rows_list = list(rows.values())
-    keys = [*ragas_metrics.METRICS, "hit@1", "hit@5", "mrr", "cited_page_hit", "latency_s"]
+    keys = [
+        *ragas_metrics.METRICS,
+        *("hit@1", "hit@5", "mrr", "cited_page_hit", "latency_s"),
+        *("input_tokens", "output_tokens", "tokens"),
+    ]
     payload = {
         "name": args.name,
         "kind": "rag",

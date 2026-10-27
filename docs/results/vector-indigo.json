@@ -24,20 +24,23 @@
  },
  "n": 17,
  "aggregate": {
-  "faithfulness": 0.7207,
-  "answer_relevancy": 0.8278,
-  "context_recall": 0.8235,
+  "faithfulness": 0.7288,
+  "answer_relevancy": 0.8091,
+  "context_recall": 0.8431,
   "hit@1": 0.5882,
-  "hit@5": 0.8235,
-  "mrr": 0.6588,
-  "cited_page_hit": 0.8235,
-  "latency_s": 9.1271
+  "hit@5": 0.7647,
+  "mrr": 0.6471,
+  "cited_page_hit": 0.7647,
+  "latency_s": 8.5271,
+  "input_tokens": 2877.6471,
+  "output_tokens": 419.2941,
+  "tokens": 3296.9412
  },
  "rows": [
   {
    "id": "indigo24-aog",
    "question": "What did IndiGo account for in FY24 regarding aircraft grounded due to engine unavailability?",
-   "answer": "In FY24, IndiGo accrued compensation from the Original Equipment Manufacturer (OEM) for the Aircraft on Ground (AOG) situation caused by engine unavailability. The accrual is included in Revenue from operations for the year ended March 31, 2024 [1][2].\n\nKey details:\n- **Nature:** Compensation for the period under discussion with the OEM, related to the ongoing AOG situation from unavailability of engines for certain aircraft [1][2].\n- **Accounting basis:** Recorded under Ind AS 115, considering the principles in the existing contract, the past mechanism of agreed compensation, and the OEM's latest compensation proposal [1][2].\n- **Status:** The company is still negotiating with the OEM to finalise a customised compensation plan [1][2].\n- **Amount:** The passages do not state the amount of the accrual, so it cannot be quantified from the provided context.",
+   "answer": "In FY24, IndiGo accrued compensation from the Original Equipment Manufacturer (OEM) for the Aircraft on Ground (AOG) situation caused by engine unavailability. The accrual is included in Revenue from operations for the year ended March 31, 2024 [1][2].\n\nKey details from the passages:\n\n- **Accounting treatment:** The accrual was recorded under Ind AS 115, based on the principles in the existing contract, the past mechanism of agreed compensation, and the OEM's latest compensation proposal [1][2].\n- **Status:** The company is still in discussions with the OEM to finalise a customized compensation plan [1][2].\n- **Amount:** The passages do not state the amount of the compensation accrued. The amount is therefore missing from the provided context.",
    "reference": "IndiGo recorded an accrual for compensation from the original equipment manufacturer (OEM) for the ongoing Aircraft on Ground (AOG) situation caused by unavailability of engines, under Ind AS 115 and the existing contract, while a customised compensation plan was still being negotiated.",
    "pages": [
     [
@@ -83,7 +86,10 @@
     "(viii) Incentive - non-refundable\n\nCash incentives\n\n\u0007The Company receives non-refundable incentives in connection with the acquisition of aircraft and engines. In case of owned \naircraft and engines, incentives are recorded as a reduction to the cost of related aircraft and engines. In case of aircraft \nand engines held under leases, the incentives are recorded as reduction to the carrying amount of right of use assets at \nthe commencement of lease of the respective aircraft and engine.\n\n\u0007The Company also receives non-refundable milestone incentives from the engine manufacturer on achievement of certain \nmilestones relating to acquisition and delivery of aircraft. These milestone incentives are recorded as reduction to the \ncarrying value of aircraft and engines in case of owned aircraft and engines. In case of aircraft and engines held under",
     "\u0007Major inspection costs relating to engine and airframe overhauls and other heavy maintenance are identified as separate \ncomponents for owned aircraft and owned engines and are depreciated over the expected lives between major overhauls \nand remaining useful life of the aircraft/engines, whichever is lower.\n\n\u0007Depreciation on property, plant and equipment has been charged based on the following useful lives:"
    ],
-   "latency_s": 9.24,
+   "latency_s": 8.85,
+   "input_tokens": 2589,
+   "output_tokens": 327,
+   "tokens": 2916,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
@@ -91,13 +97,13 @@
    "hit@10": 1.0,
    "mrr": 1.0,
    "faithfulness": 1.0,
-   "answer_relevancy": 0.8163756551309833,
+   "answer_relevancy": 0.801156589423638,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-passengers",
    "question": "How many passengers did IndiGo carry in FY24?",
-   "answer": "IndiGo carried **106.42 million passengers in FY 2024** [1].\n\nThis was a 24% increase on the 85.59 million passengers carried in FY 2023 [1]. The report describes this as the airline's milestone of carrying more than 100 million passengers in one year [1].",
+   "answer": "IndiGo carried **106.42 million passengers in FY 2024** [1].\n\nThis was a 24% increase over the 85.59 million passengers carried in FY 2023 [1].",
    "reference": "IndiGo carried 106.42 million passengers in FY 2024, its first year above 100 million, a 24% increase over 85.59 million in FY 2023.",
    "pages": [
     [
@@ -139,21 +145,24 @@
     "connected to 52+ countries and 100+ countries via \nindirect routes. The Government of India continues to \nsupport the development of a robust airline ecosystem \nto improve connectivity to all markets including the \nunderserved and unserved countries.\n\nDemand for international travel\n\nSomewhat uniquely, more than 50% of the Indian \ninternational air travellers are served by foreign airlines. \nOver the past five years, there have been positive \ndevelopments, and market share for Indian carriers has",
     "IndiGo is the largest airline in India with over 2,000 daily flights across 88 domestic and 33 international destinations. \nIndiGo remains committed to its purpose of 'Giving wings to the nation, by connecting people and aspirations'.\n\nIn a short span of 18 years, IndiGo has become the seventh-largest airline in the world in terms of daily departures and is \nthe first Indian airline to operate a large fleet of 350+ aircraft. IndiGo also became the youngest airline globally to welcome \n100 million customers in a calendar year.\n\nIndiGo has four key customer promises: affordable fares, on-time performance, courteous and hassle-free service, and \nan unparalleled network, making it one of the most reliable airlines globally.\n\nIndiGo continues to build on its success story with its strategy of 'Towards new heights and across new frontiers' which has \nthree strategic pillers of Reassure, Develop, and Create. IndiGo’s vision is to be India’s preferred airline for connectivity in and \nwith India, and by doing so being one of the leading airlines in the world."
    ],
-   "latency_s": 7.44,
+   "latency_s": 3.08,
+   "input_tokens": 2576,
+   "output_tokens": 121,
+   "tokens": 2697,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 1.0,
-   "answer_relevancy": 0.8853046409132678,
+   "faithfulness": 0.6,
+   "answer_relevancy": 0.8851421255002558,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-scope1",
    "question": "What were IndiGo's Scope 1 greenhouse gas emissions in FY24?",
-   "answer": "IndiGo's Scope 1 greenhouse gas emissions in FY 2024 were **8,414,458.31 metric tonnes of CO2 equivalent** [2]. The FY 2023 figure was 6,789,520.00 metric tonnes of CO2 equivalent [2].\n\nThe passages do not state whether these figures are standalone or consolidated. The FY 2024 Scope 2 emissions boundary was expanded to include electricity at airport operational locations [3][6], but no equivalent note is given for Scope 1.",
+   "answer": "IndiGo's Scope 1 greenhouse gas emissions in FY24 were **8,414,458.31 metric tonnes of CO2 equivalent** [2]. The comparative FY23 figure was 6,789,520.00 metric tonnes of CO2 equivalent [2].\n\nThe passages do not state whether these figures are standalone or consolidated.",
    "reference": "Total Scope 1 emissions were 8,414,458.31 tonnes of CO2 equivalent in FY 2024, up from 6,789,520.00 in FY 2023.",
    "pages": [
     [
@@ -185,25 +194,20 @@
     [
      "indigo_FY24",
      128
-    ],
-    [
-     "indigo_FY24",
-     128
-    ],
-    [
-     "indigo_FY24",
-     127
     ]
    ],
    "contexts": [
     "| Parameter | Unit | FY 2024 | FY 2023 |\n| --- | --- | --- | --- |\n| Total Scope 1 emissions (Break-up of the GHG into CO2, CH4,  N2O, HFCs, FCs, SF6, NF3, if available) Metric tonnes of CO2 equivalent |  | 8,414,458.31 | 6,789,520.00 |\n| Total Scope 2 emissions (Break-up of the GHG into CO2, CH4,  N2O, HFCs, PFCs, SF6, NF3, if available) Metric tonnes of CO2 equivalent |  | 12,427.97 | 4,445.00 |\n| Total Scope 1 and Scope 2 emission intensity per rupee of  turnover adjusted for Purchasing Power Parity (PPP)  (Total Scope 1 and Scope 2 GHG emissions / Revenue from  operations adjusted for PPP) (tCO2e/USD) Metric tonnes of CO2 equivalent |  | 0.0003 | 0.0003 |\n| Total Scope 1 and Scope 2 emissions per ASK Grams of CO2 equivalent/ASK |  | 60.5 | 59.5 |",
-    "Note 1: Indicate if any independent assessment/ evaluation/assurance has been conducted by an external agency? (Y/N) If \nyes, name of the external agency: Yes, TUV India Pvt. Ltd.\n\nNote 2: Figures for FY 2024 scope 2 emission boundary has been increased to include electricity consumption at the airport \noperational locations (offices, operational areas, hangars, etc.)\n\nNote 3: The intensity number is revised basis the per rupee of turnover.\n\n8. \nDoes the entity have any project related to reducing Green House Gas emission? If yes, then provide details.\n\nResponse: IndiGo has undertaken the following mechanisms for GHG emission reduction and Ground CO2 reduction by \nminimising diesel consumption:\n\n1. \nBy using electrical vehicles and other ground equipment like electric baggage tugs\n\n2. \nBy using CNG vehicles.\n\n3. \nBy using other fuel economical diesel equipment.\n\n9. \nProvide details related to waste management by the entity, in the following format:\n\nParameter\nFY 2024 (MT)\nFY 2023 (MT)\n\nTotal waste generated (in metric tonnes)",
-    "A. \n\u0007Note: Indicate if any independent assessment/ evaluation/assurance has been carried out by an external agency? (Y/N) \nIf yes, name of the external agency.\n\nResponse: Yes\n\nB. \n\u0007Note: The scope of data for FY 2024 includes electricity consumption from airports and fugitive emissions from refrigerant \nrecharged in air conditioning units and CO2 extinguishers recharged during the reporting period\n\n2. \n\u0007Does the entity have any sites / facilities identified as designated consumers (DCs) under the Performance, Achieve and \nTrade (PAT) Scheme of the Government of India? (Y/N) If yes, disclose whether targets set under the PAT scheme have been \nachieved. In case targets have not been achieved, provide the remedial action taken, if any.\n\nResponse: Nil\n\n3. \nProvide details of the following disclosures related to water, in the following format:\n\nParameter\nFY 2024 (KL)\nFY 2023 (KL)\n\nWater withdrawal by source (in kilolitres)",
     "Note: The value for FY 2023 was re-stated due to change in methodology in calculations.\n\n\u0007Note: Indicate if any independent assessment/ evaluation/assurance has been carried out by an external agency? (Y/N) If \nyes, name of the external agency.\n\n\u0007Response: Yes\n\n\u0007Note 1: The NOx and SOx emissions have been calculated based on the well to wake emissions of our jet fuel consumption. \nThe emission factors have been sourced from National Renewable Energy Laboratory (NREL).\n\n7. \nProvide details of greenhouse gas emissions (Scope 1 and Scope 2 emissions) & its intensity, in the following format:",
+    "Note 1: Indicate if any independent assessment/ evaluation/assurance has been conducted by an external agency? (Y/N) If \nyes, name of the external agency: Yes, TUV India Pvt. Ltd.\n\nNote 2: Figures for FY 2024 scope 2 emission boundary has been increased to include electricity consumption at the airport \noperational locations (offices, operational areas, hangars, etc.)\n\nNote 3: The intensity number is revised basis the per rupee of turnover.\n\n8. \nDoes the entity have any project related to reducing Green House Gas emission? If yes, then provide details.\n\nResponse: IndiGo has undertaken the following mechanisms for GHG emission reduction and Ground CO2 reduction by \nminimising diesel consumption:\n\n1. \nBy using electrical vehicles and other ground equipment like electric baggage tugs\n\n2. \nBy using CNG vehicles.\n\n3. \nBy using other fuel economical diesel equipment.\n\n9. \nProvide details related to waste management by the entity, in the following format:\n\nParameter\nFY 2024 (MT)\nFY 2023 (MT)\n\nTotal waste generated (in metric tonnes)",
     "around 4 years has further helped us in reducing our \ngreenhouse gas emissions. Around 78% of our current \naircraft fleet belongs to the Airbus A320neo family. \nFor ground operations, we are making investments in \nelectric coaches and electric ground equipment. We \nare in active discussions with oil marketing companies \nregarding sustainable aviation fuel, supply of which is \nconstrained both globally and locally. These initiatives \nhave placed us in the category of one of the lowest \ncarbon-emitting airlines in the world and at the same \ntime one of the lowest noise producing airline. Our \nactive drive against solid waste generation is helped \nby numerous initiatives, including avoidance of single \nuse plastics in favour of biodegradable options for more \nthan 100 items in FY 2024.\n\nIndiGo is an equal opportunity employer, and \napproximately half of our workforce is female. \nFurthermore, IndiGo is proud of its record of being \nleaders globally in employing women pilots. \nOur inclusive hiring efforts have resulted in doubling \nof People with Disability (PwD) number in the current \nfinancial year.",
-    "Corporate overview\nValue creation for stakeholders\nFinancial statements\nStatutary reports\n\n2. \nPlease provide details of total Scope 3 emissions & its intensity, in the following format:\n\n\u0007Response: Nil\n\n3. \n\u0007With respect to the ecologically sensitive areas reported at Question 11 of Essential Indicators above, provide details \nof significant direct & indirect impact of the entity on biodiversity in such areas along-with prevention and remediation \nactivities.\n\n\u0007Response: Nil\n\n4. \n\u0007If the entity has undertaken any specific initiatives or used innovative technology or solutions to improve resource efficiency, \nor reduce impact due to emissions / effluent discharge / waste generated, please provide details of the same as well as \noutcome of such initiatives, as per the following format:"
+    "Corporate overview\nValue creation for stakeholders\nFinancial statements\nStatutary reports\n\n2. \nPlease provide details of total Scope 3 emissions & its intensity, in the following format:\n\n\u0007Response: Nil\n\n3. \n\u0007With respect to the ecologically sensitive areas reported at Question 11 of Essential Indicators above, provide details \nof significant direct & indirect impact of the entity on biodiversity in such areas along-with prevention and remediation \nactivities.\n\n\u0007Response: Nil\n\n4. \n\u0007If the entity has undertaken any specific initiatives or used innovative technology or solutions to improve resource efficiency, \nor reduce impact due to emissions / effluent discharge / waste generated, please provide details of the same as well as \noutcome of such initiatives, as per the following format:",
+    "A. \n\u0007Note: Indicate if any independent assessment/ evaluation/assurance has been carried out by an external agency? (Y/N) \nIf yes, name of the external agency.\n\nResponse: Yes\n\nB. \n\u0007Note: The scope of data for FY 2024 includes electricity consumption from airports and fugitive emissions from refrigerant \nrecharged in air conditioning units and CO2 extinguishers recharged during the reporting period\n\n2. \n\u0007Does the entity have any sites / facilities identified as designated consumers (DCs) under the Performance, Achieve and \nTrade (PAT) Scheme of the Government of India? (Y/N) If yes, disclose whether targets set under the PAT scheme have been \nachieved. In case targets have not been achieved, provide the remedial action taken, if any.\n\nResponse: Nil\n\n3. \nProvide details of the following disclosures related to water, in the following format:\n\nParameter\nFY 2024 (KL)\nFY 2023 (KL)\n\nWater withdrawal by source (in kilolitres)"
    ],
-   "latency_s": 8.15,
+   "latency_s": 3.58,
+   "input_tokens": 3180,
+   "output_tokens": 189,
+   "tokens": 3369,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
@@ -211,13 +215,13 @@
    "hit@10": 1.0,
    "mrr": 1.0,
    "faithfulness": 1.0,
-   "answer_relevancy": 0.8601593546353994,
+   "answer_relevancy": 0.9264865560640841,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-load-factor",
    "question": "What was IndiGo's passenger load factor in FY24?",
-   "answer": "IndiGo's Passenger Load Factor in FY 2024 was **85.9%**.\n\n- Passage [1] states the load factor rose from 82.1% in FY 2023 to 85.9% in FY 2024.\n- Passage [4] (Operational highlights table) also reports Passenger Load Factor (%) of 85.9% for FY 2024, with a +3.8 pts change against FY 2023's 82.1%.",
+   "answer": "IndiGo's Passenger Load Factor in FY 2024 was **85.9%**, up from 82.1% in FY 2023 [1][4].\n\nSupporting detail:\n- Passage [1] states the load factor \"increased from 82.1% in FY 2023 to 85.9% in FY 2024.\"\n- Passage [4] lists Passenger Load Factor (%) of 85.9% for FY 2024 and shows a change of +3.8 pts versus FY 2023.",
    "reference": "The passenger load factor rose from 82.1% in FY 2023 to 85.9% in FY 2024.",
    "pages": [
     [
@@ -263,7 +267,10 @@
     "Global aviation industry\n\ngrowth rate. Industry-wide international revenue passenger \nkilometres (RPKs) reached 88.6% of 2019 levels.\n\nIn 2023, global demand for air travel continued to be strong, \nsustaining the rebound from the impact of COVID-19. As \nper the International Air Transport Association (IATA), the \nindustry witnessed growth of 36.9% year-over-year in 2023, \nmeasured in revenue passenger-kilometres (RPKs), reaching \n94.1% of pre-Covid (2019) levels. This is a significant increase \nfrom 2022, when it stood at 68.7%. Capacity has also \nrecovered, resulting in an industry-wide load factor of 82.3%, \nwhich was 0.3 points lower than the load factor in 2019.\n\nThis recovery was observed across all regions, with North \nAmerican carriers leading the revival, benefitting from an \nearly reopening and strong domestic demand. The reopening \nof the Chinese market in January 2023 also played a crucial \nrole in accelerating global passenger traffic recovery in 2023, \nparticularly revitalising travel in the Asia-Pacific region. This \nrecovery was further supported by the ongoing recovery in \nlarge markets like India.",
     "Passenger capacity (seats)\nTonnage capacity (tonnes)\nNo. of aircraft"
    ],
-   "latency_s": 7.84,
+   "latency_s": 8.36,
+   "input_tokens": 2751,
+   "output_tokens": 230,
+   "tokens": 2981,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
@@ -271,13 +278,13 @@
    "hit@10": 1.0,
    "mrr": 1.0,
    "faithfulness": 0.8,
-   "answer_relevancy": 0.9113952914469821,
+   "answer_relevancy": 0.8969007119317741,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-ops",
    "question": "What were IndiGo's on-time performance and peak daily flights in FY24?",
-   "answer": "IndiGo's FY24 on-time performance was **81.3%** on DGCA metros [1]. Peak daily flights reached **2,016** (2,001 commercial schedule and 15 military flights) [1].\n\nFor context, the peak in FY23 was 1,815 daily flights [1], so the FY24 peak was up 11% (2,016 ÷ 1,815 − 1 ≈ 11.1%), as the report itself states [1].",
+   "answer": "IndiGo's FY24 on-time performance was **81.3%** on DGCA metros, and its peak operation reached **2,016 daily flights** [1].\n\n- **On-time performance:** 81.3% for FY 2024, measured on DGCA metros [1].\n- **Peak daily flights:** 2,016 (2,001 in the commercial schedule and 15 military flights), up 11% from 1,815 peak daily flights in FY 2023 [1].",
    "reference": "On-time performance was 81.3% on DGCA metros, and peak operations reached 2,016 daily flights, 11% more than the 1,815 peak in FY 2023.",
    "pages": [
     [
@@ -319,21 +326,24 @@
     "Affordable \nfares\n\nOn-time \nperformance\n\nCourteous and \nhassle-free service\n\nUnparalleled \nnetwork",
     "Courteous &\n\nAffordable\n\nUnparalleled\n\nOn Time \nPerformance\n\nHassle-free\n\nFares\n\nNetwork\n\nservice"
    ],
-   "latency_s": 7.76,
+   "latency_s": 7.62,
+   "input_tokens": 2282,
+   "output_tokens": 218,
+   "tokens": 2500,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.875,
-   "answer_relevancy": 0.9075338792781219,
+   "faithfulness": 1.0,
+   "answer_relevancy": 0.9235060211135737,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-rask",
    "question": "How did IndiGo's RASK change in FY24?",
-   "answer": "**The passages don't support an answer on how IndiGo's RASK changed in FY24.** Only the FY 2024 figure is reported.\n\n- **FY 2024 RASK (H): 4.96** [1]. The passage gives no unit or definition for \"(H)\".\n- **FY 2023 RASK:** not reported. The RASK row in [1] has no prior-year value and no \"% Change\" entry.\n\nWithout the FY 2023 figure, the year-on-year change can't be calculated. The FY 2023 RASK would need to come from another section of the FY24 annual report, such as a page with the same operating-metrics table for both years.",
+   "answer": "**IndiGo's FY24 RASK change cannot be determined from the passages.** The passages give only the FY24 figure.\n\n- **FY 2024 RASK (H): 4.96** [1]\n- **FY 2023 RASK:** Not provided. The table in [1] is garbled, and its FY23 column is not clearly labelled. Figures such as 4.80, 4.83 and 2.76 appear in the same block, but the passage does not tie any of them to RASK, so I have not used them.\n\nBecause the FY23 value is missing, I cannot compute the year-over-year change. The FY23 RASK figure from the annual report's financial highlights would be needed.",
    "reference": "RASK increased by 3.2% from Rs. 4.80 in FY 2023 to Rs. 4.96 in FY 2024, driven by higher yields and passenger load.",
    "pages": [
     [
@@ -346,19 +356,19 @@
     ],
     [
      "indigo_FY24",
-     60
-    ],
-    [
-     "indigo_FY24",
      43
     ],
     [
      "indigo_FY24",
-     204
+     9
     ],
     [
      "indigo_FY24",
-     9
+     296
+    ],
+    [
+     "indigo_FY24",
+     101
     ]
    ],
    "cited_pages": [
@@ -370,26 +380,29 @@
    "contexts": [
     "| Particulars | FY 2024 | FY 2023 |  | % Change |\n| --- | --- | --- | --- | --- |\n| EBITDAR Margin | 25.5% | 13.4% 12.0 pts -0.6% 12.4 pts 4.80 3.2% 4.83 9.3% 2.76 3.6% N/A N/A |  |  |\n| Net Profit Margin | 11.9% |  |  |  |\n| RASK (H) | 4.96 |  |  |  |\n| CASK (H) | 4.38 |  |  |  |\n| CASK Ex-Fuel (H) | 2.66 |  |  |  |\n| Return on Net Worth*(%) | N/A |  |  |  |",
     "Impact on profit / (loss) for the year ended March 31, 2023\n\nChange in interest on financial liabilities\n(75.33)\n75.33\n\nChange in interest on financial assets\n92.07\n(92.07)",
-    "\u0007IndiGo continues to improve its customer interactions, with its social media channels receiving a 49% increase in \nvolume vs. FY 2023, reaching more than 1 million cases. Response times improved by 56%, from 114 minutes in FY 2023 \nto 49 minutes in FY 2024. IndiGo continues investing in technologies, processes and people aimed at efficiency \nimprovements and adopting cutting-edge IT solutions to enhance customer support, such as the implementation of \nsalesforce across all communication channels. These new tools allow IndiGo to maintain high service levels while \nmanaging increased demand (e.g., in FY 2024, our call centers received more than 90 million calls, a 21% increase from \nthe previous year).",
     "Y-o-Y% change vs. 2019\n\n20%\n\n0%\n\n-20%\n\n-40%\n\n-60%\n\n-80%\n\nDomestic\nInternational\nTotal\n\n-100%\n\nJul\n\nJul\n\nJul\n\nJan\n\nJan\n\nJan\n\nSep\n\nSep\n\nSep\n\nMar\n\nMar\n\nMar\n\nMay\n\nMay\n\nMay\n\nNov\n\nNov\n\nNov\n\nJul\n\nJan\n\nSep\n\nMar\n\nMay\n\nNov\n\n2020\n\n2021\n\n2022\n\n2023\n\nSources: IATA Sustainability and Economics, IATA Monthly Statistics",
-    "| Particulars |  | Standalone Statement of  Profit and Loss |  |  |\n| --- | --- | --- | --- | --- |\n|  |  | Increase by  0.50% |  | Decrease by  0.50% |\n| Impact on profit / (loss) for the year ended March 31, 2024 Change in interest on financial liabilities Change in interest on financial assets Impact on profit / (loss) for the year ended March 31, 2023 Change in interest on financial liabilities Change in interest on financial assets |  |  | 299.57   (123.39)  75.33   (92.07) |  |\n|  |  | (299.57) |  | 299.57 |\n|  |  | 123.39 |  | (123.39) |\n|  |  | (75.33) |  |  |\n|  |  | 92.07 |  |  |",
-    "recognition is still what drives us \nevery day. To improve our courteous \nand hassle-free service we have been \nsimplifying our processes. In September \n2023 we had introduced a revamped \ncatering concept. With 6E Eats, our \non-board service has been simplified \nfor greater value, service efficiency, \nand sustainability.\n\nthe efficiency and effectiveness of \nthe bot.\n\nOperationally, even though we \nremained #5 in OTP amongst global \nmega carriers in CY 2023, we did \nobserve some tail winds in the \nseasonally difficult ‘bad weather’ \nmonths (IROPS). In the first half \nof FY 2024, we saw a consistent \nperformance and on average we were \nable to hold the number one position \nwhen it came to OTP in India. When \nIROPS started, the fogs proved to be \nfar more, stretching beyond Northern \nIndia, and longer into January. Due \nto our extensive network and high \nutilisation, our operational performance \nwas impacted somewhat more heavily \nthan other airlines."
+    "recognition is still what drives us \nevery day. To improve our courteous \nand hassle-free service we have been \nsimplifying our processes. In September \n2023 we had introduced a revamped \ncatering concept. With 6E Eats, our \non-board service has been simplified \nfor greater value, service efficiency, \nand sustainability.\n\nthe efficiency and effectiveness of \nthe bot.\n\nOperationally, even though we \nremained #5 in OTP amongst global \nmega carriers in CY 2023, we did \nobserve some tail winds in the \nseasonally difficult ‘bad weather’ \nmonths (IROPS). In the first half \nof FY 2024, we saw a consistent \nperformance and on average we were \nable to hold the number one position \nwhen it came to OTP in India. When \nIROPS started, the fogs proved to be \nfar more, stretching beyond Northern \nIndia, and longer into January. Due \nto our extensive network and high \nutilisation, our operational performance \nwas impacted somewhat more heavily \nthan other airlines.",
+    "| S. No. | Ratio |  | Explanation of numerator and  denominator | Units | March 31, 2024 | March 31, 2023 | % Variance | Reason for variance (where the change is  more than 25%) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 9 Net profit  ratio Net profit ratio has been computed  as net profit divided by sale of  services and products. % |  |  |  |  | 12.13% | (0.56%) 2266.07% Increase in revenue on  account of higher load  factor and better yield  coupled with favorable  average fuel costs and  lesser rupee depreciation  from last year has resulted  in improvement of net  profit ratio. 4.29% 328.44% Increase  in  net  profit  after tax has resulted in  improvement in ROCE. 3.51% 83.19% Higher  returns  along  with increase in average  investments  and  bank  deposits has resulted in  increase in the ratio. |  |  |\n| 10 Return on  capital  employed  (ROCE)**** ROCE has been computed as  earnings  before  interest  and  taxes divided by capital employed  where capital employed represents  tangible net worth and total debt  adjusted with deferred tax liability.  Tangible net worth is calculated  as total assets except intangible  assets and intangible assets under  development minus total liabilities. % |  |  |  |  | 18.38% |  |  |  |\n| 11 Return on  investment Return on investment has been  computed  as  finance  income  divided by average investments.  Finance income represents interest  income from bank deposits and  bonds, net gain on sale of current  investments and mark to market  gain  on  current  investments.  Average investments is an average  of investments in bank deposits,  cash and cash equivalents and  investments in mutual funds and  bonds. % |  |  |  |  | 6.43% |  |  |  |",
+    "Executive Summary\n\ngradually phasing out diesel operated \nequipment and electrification of ground \noperations. In this direction, Ahmedabad \nbecame our first station to have 100% \nfleet of eco-friendly electric coaches.\n\nmaintaining the highest standards of \nsafety and excellence.\n\nInterGlobe Aviation Limited is a leading \nair transportation Company in India. As \nof March 2024, we had 367 aircraft in \nour fleet. With a presence in 88 domestic \nand 33 1 international cities, we served \n~106.7 mln passengers in FY 2024.\n\nOne of our most significant actions has \nbeen the investment in a modern fleet \nof fuel-efficient aircraft. Our investment \nin the latest generation of fuel-efficient \nA320 neo family aircraft enable us to \nreduce our carbon emissions making us \none of the lowest CO2, per available \nseat kilometre, emitting airlines in the \nworld. These also enhance operational \nefficiency, leading to cost savings. \nOur \ndedication \nto \nenvironmental \nresponsibility \nenabled \nus \nto \nbe \nrecognised with the prestigious ‘Asia \nEnvironmental Sustainability Airline of \nthe Year 2023’ award by the Centre \nfor Asia Pacific Aviation (CAPA). This \naward underscores the effectiveness of \nour initiatives."
    ],
-   "latency_s": 10.46,
+   "latency_s": 9.93,
+   "input_tokens": 3105,
+   "output_tokens": 570,
+   "tokens": 3675,
    "cited_page_hit": 0.0,
    "hit@1": 0.0,
    "hit@3": 0.0,
    "hit@5": 0.0,
    "hit@10": 0.0,
    "mrr": 0.0,
-   "faithfulness": 0.7,
-   "answer_relevancy": 0.0,
-   "context_recall": 0.0
+   "faithfulness": 0.6363636363636364,
+   "answer_relevancy": 0.8768032454683204,
+   "context_recall": 0.5
   },
   {
    "id": "indigo24-csr",
    "question": "How much did IndiGo spend on CSR in FY24?",
-   "answer": "The passages do not state how much IndiGo spent on CSR in FY24.\n\n- **[2] and [3]** contain the CSR disclosure heading and the table headers (\"Total amount spent for the financial year\", \"Amount Unspent\"), but no amounts or dates.\n- **[5]** (consolidated) and **[6]** (standalone) state only the legal requirement: at least 2% of the average net profits of the preceding three financial years. They give no spend figure.\n- **[4]** gives FY24 turnover of INR 689,043.42 million and net worth of INR 19,319.28 million, but no CSR expenditure.\n\nTo answer, you would need the CSR table in the Board's report (the \"Annual CSR report\" in the FY24 Annual Report, page 71 per [2]–[3]) with the \"Total amount spent for the financial year\" figure, which the passages omit.",
+   "answer": "The passages do not state how much IndiGo spent on CSR in FY24.\n\n- **[2] and [3]** contain the start of the CSR disclosure table (the \"Total amount spent for the financial year\" and \"Amount Unspent\" headers), but no amounts or dates are filled in.\n- **[5]** (consolidated notes) and **[6]** (standalone notes) state only the legal requirement to spend at least 2% of average net profits of the preceding three years on CSR. They give no actual spend.\n- **[4]** gives CSR applicability (Yes), turnover of INR 689,043.42 million, and net worth of INR 19,319.28 million. These are inputs for the CSR threshold, not the amount spent.\n\nTo answer, you would need the completed CSR table in section (e) of the Board's report, or the CSR note showing the amount spent during FY24, with the standalone and consolidated figures identified.",
    "reference": "IndiGo spent Rs. 19,811,186 on CSR in FY 2024 although its statutory obligation (two percent of average net profit) was nil, so the whole amount was in excess of the requirement.",
    "pages": [
     [
@@ -447,21 +460,24 @@
     "*\u0007 1,028,754 (previous year 1,278,510) stock options granted to employees under the existing employee share option schemes\n\nhave not been included in the calculation of diluted earnings per share as they are anti-dilutive.\n\n38. Corporate social responsibility\n\n\u0007Under Section 135 of the Companies Act, 2013, the Company is required to spend, in every financial year, at least 2% of \nthe average net profits of the Company made during the three immediately preceding financial years on Corporate Social \nResponsibility (CSR), pursuant to its policy in this regard.",
     "Revenue recognised from amount included in contract liabilities (forward sales) at the beginning of the year amounts to \nRs. 27,181.87 (previous year Rs. 19,255.31) (excludes amount collected on behalf of third parties and amount refunded due to \ncancellations).\n\n22. Tax expense\n\na. \nAmounts recognised in the Standalone Statement of Profit and Loss comprises :"
    ],
-   "latency_s": 10.48,
+   "latency_s": 10.87,
+   "input_tokens": 2090,
+   "output_tokens": 457,
+   "tokens": 2547,
    "cited_page_hit": 1.0,
    "hit@1": 0.0,
    "hit@3": 1.0,
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 0.5,
-   "faithfulness": 0.2857142857142857,
-   "answer_relevancy": 0.9535609764414876,
+   "faithfulness": 0.75,
+   "answer_relevancy": 0.977944839689001,
    "context_recall": 0.0
   },
   {
    "id": "indigo24-auditor",
    "question": "Who are the statutory auditors of InterGlobe Aviation?",
-   "answer": "The statutory auditors of InterGlobe Aviation (IndiGo) are M/s S.R. Batliboi & Co. LLP, Chartered Accountants (ICAI Firm Registration Number 301003E/E300005) [2].\n\n- **Appointment history:** They were first appointed at the 16th AGM held on August 27, 2019, and their term ran until the 21st AGM in 2024 [2].\n- **Re-appointment:** On May 23, 2024, the Board, on the Audit Committee's recommendation, approved their re-appointment for a second five-year term, from the conclusion of the 21st AGM (scheduled for August 23, 2024) to the conclusion of the 26th AGM in 2029 [2][4]. The re-appointment is subject to member approval [2].\n- **Audit fee:** Proposed remuneration for FY 2025 audit services is INR 27 million (including subsidiaries), plus applicable taxes and out-of-pocket expenses [2].\n- **Audit status for FY24:** They audited the Company's FY24 financial statements. The Auditors' Report contains no qualification, reservation, or adverse remark, and no frauds were reported under Section 143(12) [4].",
+   "answer": "The statutory auditors of InterGlobe Aviation (IndiGo) are M/s S.R. Batliboi & Co. LLP, Chartered Accountants (ICAI Firm Registration Number 301003E/E300005) [2].\n\n- They were first appointed at the 16th AGM on August 27, 2019 [2].\n- The Board, on May 23, 2024, approved their re-appointment for a second term of five consecutive years, from the conclusion of the 21st AGM until the conclusion of the 26th AGM in 2029, subject to member approval [2][4]. The 21st AGM is scheduled for August 23, 2024 [4].\n- The proposed audit remuneration for FY ending March 31, 2025 is INR 27 million (including subsidiaries), plus applicable taxes and out-of-pocket expenses [2].\n- The auditors audited the Company's financial statements for the year under review, and their report contains no qualification, reservation, or adverse remark [4].",
    "reference": "M/s S.R. Batliboi & Co. LLP, Chartered Accountants, appointed at the 16th AGM on August 27, 2019.",
    "pages": [
     [
@@ -507,21 +523,24 @@
     "Besides the audit services, the Company would also avail of permissible non-audit services as required from time to time, for \nwhich they will be remunerated separately on mutually agreed terms, as approved by the Audit Committee.\n\nConsidering the evaluation of the past performance, experience and expertise of S.R. Batliboi and based on the recommendation \nof the Audit Committee, it is proposed to appoint S.R. Batliboi as Statutory Auditors of the Company for a second term of five \nconsecutive years till the conclusion of the 26th AGM of the Company.\n\nBrief Profile:\n\nS. R. Batliboi & Co. LLP (“the Firm”) is limited liability partnership firm incorporated in India and is a firm of Chartered Accountants \nregistered with the Institute of Chartered Accountants of India (“ICAI”) with (ICAI Firm Registration No. 301003E/E300005). The \nFirm is part of S. R. Batliboi & Affiliates, a network of firms registered with the ICAI. The Firm was established in 1949 with its \nregistered office in Kolkata and has offices across key cities in India. The Firm has a valid Peer Review certificate.",
     "scope of audit for FY 2025, the revised remuneration, if needed, will be decided by the Board of Directors on the recommendation \nof the Audit Committee. The remuneration to be paid to Statutory Auditors for the remaining term, i.e., from FY 2026 through \nFY 2029 (till the conclusion of the 26th AGM of the Company to be held in the year 2029), shall also be decided by the Board of \nDirectors based on the recommendation of the Audit Committee."
    ],
-   "latency_s": 8.91,
+   "latency_s": 7.93,
+   "input_tokens": 2827,
+   "output_tokens": 391,
+   "tokens": 3218,
    "cited_page_hit": 1.0,
    "hit@1": 0.0,
    "hit@3": 0.0,
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 0.25,
-   "faithfulness": 1.0,
-   "answer_relevancy": 0.8419584957046005,
+   "faithfulness": 0.8461538461538461,
+   "answer_relevancy": 0.8402080105232618,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-revenue",
    "question": "What was InterGlobe Aviation's consolidated revenue from operations in FY24 and how much did it grow?",
-   "answer": "**Consolidated revenue from operations for FY24 was Rs. 689,043.42 (in the report's table units), up 26.6% from Rs. 544,464.53 in FY23.** [4]\n\n**Calculation:**\n- Growth = (689,043.42 − 544,464.53) ÷ 544,464.53 = 144,578.89 ÷ 544,464.53 ≈ 26.6% [4]\n\n**Notes:**\n- Standalone revenue from operations is identical to consolidated (Rs. 689,043.42 for FY24 and Rs. 544,464.53 for FY23). [4]\n- The table in [4] is labelled \"Rs.\" without a stated multiplier. Other passages in the same report use ₹ million (e.g., passenger ticket revenue of ₹608,227.74 million [2]), so the figures are likely in ₹ million, but the passages do not state this explicitly for the table.\n- The passages do not fully reconcile the total. Passenger ticket revenue (₹608,227.74 million) and ancillary revenue (₹65,789.01 million) [2] sum to ₹674,016.75 million, leaving ₹15,026.67 million of FY24 revenue from operations unexplained by the passages. The FY23 components are similarly incomplete.",
+   "answer": "**Consolidated revenue from operations rose about 26.6% in FY24, from ₹544,464.53 to ₹689,043.42 (figures as printed in the Board's report).** [4]\n\n**Calculation:**\n- Growth = (689,043.42 − 544,464.53) / 544,464.53\n- = 144,578.89 / 544,464.53 ≈ **26.55%**\n\n**Notes:**\n- The table in [4] does not state its units. Passage [2] reports the same company's revenue lines in ₹ million, so the figures are most likely ₹ million, but the source does not say so explicitly.\n- Standalone revenue from operations is identical to consolidated (₹689,043.42 vs ₹544,464.53), per [4].\n- Revenue from operations for FY24 includes compensation accrued from the OEM for the ongoing Aircraft on Ground (AOG) situation. The company is still negotiating the final compensation plan. The passages do not quantify this accrual. [3]",
    "reference": "Consolidated revenue from operations was Rs. 689,043.42 million in FY 2024, up from Rs. 544,464.53 million in FY 2023, a growth of about 26.6%.",
    "pages": [
     [
@@ -556,32 +575,39 @@
     ],
     [
      "indigo_FY24",
+     293
+    ],
+    [
+     "indigo_FY24",
      59
     ]
    ],
    "contexts": [
     "Income\n\nPassenger ticket revenue\nPassenger ticket revenue increased by 26.3% from \n` 481,743.71 million in FY 2023 to ` 608,227.74 \nmillion in FY 2024.\n\nRevenue from ancillary products and services\nRevenue from ancillary products and services primarily \ninclude cargo, excess baggage, special service requests, \nticket modification and cancellation, in-flight sales, and tours. \nRevenue from ancillary products and services increased by \n20.9% from ` 54,415.21 million in FY 2023 to \n` 65,789.01 million in FY 2024.\n\nOther income\nOther income is primarily comprised of financial income \non cash and other non-operating income. Other income \nincreased by 62.2% from ` 14,349.65 million in FY 2023 \nto ` 23,268.21 million in FY 2024.\n\nRevenue per Available Seat Kilometre (RASK)\nRASK increased by 3.2% from ` 4.80 in FY 2023 to \n` 4.96 in FY 2024, driven by increase in yields and \npassenger load.\n\nOther expenses\nOther expenses increased by 30.2% from ` 42,469.61 million in \nFY 2023 to ` 55,299.07 million in FY 2024.\n\nExpenses\n\nTotal expenses increased by 12.5% from ` 561,858.03 million \nin FY 2023 to ` 631,818.54 million in FY 2024.\n\nCost per Available Seat Kilometre (CASK)\nCASK decreased by 9.3% from ` 4.83 in FY 2023 to \n` 4.38 in FY 2024, primarily driven by lower fuel cost and \nlower foreign exchange losses.",
+    "* The weighted average share price at the date of exercise of options exercised during the year was Rs. 2,580.74 (previous year \nRs. 1,770.19). Further, during the current year, certain employees have exercised their right to exercise employee stock options.\n\n39. \u0007Revenue from operations for the year ended March 31, 2024 includes compensation accrued by the Company for the period \nunder discussion with the Original Equipment Manufacturer (“OEM”) in relation to the ongoing Aircraft on Ground (AOG) \nsituation experienced due to unavailability of engines for certain aircraft. While the company is still in discussions with the \nOEM to finalise a customized compensation plan, the accrual has been recorded in accordance with Ind AS 115, considering \nprinciples provided in the existing contract, past mechanism of agreed compensation and latest proposal for compensation \nfrom the OEM.",
     "| Particulars | Consolidated |  | Standalone |  |\n| --- | --- | --- | --- | --- |\n|  | Year ended |  | Year ended |  |\n|  | March 31, 2024 | March 31, 2023 | March 31, 2024 | March 31, 2023 |\n| Revenue from operations | 689,043.42 | 544,464.53 | 689,043.42 | 544,464.53 |\n| Other Income | 23,268.21 | 14,349.65 | 23,255.72 | 14,314.35 |\n| Total Income | 712,311.63 | 558,814.18 | 712,299.14 | 558,778.88 |\n| Profit / (Loss) before Tax | 80,493.09 | (3,043.85) | 80,432.41 | (3,167.16) |\n| Current Tax | 10.85 | 14.04 | - | - |\n| Deferred tax credit / (charge) | (1,242.44) | - | (1,242.44) | - |\n| Profit / (Loss) after Tax | 81,724.68 | (3,057.89) | 81,674.85 | (3,167.16) |\n| Other Comprehensive Income / (Loss) net of tax | (145.92) | 77.24 | (174.92) | 92.60 |\n| Total Comprehensive Income / (Loss) | 81,578.76 | (2,980.65) | 81,499.93 | (3,074.56) |\n| Earnings per equity share of the face value of Rs. 10  each |  |  |  |  |\n| Basic (Rs.) | 211.84 | (7.93) | 211.71 | (8.22) |\n| Diluted (Rs.) | 211.61 | (7.93) | 211.48 | (8.22) |",
     "Revenue recognised from amount included in contract liabilities (forward sales) at the beginning of the year amounts to \nRs. 27,181.87 (previous year Rs. 19,255.31) (excludes amount collected on behalf of third parties and amount refunded due to \ncancellations).\n\n21. Tax expense\n\na. \nAmounts recognised in the Consolidated Statement of Profit and Loss comprises:",
-    "* The weighted average share price at the date of exercise of options exercised during the year was Rs. 2,580.74 (previous year \nRs. 1,770.19). Further, during the current year, certain employees have exercised their right to exercise employee stock options.\n\n39. \u0007Revenue from operations for the year ended March 31, 2024 includes compensation accrued by the Company for the period \nunder discussion with the Original Equipment Manufacturer (“OEM”) in relation to the ongoing Aircraft on Ground (AOG) \nsituation experienced due to unavailability of engines for certain aircraft. While the company is still in discussions with the \nOEM to finalise a customized compensation plan, the accrual has been recorded in accordance with Ind AS 115, considering \nprinciples provided in the existing contract, past mechanism of agreed compensation and latest proposal for compensation \nfrom the OEM.",
     "Revenue recognised from amount included in contract liabilities (forward sales) at the beginning of the year amounts to \nRs. 27,181.87 (previous year Rs. 19,255.31) (excludes amount collected on behalf of third parties and amount refunded due to \ncancellations).\n\n22. Tax expense\n\na. \nAmounts recognised in the Standalone Statement of Profit and Loss comprises :",
     "Revenue from air transportation services is directly attributed to domestic and international operations or are attributed on a \nreasonable basis. Other income is not allocated as the underlying assets / liabilities / services are used interchangeably.\n\nThe revenues from international operations in UAE and Saudi Arabia are more than 10% of the total revenue attributed to all \nforeign countries.\n\nNon-current assets, other than financial instruments, deferred tax assets (net) and income tax assets (net), primarily comprises of \nright of use assets, property, plant and equipment and other non-current assets which cannot be bifurcated between domestic \nand international locations, as such assets are used interchangeably. Accordingly, the same has not been bifurcated between \ndomestic and international locations.\n\nNo single external customer amounts to 10% or more of the Group's revenue. Accordingly, information about major customer is \nnot provided.\n\n35. Related party disclosures\n\na. \n\u0007List of related parties and nature of relationship with whom transactions have taken place during the current / \nprevious year\n\n(i) \nEntity / person with direct or indirect significant influence over the Group\n\nInterGlobe Enterprises Private Limited\n\n(ii) Key managerial personnel of the Group and their close family members\n\nMr. Rahul Bhatia – Managing Director"
    ],
-   "latency_s": 11.43,
+   "latency_s": 11.2,
+   "input_tokens": 3319,
+   "output_tokens": 909,
+   "tokens": 4228,
    "cited_page_hit": 1.0,
    "hit@1": 0.0,
    "hit@3": 0.0,
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 0.25,
-   "faithfulness": 0.2777777777777778,
-   "answer_relevancy": 0.8416972018908762,
-   "context_recall": 0.6666666666666666
+   "faithfulness": 0.2222222222222222,
+   "answer_relevancy": 0.7741782861003994,
+   "context_recall": 0.5
   },
   {
    "id": "indigo24-employees",
    "question": "How many permanent employees did IndiGo have at the end of FY24?",
-   "answer": "IndiGo had **36,860 permanent employees** on its rolls as at March 31, 2024 [1][4].\n\nPassage [4] also shows the FY 2023 figure of 32,407 permanent employees, so the year-on-year increase is 36,860 − 32,407 = 4,453 (about 13.7%, computed from the printed figures) [4].",
+   "answer": "IndiGo had **36,860 permanent employees** on the rolls as on March 31, 2024 [1][4].\n\nPassage [4] also shows the FY 2023 total for permanent employees as 32,407 [4], which is not needed for the FY24 figure but gives context.",
    "reference": "The Company had 36,860 permanent employees on its rolls as on March 31, 2024.",
    "pages": [
     [
@@ -627,21 +653,24 @@
     "| Particulars | For the year ended March 31, 2024 | For the year ended March 31, 2023 |\n| --- | --- | --- |\n| Salaries, wages and bonus (Refer to Note 38) | 62,395.41 | 46,166.12 |\n| Contribution to provident and other funds (Refer to Note 33) | 1,955.42 | 1,600.77 |\n| Staff welfare expenses | 267.73 | 180.63 |\n| Total | 64,618.56 | 47,947.52 |",
     "| Particulars | FY 2024 (Turnover rate in current FY) |  |  | FY 2023 (Turnover rate in previous FY) |  |  | FY 2022 (Turnover rate in the year prior to the  previous FY) |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Male | Female | Total | Male | Female | Total | Male | Female | Total |\n| Permanent  Employees | 18.1% | 23.0% | 20.2% | 23.9% 29.9% 26.5% 16.1% 17.8% 16.8% |  |  |  |  |  |"
    ],
-   "latency_s": 7.1,
+   "latency_s": 7.48,
+   "input_tokens": 3034,
+   "output_tokens": 165,
+   "tokens": 3199,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.16666666666666666,
-   "answer_relevancy": 0.8333149878491987,
+   "faithfulness": 0.25,
+   "answer_relevancy": 0.8668764220890464,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-orders",
    "question": "How many aircraft did IndiGo have on order according to its FY24 annual report?",
-   "answer": "IndiGo's FY24 annual report gives two different order-book figures, so the passages don't settle a single answer:\n\n- **About 970 aircraft** on order, scheduled for delivery until 2035 (including 30 wide-body aircraft), as of June 30, 2024 [1].\n- **985 aircraft** in the order book, stated in the report's \"Efficiency at the helm\" section [2].\n\nThe passages don't explain the gap. The 970 figure is dated June 30, 2024, while the 985 figure has no stated date. The same section of [2] also gives a fleet of 367 aircraft, while [1] gives 382 as of June 30, 2024. The fleet breakdown in [6] as of March 31, 2024 sums to 366 aircraft, which is different again.",
+   "answer": "The FY24 annual report gives two figures, and they don't match:\n\n- **About 970 aircraft** on order, scheduled for delivery until 2035 (including 30 wide-body aircraft), as of June 30, 2024 [1].\n- **985 aircraft** in the order book, stated in the \"Efficiency at the helm\" section without a date [2].\n\nThe passages don't settle which is correct. The 970 figure is the more precisely dated one, but the passages don't say why the two differ. No passage gives a March 31, 2024 order-book figure.\n\nFor context, the passages also report a 500-aircraft order placed in June 2023 [4] and a later agreement in April 2024 for 30 firm A350-900 aircraft, with deliveries from 2027 [5]. The passages don't say whether the April 2024 order is included in either total.",
    "reference": "IndiGo had 985 aircraft on order, securing deliveries until the middle of the next decade, with an aim to become a 600+ aircraft carrier by 2030.",
    "pages": [
     [
@@ -680,32 +709,39 @@
     ],
     [
      "indigo_FY24",
-     60
+     8
+    ],
+    [
+     "indigo_FY24",
+     8
     ]
    ],
    "contexts": [
     "On June 30, 2024 the Company has a fleet of 382 aircraft and has an order book of around 970 aircraft scheduled to be delivered \nuntil 2035 (including 30 wide-body aircraft). Historically, the Company has predominantly acquired aircraft on operating leases, \nwherein the lease liability does not impact the borrowing limit utilisation. However, given the large aircraft delivery in pipeline, \nin addition to the operating leases, the Company has started diversifying the sources of financing and started taking aircraft \ndeliveries through finance leases or other modes of financing which utilises the borrowing limit.\n\nIn order to support the steady stream of planned aircraft deliveries through diversified sources of financing and working capital \nrequirements towards growth in operations in the coming years, the Company expects to utilise its existing borrowing limit by \nearly half of FY 2026 and further requires incremental borrowing limit of Rs. 30,000 crore expected to be utilised by second half \nof FY 2027.",
     "Our fleet consists of 367 aircraft, with future growth \nsupported by an extensive order book of 985 aircraft. \nWe are delivering on our commitment to build a modern, \nfuel-efficient fleet that amplifies our capabilities in both \ndomestic and international markets.\n\nAs of FY 2024, 78% of our fleet comprises of Airbus A320neo \naircraft. The new aircraft provides a 15% increase in fuel \nefficiency over its predecessors, solidifying our commitment \nto sustainability and operational excellence.",
-    "\u0007As of March 31, 2024, our fleet consists of 192 Airbus A320 neo, 94 Airbus A321 neo, 20 Airbus A320 CEO, 45 ATR \naircraft, 3 A321 Freighters (P2F), 2 B777 (damp lease) and 10 A320 (damp lease). During FY 2024, we inducted 45 new \nfuel-efficient Airbus neo powered by CFM LEAP-1A engines, 1 A320 CEO, 6 ATR Aircraft, 1 A321 Freighter (P2F), 1 B777 \nand 10 A320 (damp lease).\n\n\u0007In addition to increasing the mix of new, fuel-efficient aircraft in its fleet, IndiGo strives to adopt and implement cutting-\nedge measures to reduce fuel consumption and carbon emissions. This includes fuel monitoring, pilot awareness of \ngreen policies, engine and fuselage cleanings and weight reduction initiatives, which will be progressively implemented \nin the ATR fleet.\n\nC. Operational Initiatives",
-    "with a fleet of more than 850 aircraft . Significant \nadditions were made to the total outstanding order \nbook for Indian carriers on account of large aircraft \norders. These timely orders bode well for the sector, as \nnew aircraft availability, globally, remains constrained \nand expanding aircraft production capacity is a time-\nconsuming process. Therefore, over the next decade, \nIndian carriers are better poised to sustain planned \ncapacity growth.\n\nonly 6.5% of Indians hold valid passports. This level \nof underpenetration highlights the immense growth \npotential of the Indian aviation market, presenting an \nopportunity to make air travel more accessible to the \nworld's largest diaspora.\n\nPivotal role of Tier 2 and \nTier 3 cities\n\nTier 2 and Tier 3 cities in India are home to a large \nand diverse population that are increasingly becoming \nurbanised. As economic activity continues to diversify \nand expand across these cities, there has been a \nnoticeable increase in income levels. This rise in \ndisposable income is largely due to the proliferation \nof new businesses, expansion of manufacturing \nand service industries, and increased investment in \nlocal infrastructure.",
     "Despite the high growth, India \nremains highly underpenetrated \nboth in domestic as well as in \ninternational markets. To cater to the \nunderpenetrated market, in June 2023, \nIndiGo placed the largest-ever single \naircraft order by any airline of 500 \naircraft. The importance of this can \nhardly be understated. With this order, \nIndiGo has secured a steady flow \nof aircraft till the middle of the next \ndecade. By 2030, we are poised to \nbecome a 600+ aircraft carrier.\n\nOur journey ever since the start of \nthe airline has been extraordinary, \nnot only in India but on a global \naviation stage too. IndiGo is playing \nin the global top league. Our roots \nand fundamentals are Indian but \nincreasingly, the world is where we \noperate. By the end of FY 2024, we \nare globally the 7 th largest by daily \nflights, 5 th largest by passengers \ncarried, and 5 th best for OTP (CY 2023). \nThese results are a testament to the \nloyalty of our customers, the execution \nof our strategy, and dedication of 6E \nemployees who worked relentlessly \nand collectively to build it.\n\nIn FY 2024, we could really see the \ngradual execution and unfolding of \nour strategy of 'Towards new heights \nand across new frontiers'. We have \nfocused on all three pillars of our \ngrowth strategy – Reassure, Develop \nand Create – in parallel, and on all \npillars, we have seen these initiatives \nyielding results:\n\nReassure",
-    "After the closing of FY 2024, we have \ntaken the next step in defining our \nfuture and are on the path of becoming \na global aviation player. In April 2024, \nwe entered into an agreement with \nAirbus to place an order for 30 Firm \nA350-900 aircraft, for which the \ndeliveries are expected to start in 2027.\n\nThis first pillar of the strategy is \nabout reassuring, and improving \nwhere needed, the very basis of our \nCompany. The focus on our three \ncustomer promises – affordable fares, \non-time performance, and courteous \nand hassle-free service – have been \nthe basis of our success. Over the past \nyear we have added a fourth promise: \nunparalleled network. Naturally, above \nall, safety is paramount and will remain \nour number one priority.\n\nAs a result of the favourable external \nenvironment and a wide range of \ninitiatives that were taken as a part \nof the IndiGo strategy, our financial \nperformance improved further in \nFY 2024. Our capacity grew by 22% as \ncompared to last year and we reported \nthe highest-ever annual total income of \naround₹ D 712 billion (+27%) and a net \nprofit of around D 82 billion (almost \n$1 billion)."
+    "After the closing of FY 2024, we have \ntaken the next step in defining our \nfuture and are on the path of becoming \na global aviation player. In April 2024, \nwe entered into an agreement with \nAirbus to place an order for 30 Firm \nA350-900 aircraft, for which the \ndeliveries are expected to start in 2027.\n\nThis first pillar of the strategy is \nabout reassuring, and improving \nwhere needed, the very basis of our \nCompany. The focus on our three \ncustomer promises – affordable fares, \non-time performance, and courteous \nand hassle-free service – have been \nthe basis of our success. Over the past \nyear we have added a fourth promise: \nunparalleled network. Naturally, above \nall, safety is paramount and will remain \nour number one priority.\n\nAs a result of the favourable external \nenvironment and a wide range of \ninitiatives that were taken as a part \nof the IndiGo strategy, our financial \nperformance improved further in \nFY 2024. Our capacity grew by 22% as \ncompared to last year and we reported \nthe highest-ever annual total income of \naround₹ D 712 billion (+27%) and a net \nprofit of around D 82 billion (almost \n$1 billion).",
+    "with a fleet of more than 850 aircraft . Significant \nadditions were made to the total outstanding order \nbook for Indian carriers on account of large aircraft \norders. These timely orders bode well for the sector, as \nnew aircraft availability, globally, remains constrained \nand expanding aircraft production capacity is a time-\nconsuming process. Therefore, over the next decade, \nIndian carriers are better poised to sustain planned \ncapacity growth.\n\nonly 6.5% of Indians hold valid passports. This level \nof underpenetration highlights the immense growth \npotential of the Indian aviation market, presenting an \nopportunity to make air travel more accessible to the \nworld's largest diaspora.\n\nPivotal role of Tier 2 and \nTier 3 cities\n\nTier 2 and Tier 3 cities in India are home to a large \nand diverse population that are increasingly becoming \nurbanised. As economic activity continues to diversify \nand expand across these cities, there has been a \nnoticeable increase in income levels. This rise in \ndisposable income is largely due to the proliferation \nof new businesses, expansion of manufacturing \nand service industries, and increased investment in \nlocal infrastructure.",
+    "\u0007As of March 31, 2024, our fleet consists of 192 Airbus A320 neo, 94 Airbus A321 neo, 20 Airbus A320 CEO, 45 ATR \naircraft, 3 A321 Freighters (P2F), 2 B777 (damp lease) and 10 A320 (damp lease). During FY 2024, we inducted 45 new \nfuel-efficient Airbus neo powered by CFM LEAP-1A engines, 1 A320 CEO, 6 ATR Aircraft, 1 A321 Freighter (P2F), 1 B777 \nand 10 A320 (damp lease).\n\n\u0007In addition to increasing the mix of new, fuel-efficient aircraft in its fleet, IndiGo strives to adopt and implement cutting-\nedge measures to reduce fuel consumption and carbon emissions. This includes fuel monitoring, pilot awareness of \ngreen policies, engine and fuselage cleanings and weight reduction initiatives, which will be progressively implemented \nin the ATR fleet.\n\nC. Operational Initiatives"
    ],
-   "latency_s": 8.49,
+   "latency_s": 9.23,
+   "input_tokens": 3377,
+   "output_tokens": 640,
+   "tokens": 4017,
    "cited_page_hit": 0.0,
    "hit@1": 0.0,
    "hit@3": 0.0,
    "hit@5": 0.0,
    "hit@10": 0.0,
    "mrr": 0.0,
-   "faithfulness": 0.8666666666666667,
-   "answer_relevancy": 0.938573945004997,
+   "faithfulness": 0.9,
+   "answer_relevancy": 0.7804304324856415,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-profit",
    "question": "What net profit did IndiGo report for FY24 compared with FY23?",
-   "answer": "**IndiGo reported a net profit of ₹81,724.68 (consolidated) in FY24, compared with a net loss of ₹(3,057.89) in FY23.** [5]\n\n| Particulars (Profit / (Loss) after Tax) | FY24 | FY23 |\n|---|---|---|\n| Consolidated | 81,724.68 | (3,057.89) |\n| Standalone | 81,674.85 | (3,167.16) |\n\nSource: [5]. The table does not label its units. The standalone and consolidated P&L statement headers say \"Rupees in millions\" [3][4], so the figures are likely ₹ million, but this passage does not confirm it.\n\n- **Swing:** Consolidated profit moved by 81,724.68 − (−3,057.89) = ₹84,782.57 (million, if the units above hold).\n- **Percentage growth:** Not meaningful, because the FY23 base is a loss.\n\nThe FY24 net profit margin is reported as 12.13%, versus (0.56%) in FY23. [6]",
+   "answer": "I can't answer this from the provided passages. The net profit figures for FY24 and FY23 are not printed in any of them.\n\nWhat the passages do contain:\n- **Net Profit Margin for FY24: 11.9%** [2]. No FY23 comparison is given in that table, and no rupee profit amount is shown.\n- **Net worth: positive ₹19,964.32 (as at March 31, 2024) versus negative ₹(62,465.16) (as at March 31, 2023)** [1]. This is a balance-sheet figure, not a profit figure, and the passage doesn't state its units beyond the ₹ symbol.\n- Passage [4] points to the Standalone Statement of Profit and Loss (page 156) and passage [6] to the Consolidated Statement of Profit and Loss (page 232), but the passages cut off before any profit line items appear.\n\nTo answer, I would need the profit after tax lines from the standalone or consolidated Statement of Profit and Loss for FY24 and FY23. I'd also need to know which basis (standalone or consolidated) you want.",
    "reference": "IndiGo reported a consolidated net profit of Rs. 81,724.68 million in FY 2024 against a net loss of Rs. 3,057.89 million in FY 2023.",
    "pages": [
     [
@@ -718,62 +754,65 @@
     ],
     [
      "indigo_FY24",
+     19
+    ],
+    [
+     "indigo_FY24",
      156
     ],
     [
      "indigo_FY24",
+     206
+    ],
+    [
+     "indigo_FY24",
      232
-    ],
-    [
-     "indigo_FY24",
-     59
-    ],
-    [
-     "indigo_FY24",
-     296
     ]
    ],
    "cited_pages": [
     [
      "indigo_FY24",
+     48
+    ],
+    [
+     "indigo_FY24",
+     48
+    ],
+    [
+     "indigo_FY24",
      156
     ],
     [
      "indigo_FY24",
      232
-    ],
-    [
-     "indigo_FY24",
-     59
-    ],
-    [
-     "indigo_FY24",
-     296
     ]
    ],
    "contexts": [
+    "*This ratio is non-determinable due to negative average net worth for the year ended March 31, 2024 and March 31, 2023 on account of losses of \nprevious years. The net worth is positive ` 19,964.32 as at March 31, 2024 compared to negative net worth of ` (62,465.16) as at March 31, 2023.",
+    "| Particulars | FY 2024 | FY 2023 |  | % Change |\n| --- | --- | --- | --- | --- |\n| EBITDAR Margin | 25.5% | 13.4% 12.0 pts -0.6% 12.4 pts 4.80 3.2% 4.83 9.3% 2.76 3.6% N/A N/A |  |  |\n| Net Profit Margin | 11.9% |  |  |  |\n| RASK (H) | 4.96 |  |  |  |\n| CASK (H) | 4.38 |  |  |  |\n| CASK Ex-Fuel (H) | 2.66 |  |  |  |\n| Return on Net Worth*(%) | N/A |  |  |  |",
     "for the year ended March 31, 2024\n(Rupees in millions, except for share data and if otherwise stated)",
     "as at March 31, 2024\n(Rupees in millions, except for share data and if otherwise stated)",
-    "| Particulars | Consolidated |  | Standalone |  |\n| --- | --- | --- | --- | --- |\n|  | Year ended |  | Year ended |  |\n|  | March 31, 2024 | March 31, 2023 | March 31, 2024 | March 31, 2023 |\n| Revenue from operations | 689,043.42 | 544,464.53 | 689,043.42 | 544,464.53 |\n| Other Income | 23,268.21 | 14,349.65 | 23,255.72 | 14,314.35 |\n| Total Income | 712,311.63 | 558,814.18 | 712,299.14 | 558,778.88 |\n| Profit / (Loss) before Tax | 80,493.09 | (3,043.85) | 80,432.41 | (3,167.16) |\n| Current Tax | 10.85 | 14.04 | - | - |\n| Deferred tax credit / (charge) | (1,242.44) | - | (1,242.44) | - |\n| Profit / (Loss) after Tax | 81,724.68 | (3,057.89) | 81,674.85 | (3,167.16) |\n| Other Comprehensive Income / (Loss) net of tax | (145.92) | 77.24 | (174.92) | 92.60 |\n| Total Comprehensive Income / (Loss) | 81,578.76 | (2,980.65) | 81,499.93 | (3,074.56) |\n| Earnings per equity share of the face value of Rs. 10  each |  |  |  |  |\n| Basic (Rs.) | 211.84 | (7.93) | 211.71 | (8.22) |\n| Diluted (Rs.) | 211.61 | (7.93) | 211.48 | (8.22) |",
-    "| S. No. | Ratio |  | Explanation of numerator and  denominator | Units | March 31, 2024 | March 31, 2023 | % Variance | Reason for variance (where the change is  more than 25%) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 9 Net profit  ratio Net profit ratio has been computed  as net profit divided by sale of  services and products. % |  |  |  |  | 12.13% | (0.56%) 2266.07% Increase in revenue on  account of higher load  factor and better yield  coupled with favorable  average fuel costs and  lesser rupee depreciation  from last year has resulted  in improvement of net  profit ratio. 4.29% 328.44% Increase  in  net  profit  after tax has resulted in  improvement in ROCE. 3.51% 83.19% Higher  returns  along  with increase in average  investments  and  bank  deposits has resulted in  increase in the ratio. |  |  |\n| 10 Return on  capital  employed  (ROCE)**** ROCE has been computed as  earnings  before  interest  and  taxes divided by capital employed  where capital employed represents  tangible net worth and total debt  adjusted with deferred tax liability.  Tangible net worth is calculated  as total assets except intangible  assets and intangible assets under  development minus total liabilities. % |  |  |  |  | 18.38% |  |  |  |\n| 11 Return on  investment Return on investment has been  computed  as  finance  income  divided by average investments.  Finance income represents interest  income from bank deposits and  bonds, net gain on sale of current  investments and mark to market  gain  on  current  investments.  Average investments is an average  of investments in bank deposits,  cash and cash equivalents and  investments in mutual funds and  bonds. % |  |  |  |  | 6.43% |  |  |  |",
-    "*This ratio is non-determinable due to negative average net worth for the year ended March 31, 2024 and March 31, 2023 on account of losses of \nprevious years. The net worth is positive ` 19,964.32 as at March 31, 2024 compared to negative net worth of ` (62,465.16) as at March 31, 2023.",
-    "| Particulars | FY 2024 | FY 2023 |  | % Change |\n| --- | --- | --- | --- | --- |\n| EBITDAR Margin | 25.5% | 13.4% 12.0 pts -0.6% 12.4 pts 4.80 3.2% 4.83 9.3% 2.76 3.6% N/A N/A |  |  |\n| Net Profit Margin | 11.9% |  |  |  |\n| RASK (H) | 4.96 |  |  |  |\n| CASK (H) | 4.38 |  |  |  |\n| CASK Ex-Fuel (H) | 2.66 |  |  |  |\n| Return on Net Worth*(%) | N/A |  |  |  |"
+    "(‡in million)\n\n(‡in million)\n\n347,375\n\n(58,064)\n\n(61,618)\n\n(3,058)\n\n(2,337)\n\n234,243\n\n81,725\n\n1,572\n\n203,769\n\n185,685\n\n182,275\n\n153,237\n\nFY 20\nFY 19\nFY 21\nFY 22\nFY 23\nFY 24\n\nFY 19\n\nFY 20\nFY 21\nFY 22\nFY 23\nFY 24",
+    "| Particulars | Standalone Statement of Profit and Loss  for the year ended March 31, 2024 |  | Standalone Statement of Profit and Loss  for the year ended March 31, 2023 |  |\n| --- | --- | --- | --- | --- |\n|  | Gain / (loss)  on appreciation | Gain / (loss)  on depreciation | Gain / (loss)  on appreciation | Gain / (loss)  on depreciation |\n| 1% depreciation / appreciation in Indian Rupees against  following foreign currencies: |  |  | 3.98   (3.98)  0.73   (0.73)  4.70   (4.70)  1.34   (1.34)  0.19   (0.19)  0.19   (0.19)  (1.01)  1.01   0.20   (0.20)  (0.31)  0.31   (0.21)  0.21   (3.08)  3.08   4,195.78   (4,195.78)  (1.86)  1.86   0.68   (0.68)  (0.17)  0.17   0.69   (0.69)  (0.02)  0.02   (4.96)  4.96   -   -   (0.00)  0.00   (0.00)  0.00   (0.00)  0.00   (0.01)  0.01   (0.24)  0.24   -   -   -   -   4,196.60   (4,196.60) |  |\n| AED | 0.83 | (0.83) |  |  |\n| CHF | 0.30 | (0.30) |  |  |\n| EUR | 5.19 | (5.19) |  |  |\n| GBP | 0.57 | (0.57) |  |  |\n| NPR | (0.24) | 0.24 |  |  |\n| OMR | 0.13 | (0.13) |  |  |\n| SGD | 1.28 | (1.28) |  |  |\n| THB | 0.30 | (0.30) |  |  |\n| QAR | 1.24 | (1.24) |  |  |\n| LKR | (0.81) | 0.81 |  |  |\n| BDT | (6.55) | 6.55 |  |  |\n| USD* | 4,977.98 | (4,977.98) |  |  |\n| HKD | 0.34 | (0.34) |  |  |\n| KWD | 0.62 | (0.62) |  |  |\n| MYR | 0.11 | (0.11) |  |  |\n| SAR | 1.35 | (1.35) |  |  |\n| TRY | (0.05) | 0.05 |  |  |\n| CNY | (0.73) | 0.73 |  |  |\n| MVR | - | - |  |  |\n| CAD | (0.00) | 0.00 |  |  |\n| IDR | (0.36) | 0.36 |  |  |\n| DKK | - | - |  |  |\n| AUD | (0.02) | 0.02 |  |  |\n| BHD | (0.25) | 0.25 |  |  |\n| GEL | (0.01) | 0.01 |  |  |\n| AZN | (0.01) | 0.01 |  |  |\n| Total | 4,981.22 | (4,981.22) |  |  |"
    ],
-   "latency_s": 11.39,
-   "cited_page_hit": 1.0,
+   "latency_s": 9.97,
+   "input_tokens": 2760,
+   "output_tokens": 501,
+   "tokens": 3261,
+   "cited_page_hit": 0.0,
    "hit@1": 0.0,
    "hit@3": 0.0,
-   "hit@5": 1.0,
-   "hit@10": 1.0,
-   "mrr": 0.2,
-   "faithfulness": 0.23529411764705882,
-   "answer_relevancy": 0.928151973257322,
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "mrr": 0.0,
+   "faithfulness": 0.2857142857142857,
+   "answer_relevancy": 0.0,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-cash",
    "question": "What was IndiGo's total cash position at the end of FY24?",
-   "answer": "**Answer:** IndiGo's total liquidity at the end of FY24 was about ₹347,375.29 million (consolidated), per the company's own definition of \"total cash.\" This is not the same as cash and cash equivalents on the balance sheet, which were much smaller.\n\n**Supporting detail:**\n\n- **Total cash, bank deposits and investments (incl. amounts under lien), consolidated, as at March 31, 2024: Rs. 347,375.29** (previous year Rs. 234,243.03) [3]. The passage writes \"Rs.\" without a unit, but the annual report's figures are in millions, and the FY24 chart shows 347,375 \"in million\" [1][6].\n- **Cash and cash equivalents, consolidated, as at March 31, 2024: 6,952.77** (previous year 12,679.69) [2]. This comprises cash on hand of 17.60, current accounts of 6,012.01, and deposits of three months or less of 923.16 [2]. The consolidated cash flow statement is stated in Rupees in millions [6].\n- **Standalone comparison:** The Company's liquidity position is Rs. 346,333.31 (previous year Rs. 233,513.31) [4]. Standalone cash and cash equivalents at year-end were 6,889.96 (previous year 12,438.56) [5].\n\nThe passages do not state a single \"total cash\" line on the balance sheet, so the ₹347,375.29 million figure is the company's liquidity measure that includes bank deposits and investments.",
+   "answer": "**Answer:** The passages don't give a single figure labeled \"total cash.\" The closest measures are:\n\n1. **Cash and cash equivalents at end of FY24** (the balance-sheet-style cash line):\n   - Consolidated: **6,952.77** [2]\n   - Standalone: **6,889.96** [5]\n\n   Both are the sum of cash on hand, current-account balances, and deposits with original maturity of three months or less. The consolidated table [2] doesn't print its unit. The consolidated cash-flow statement heading in [6] says \"Rupees in millions,\" so these are presumably ₹ million.\n\n2. **Liquidity position (total cash, bank deposits and investments, including amounts under lien) as at March 31, 2024:**\n   - Consolidated: **Rs. 347,375.29** (previous year Rs. 234,243.03) [3]\n   - Standalone: **Rs. 346,333.31** (previous year Rs. 233,513.31) [4]\n\n   This broader measure is much larger than cash and cash equivalents because it includes bank deposits and investments. The chart in [1] shows 347,375 in ₹ million, which matches the consolidated figure in [3], but the chart's labels are jumbled, so I can't confirm its year mapping from the chart alone.\n\nThe passages don't state the units for [3] and [4] explicitly, so the ₹ million reading relies on the [1] chart and the [6] heading.",
    "reference": "Total cash rose 48.3% to Rs. 347,375.29 million as of March 31, 2024: free cash of Rs. 208,229.91 million and restricted cash of Rs. 139,145.38 million.",
    "pages": [
     [
@@ -835,21 +874,24 @@
     "| Particulars | For the year ended  March 31, 2024 | For the year ended  March 31, 2023 |\n| --- | --- | --- |\n| D. Cash and cash equivalents at the beginning of the year |  |  |\n| Cash on hand | 8.07 | 9.95 |\n| Balances with banks: |  |  |\n| -  On current accounts | 6,272.02 | 3,599.70 |\n| -  On deposit accounts (with original maturity of three months or less) | 6,158.47 | 6,507.45 |\n|  | 12,438.56 | 10,117.10 |\n| E. Cash and cash equivalents as at the end of the year |  |  |\n| Cash on hand | 17.18 | 8.07 |\n| Balances with banks: |  |  |\n| -  On current accounts | 5,949.62 | 6,272.02 |\n| -  On deposit accounts (with original maturity of three months or less) | 923.16 | 6,158.47 |\n|  | 6,889.96 | 12,438.56 |",
     "for the year ended March 31, 2024\n(Rupees in millions, except for share data and if otherwise stated)"
    ],
-   "latency_s": 11.66,
+   "latency_s": 12.16,
+   "input_tokens": 2944,
+   "output_tokens": 1268,
+   "tokens": 4212,
    "cited_page_hit": 0.0,
    "hit@1": 0.0,
    "hit@3": 0.0,
    "hit@5": 0.0,
    "hit@10": 0.0,
    "mrr": 0.0,
-   "faithfulness": 0.8571428571428571,
-   "answer_relevancy": 0.7969785590672525,
+   "faithfulness": 0.75,
+   "answer_relevancy": 0.6855647243215217,
    "context_recall": 0.3333333333333333
   },
   {
    "id": "indigo24-fleet-a321",
    "question": "How many Airbus A321neo aircraft were in IndiGo's fleet as of March 31, 2024?",
-   "answer": "According to the FY24 annual report, IndiGo had **94 Airbus A321 neo** aircraft in its fleet as of March 31, 2024 [1].",
+   "answer": "According to passage [1], IndiGo's fleet as of March 31, 2024 included **94 Airbus A321 neo** aircraft [1].\n\nPassage [1] lists the full fleet composition, so this figure is taken directly from the report and needs no calculation.",
    "reference": "As of March 31, 2024 the fleet included 94 Airbus A321neo aircraft (alongside 192 A320neo, 20 A320ceo, 45 ATR, 3 A321 freighters and damp-leased B777 and A320 aircraft).",
    "pages": [
     [
@@ -891,7 +933,10 @@
     "| Particulars | As at March 31, 2024 |  | As at March 31, 2023 |  |\n| --- | --- | --- | --- | --- |\n|  | Non-current | Current | Non-current | Current |\n| Lease liabilities* | 378,634.62 | 115,248.51 | 322,246.09   103,772.67   322,246.09   103,772.67 |  |\n| Total | 378,634.62 | 115,248.51 |  |  |",
     "Set forth below are some of the risks that may potentially \nhave an adverse impact on business, financial results, and \nperformance outlook along with the initiatives taken by \nIndiGo to mitigate their impact.\n\nOperational issues with aircraft engines\n\nI ndiGo maintains a young fleet with an average age of \naround 4 years as on March 31, 2024, resulting in lower \nfuel consumption. Around 78% of IndiGo’s fleet is NEOs \nas on March 31, 2024, which is ~15% more fuel efficient \ncompared to the A320ceo. Additionally, higher seats in \nNEOs help in reducing fuel CASK.\n\nIndiGo, like many global airlines, has been experiencing \nsupply-chain issues impacting the availability of spare \nengines for its NEO P&W GTF-powered aircraft, which has \nimpacted its operations. Failure to obtain timely deliveries of \nessential aircraft parts, such as spare engines, can impact its \nfinancials materially.\n\nFurther, IndiGo focuses on improving fuel efficiency of \nits fleet to reduce operating costs. IndiGo also adopts \nvarious fuel-efficient practices such as single engine \ntaxis and optimising flight path."
    ],
-   "latency_s": 8.39,
+   "latency_s": 7.89,
+   "input_tokens": 3096,
+   "output_tokens": 185,
+   "tokens": 3281,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
@@ -899,13 +944,13 @@
    "hit@10": 1.0,
    "mrr": 1.0,
    "faithfulness": 1.0,
-   "answer_relevancy": 0.9041348551535603,
+   "answer_relevancy": 0.9409277169532826,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-cask",
    "question": "What was IndiGo's cost per available seat kilometre (CASK) in FY24 and why did it change?",
-   "answer": "**Answer:** IndiGo's CASK was ₹4.38 in FY24, down 9.3% from ₹4.83 in FY23 [1][5].\n\n**Arithmetic:** (4.38 − 4.83) / 4.83 = −9.3% [1]\n\n**Why it changed:** The passage attributes the decline \"primarily\" to lower fuel cost and lower foreign exchange losses [1]. Passage [6] adds context that the fleet is young and fuel-efficient, with around 78% NEOs, which it says are about 15% more fuel efficient than the A320ceo, and that higher seats in NEOs help reduce fuel CASK [6]. Passage [6] does not quantify how much of the CASK decline these factors explain.\n\n**Note:** Passage [5] also reports CASK ex-fuel of ₹2.66 for FY24, but no FY23 comparison is given in the passages for that metric.",
+   "answer": "**Answer:** IndiGo's CASK was ₹4.38 in FY24, down 9.3% from ₹4.83 in FY23 [1].\n\n**Arithmetic:** (4.38 − 4.83) / 4.83 = −9.3% [1]\n\n**Reason for the change:** The decrease was \"primarily driven by lower fuel cost and lower foreign exchange losses\" [1].\n\n**Supporting context:**\n- The fleet is young and fuel-efficient. About 78% of the fleet is NEOs, which the report says are \"~15% more fuel efficient compared to the A320ceo\" and whose higher seating helps reduce fuel CASK [6].\n- The FY24 CASK Ex-Fuel was ₹2.66 [5]. The passages do not give the FY23 CASK Ex-Fuel figure, so I cannot compute its change.",
    "reference": "CASK decreased by 9.3% from Rs. 4.83 in FY 2023 to Rs. 4.38 in FY 2024, primarily driven by lower fuel cost and lower foreign exchange losses.",
    "pages": [
     [
@@ -955,21 +1000,24 @@
     "At IndiGo, we are dedicated to \ndelivering our customer promises in the \nmost sustainable manner possible. \nAs reducing fuel emissions is \ncurrently our most effective lever \nfor CO 2 reduction, a key element of \nour strategy is renewing the fleet. \nAlready around 78% of our fleet is \nAirbus A320neo and A321neo, making \nus one of the lowest CO 2 emitting \nairlines in the world. We also have the \nyoungest fleet in the world (of 100+ \naircraft airlines) by ch-aviation, with \nan average age of around 4.4 years, \nincluding wet leased aircraft. We have \nrealised a CO 2 reduction of 19% per \navailable seat kilometre between",
     "Executive Summary\n\ngradually phasing out diesel operated \nequipment and electrification of ground \noperations. In this direction, Ahmedabad \nbecame our first station to have 100% \nfleet of eco-friendly electric coaches.\n\nmaintaining the highest standards of \nsafety and excellence.\n\nInterGlobe Aviation Limited is a leading \nair transportation Company in India. As \nof March 2024, we had 367 aircraft in \nour fleet. With a presence in 88 domestic \nand 33 1 international cities, we served \n~106.7 mln passengers in FY 2024.\n\nOne of our most significant actions has \nbeen the investment in a modern fleet \nof fuel-efficient aircraft. Our investment \nin the latest generation of fuel-efficient \nA320 neo family aircraft enable us to \nreduce our carbon emissions making us \none of the lowest CO2, per available \nseat kilometre, emitting airlines in the \nworld. These also enhance operational \nefficiency, leading to cost savings. \nOur \ndedication \nto \nenvironmental \nresponsibility \nenabled \nus \nto \nbe \nrecognised with the prestigious ‘Asia \nEnvironmental Sustainability Airline of \nthe Year 2023’ award by the Centre \nfor Asia Pacific Aviation (CAPA). This \naward underscores the effectiveness of \nour initiatives."
    ],
-   "latency_s": 9.39,
+   "latency_s": 9.24,
+   "input_tokens": 3175,
+   "output_tokens": 354,
+   "tokens": 3529,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.3125,
-   "answer_relevancy": 0.8317869377161439,
+   "faithfulness": 0.9090909090909091,
+   "answer_relevancy": 0.8534589490353611,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-dividend",
    "question": "Did IndiGo's board recommend a dividend for FY24?",
-   "answer": "Yes, the Board did not recommend a dividend for FY24. The annual report states that \"based on the Company's performance, cash flow position and the losses carried forward from the previous years, the Board has not recommended any dividend on the equity shares of the Company for FY 2024\" [1].\n\nRelated context: the Directors also do not propose any transfer to the General Reserve [1]. The equity shares carry a par value of Rs. 10 each, and any future final dividend would be subject to shareholder approval at the AGM, while interim dividends are declared by the Board [2][3].",
+   "answer": "Yes, but in the negative: the Board did not recommend a dividend on the equity shares for FY 2024.\n\nThe reason given is the Company's performance, cash flow position and the losses carried forward from previous years [1]. The Directors also do not propose any transfer to the General Reserve [1].\n\nThe passages do not include the dividend amount or per-share figures, and they do not say whether the Board recommended a dividend on any other class of security.",
    "reference": "No. Based on performance, cash flow and losses carried forward from previous years, the Board did not recommend any dividend on equity shares for FY 2024.",
    "pages": [
     [
@@ -1001,14 +1049,6 @@
     [
      "indigo_FY24",
      61
-    ],
-    [
-     "indigo_FY24",
-     185
-    ],
-    [
-     "indigo_FY24",
-     261
     ]
    ],
    "contexts": [
@@ -1019,30 +1059,29 @@
     "The Committee, upon a review of the remuneration structure for employees and with the desire to review and make a more \nmarket relevant compensation structure of the senior management, recommended to the Board to not proceed further with the \ngrant of outstanding 78,158 stock options earlier approved by the Committee on February 4, 2022. The same has been approved \nby Board at its meeting held on February 2, 2023.\n\nThe risk-free interest rates are determined based on current yield to maturity of Government Bonds with 5-10 years residual \nmaturity. Expected volatility calculation is based on historical daily closing stock prices of competitors / Company using standard \ndeviation of daily change in stock price. The minimum life of stock option is the minimum period before which the options \ncannot be exercised and the maximum life is the period after which the options cannot be exercised. The expected life has been \nconsidered based on average sum of maximum life and minimum life and may not necessarily be indicative of exercise patterns \nthat may occur. Dividend yield has been calculated taking into account expected rate of dividend on equity share price as on \ngrant date basis past trends. For the measurement of grant date fair value certain market conditions were considered in the \nmethod of valuation.",
     "The Group had transferred certain percentage of retained earnings to general reserve as per the provisions for dividend \ndistribution under the Companies Act, 1956.\n\n(iv) Retained earnings"
    ],
-   "latency_s": 8.18,
+   "latency_s": 8.49,
+   "input_tokens": 2948,
+   "output_tokens": 212,
+   "tokens": 3160,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 1.0,
-   "answer_relevancy": 0.8710149436430701,
+   "faithfulness": 0.8571428571428571,
+   "answer_relevancy": 0.8264416890245629,
    "context_recall": 1.0
   },
   {
    "id": "indigo24-fuel",
    "question": "How much did IndiGo spend on aircraft fuel in FY24 and how did it compare with capacity growth?",
-   "answer": "IndiGo spent ₹ 239,045.78 million on aircraft fuel in FY24, up 1.1% from ₹ 236,460.17 million in FY23 [1]. Over the same period, capacity grew 21.8% [1]. Fuel cost therefore grew much more slowly than capacity, which the company attributes primarily to lower ATF prices [1].\n\n**Arithmetic check:** (239,045.78 − 236,460.17) / 236,460.17 = 2,585.61 / 236,460.17 ≈ 1.1% [1]\n\nThe passages do not state whether these figures are standalone or consolidated.",
+   "answer": "IndiGo spent ₹239,045.78 million on aircraft fuel in FY 2024, up 1.1% from ₹236,460.17 million in FY 2023, while capacity grew 21.8% [1].\n\n**Calculation:** (239,045.78 − 236,460.17) ÷ 236,460.17 = 2,585.61 ÷ 236,460.17 ≈ 1.1%\n\n**Comparison with capacity:** Fuel expense rose far more slowly than capacity (1.1% vs. 21.8%). The company attributes this mainly to lower ATF prices [1]. Fuel cost per unit of capacity therefore fell year on year, though the passages do not quantify that unit-cost change.\n\n**Context:**\n- The fleet averaged about 4 years in age and about 78% of it was A320neo aircraft, which the company says is ~15% more fuel efficient than the A320ceo [2][5].\n- Passage [1] does not state whether the figures are standalone or consolidated.",
    "reference": "Aircraft fuel expenses rose only 1.1%, from Rs. 236,460.17 million to Rs. 239,045.78 million, against a 21.8% increase in capacity, mainly because ATF prices fell.",
    "pages": [
     [
      "indigo_FY24",
      49
-    ],
-    [
-     "indigo_FY24",
-     293
     ],
     [
      "indigo_FY24",
@@ -1059,31 +1098,46 @@
     [
      "indigo_FY24",
      50
+    ],
+    [
+     "indigo_FY24",
+     18
     ]
    ],
    "cited_pages": [
     [
      "indigo_FY24",
      49
+    ],
+    [
+     "indigo_FY24",
+     17
+    ],
+    [
+     "indigo_FY24",
+     50
     ]
    ],
    "contexts": [
     "Aircraft fuel expenses\nAircraft fuel expenses increased by 1.1% from ` 236,460.17 \nmillion in FY 2023 to ` 239,045.78 million in FY 2024, against \na 21.8% increase in capacity, primarily due to decrease in \nATF prices.\n\nThe Company reported a net profit of ` 81,724.68 million in \nFY 2024 against a net loss of ` 3,057.89 million in FY 2023.\n\nAircraft ownership cost\nAircraft ownership cost comprises of aircraft and engine \nrentals, supplementary rental and aircraft maintenance cost, \ndepreciation and amortisation, and net interest expense. \nAircraft ownership cost increased by 24.0% from ` 156,609.64 \nmillion in FY 2023 to ` 194,270.14 million in FY 2024.\n\nBalance sheet\n\nIndiGo’s total cash increased by 48.3% to ` 347,375.29 \nmillion as of March 31, 2024, comprising of free cash of \n` 208,229.91 million and restricted cash of ` 139,145.38 \nmillion. Total debt for the Company was ` 512,800.20 million, \nincluding capitalised operating lease liability of \n` 434,886.36 million, as of March 31, 2024.\n\nEmployee benefits expense\nEmployee benefits expense increased by 34.8% from \n` 47,947.52 million in FY 2023 to ` 64,618.56 million \nin FY 2024.\n\nForeign exchange gain/loss\nForeign exchange losses decreased from ` 29,597.73 million in \nFY 2023 to ` 7,173.97 million in FY 2024.",
-    "40. \u0007During the quarter ended June 30, 2023, the management had reassessed the estimated useful economic life for 14 \nCEO aircraft from 20 years to 13-16 years and consequent residual value, basis several factors including technological \nadvancements and the expected usage. Consequently, an additional depreciation expense of Rs. 1,386.82 million has \nbeen recorded during the year ended March 31, 2024. The estimated charge for such additional depreciation expense is \nexpected to be Rs. 1,385.81 for the year ended March 31, 2025.",
     "Our fleet consists of 367 aircraft, with future growth \nsupported by an extensive order book of 985 aircraft. \nWe are delivering on our commitment to build a modern, \nfuel-efficient fleet that amplifies our capabilities in both \ndomestic and international markets.\n\nAs of FY 2024, 78% of our fleet comprises of Airbus A320neo \naircraft. The new aircraft provides a 15% increase in fuel \nefficiency over its predecessors, solidifying our commitment \nto sustainability and operational excellence.",
+    "Set forth below are some of the risks that may potentially \nhave an adverse impact on business, financial results, and \nperformance outlook along with the initiatives taken by \nIndiGo to mitigate their impact.\n\nOperational issues with aircraft engines\n\nI ndiGo maintains a young fleet with an average age of \naround 4 years as on March 31, 2024, resulting in lower \nfuel consumption. Around 78% of IndiGo’s fleet is NEOs \nas on March 31, 2024, which is ~15% more fuel efficient \ncompared to the A320ceo. Additionally, higher seats in \nNEOs help in reducing fuel CASK.\n\nIndiGo, like many global airlines, has been experiencing \nsupply-chain issues impacting the availability of spare \nengines for its NEO P&W GTF-powered aircraft, which has \nimpacted its operations. Failure to obtain timely deliveries of \nessential aircraft parts, such as spare engines, can impact its \nfinancials materially.\n\nFurther, IndiGo focuses on improving fuel efficiency of \nits fleet to reduce operating costs. IndiGo also adopts \nvarious fuel-efficient practices such as single engine \ntaxis and optimising flight path.",
     "0.004\n0.004\n\nNote 1: The value for total fuel consumption in FY 2023 was re-stated due to change in methodology in calculations.\n\nNote 2: The value reported for total electricity consumption for FY 2024 includes electricity consumption at the airport in \naddition to the reporting boundary covered in FY 2023.",
     "with a fleet of more than 850 aircraft . Significant \nadditions were made to the total outstanding order \nbook for Indian carriers on account of large aircraft \norders. These timely orders bode well for the sector, as \nnew aircraft availability, globally, remains constrained \nand expanding aircraft production capacity is a time-\nconsuming process. Therefore, over the next decade, \nIndian carriers are better poised to sustain planned \ncapacity growth.\n\nonly 6.5% of Indians hold valid passports. This level \nof underpenetration highlights the immense growth \npotential of the Indian aviation market, presenting an \nopportunity to make air travel more accessible to the \nworld's largest diaspora.\n\nPivotal role of Tier 2 and \nTier 3 cities\n\nTier 2 and Tier 3 cities in India are home to a large \nand diverse population that are increasingly becoming \nurbanised. As economic activity continues to diversify \nand expand across these cities, there has been a \nnoticeable increase in income levels. This rise in \ndisposable income is largely due to the proliferation \nof new businesses, expansion of manufacturing \nand service industries, and increased investment in \nlocal infrastructure.",
-    "Set forth below are some of the risks that may potentially \nhave an adverse impact on business, financial results, and \nperformance outlook along with the initiatives taken by \nIndiGo to mitigate their impact.\n\nOperational issues with aircraft engines\n\nI ndiGo maintains a young fleet with an average age of \naround 4 years as on March 31, 2024, resulting in lower \nfuel consumption. Around 78% of IndiGo’s fleet is NEOs \nas on March 31, 2024, which is ~15% more fuel efficient \ncompared to the A320ceo. Additionally, higher seats in \nNEOs help in reducing fuel CASK.\n\nIndiGo, like many global airlines, has been experiencing \nsupply-chain issues impacting the availability of spare \nengines for its NEO P&W GTF-powered aircraft, which has \nimpacted its operations. Failure to obtain timely deliveries of \nessential aircraft parts, such as spare engines, can impact its \nfinancials materially.\n\nFurther, IndiGo focuses on improving fuel efficiency of \nits fleet to reduce operating costs. IndiGo also adopts \nvarious fuel-efficient practices such as single engine \ntaxis and optimising flight path."
+    "Passenger capacity (seats)\nTonnage capacity (tonnes)\nNo. of aircraft"
    ],
-   "latency_s": 8.85,
+   "latency_s": 9.08,
+   "input_tokens": 2867,
+   "output_tokens": 391,
+   "tokens": 3258,
    "cited_page_hit": 1.0,
    "hit@1": 1.0,
    "hit@3": 1.0,
    "hit@5": 1.0,
    "hit@10": 1.0,
    "mrr": 1.0,
-   "faithfulness": 0.875,
-   "answer_relevancy": 0.9499881869889296,
+   "faithfulness": 0.5833333333333334,
+   "answer_relevancy": 0.898200407730944,
    "context_recall": 1.0
   }
  ]

@@ -1,5 +1,40 @@
 [
  {
+  "name": "hybrid-fixed",
+  "kind": "rag",
+  "config": {
+   "name": "hybrid-fixed",
+   "mode": "hybrid",
+   "report": "indigo_FY24",
+   "strategy": "fixed",
+   "subset": "sample",
+   "companies": null,
+   "years": null,
+   "no_bm25": false,
+   "no_vector": false,
+   "no_rerank": false,
+   "no_multi_query": false,
+   "local": false,
+   "rescore": false,
+   "answer_model": "claude-haiku-5-5",
+   "judge_model": "claude-haiku-5-5"
+  },
+  "n": 20,
+  "aggregate": {
+   "faithfulness": 0.7821,
+   "answer_relevancy": 0.8749,
+   "context_recall": 0.7833,
+   "hit@1": 0.55,
+   "hit@5": 0.65,
+   "mrr": 0.5875,
+   "cited_page_hit": 0.65,
+   "latency_s": 10.0605,
+   "input_tokens": 2888.55,
+   "output_tokens": 464.65,
+   "tokens": 3353.2
+  }
+ },
+ {
   "name": "hybrid-structure",
   "kind": "rag",
   "config": {
@@ -21,14 +56,17 @@
   },
   "n": 20,
   "aggregate": {
-   "faithfulness": 0.7702,
-   "answer_relevancy": 0.8735,
-   "context_recall": 0.8167,
-   "hit@1": 0.55,
+   "faithfulness": 0.7275,
+   "answer_relevancy": 0.8774,
+   "context_recall": 0.7833,
+   "hit@1": 0.5,
    "hit@5": 0.75,
-   "mrr": 0.6167,
-   "cited_page_hit": 0.7,
-   "latency_s": 11.434
+   "mrr": 0.6104,
+   "cited_page_hit": 0.75,
+   "latency_s": 11.633,
+   "input_tokens": 3188.55,
+   "output_tokens": 517.15,
+   "tokens": 3705.7
   }
  },
  {
@@ -89,14 +127,17 @@
   },
   "n": 17,
   "aggregate": {
-   "faithfulness": 0.7207,
-   "answer_relevancy": 0.8278,
-   "context_recall": 0.8235,
+   "faithfulness": 0.7288,
+   "answer_relevancy": 0.8091,
+   "context_recall": 0.8431,
    "hit@1": 0.5882,
-   "hit@5": 0.8235,
-   "mrr": 0.6588,
-   "cited_page_hit": 0.8235,
-   "latency_s": 9.1271
+   "hit@5": 0.7647,
+   "mrr": 0.6471,
+   "cited_page_hit": 0.7647,
+   "latency_s": 8.5271,
+   "input_tokens": 2877.6471,
+   "output_tokens": 419.2941,
+   "tokens": 3296.9412
   }
  },
  {
@@ -121,14 +162,17 @@
   },
   "n": 17,
   "aggregate": {
-   "faithfulness": 0.7132,
-   "answer_relevancy": 0.7331,
-   "context_recall": 0.5686,
+   "faithfulness": 0.6493,
+   "answer_relevancy": 0.6704,
+   "context_recall": 0.5294,
    "hit@1": 0.0588,
    "hit@5": 0.4118,
-   "mrr": 0.1814,
+   "mrr": 0.1735,
    "cited_page_hit": 0.4118,
-   "latency_s": 6.6741
+   "latency_s": 7.2135,
+   "input_tokens": 13577,
+   "output_tokens": 600,
+   "tokens": 14177
   }
  }
 ]

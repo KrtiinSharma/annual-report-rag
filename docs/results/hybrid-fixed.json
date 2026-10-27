@@ -1,0 +1,1425 @@
+{
+ "name": "hybrid-fixed",
+ "kind": "rag",
+ "config": {
+  "name": "hybrid-fixed",
+  "mode": "hybrid",
+  "report": "indigo_FY24",
+  "strategy": "fixed",
+  "subset": "sample",
+  "companies": null,
+  "years": null,
+  "no_bm25": false,
+  "no_vector": false,
+  "no_rerank": false,
+  "no_multi_query": false,
+  "local": false,
+  "rescore": false,
+  "answer_model": "claude-haiku-5-5",
+  "judge_model": "claude-haiku-5-5"
+ },
+ "n": 20,
+ "aggregate": {
+  "faithfulness": 0.7821,
+  "answer_relevancy": 0.8749,
+  "context_recall": 0.7833,
+  "hit@1": 0.55,
+  "hit@5": 0.65,
+  "mrr": 0.5875,
+  "cited_page_hit": 0.65,
+  "latency_s": 10.0605,
+  "input_tokens": 2888.55,
+  "output_tokens": 464.65,
+  "tokens": 3353.2
+ },
+ "rows": [
+  {
+   "id": "indigo24-aog",
+   "question": "What did IndiGo account for in FY24 regarding aircraft grounded due to engine unavailability?",
+   "answer": "In FY24, IndiGo (InterGlobe Aviation) recorded compensation accrued from the Original Equipment Manufacturer (OEM) for the period under discussion, relating to the ongoing Aircraft on Ground (AOG) situation caused by unavailability of engines for certain aircraft. This accrual is included in Revenue from operations for the year ended March 31, 2024 [1][2].\n\nKey points:\n- **Accounting basis:** The accrual was recorded under Ind AS 115, considering principles in the existing contract, the past mechanism of agreed compensation, and the latest compensation proposal from the OEM [1][2].\n- **Status:** The company was still negotiating with the OEM to finalise a customized compensation plan [1][2].\n- **Amount:** The passages do not state the amount of the compensation accrual, so it cannot be quantified from the provided context.",
+   "reference": "IndiGo recorded an accrual for compensation from the original equipment manufacturer (OEM) for the ongoing Aircraft on Ground (AOG) situation caused by unavailability of engines, under Ind AS 115 and the existing contract, while a customised compensation plan was still being negotiated.",
+   "pages": [
+    [
+     "indigo_FY24",
+     219
+    ],
+    [
+     "indigo_FY24",
+     293
+    ],
+    [
+     "indigo_FY24",
+     166
+    ],
+    [
+     "indigo_FY24",
+     242
+    ],
+    [
+     "indigo_FY24",
+     248
+    ],
+    [
+     "indigo_FY24",
+     244
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY24",
+     219
+    ],
+    [
+     "indigo_FY24",
+     293
+    ]
+   ],
+   "contexts": [
+    "Notes forming part of the Standalone Financial Statements\n\nfor the year ended March 31, 2024\n\n(Rupees in millions, except for share data and if otherwise stated)\n40. \u0007 Revenue from operations for the year ended March 31, 2024 includes compensation accrued by the Company for the period \nunder discussion with the Original Equipment Manufacturer (“OEM”) in relation to the ongoing Aircraft on Ground (AOG) \nsituation experienced due to unavailability of engines for certain aircraft. While the company is still in discussions with the \nOEM to finalise a customized compensation plan, the accrual has been recorded in accordance with Ind AS 115, considering \nprinciples provided in the existing contract, past mechanism of agreed compensation and latest proposal for compensation \nfrom the OEM.",
+    "* The weighted average share price at the date of exercise of options exercised during the year was Rs. 2,580.74 (previous year \nRs. 1,770.19). Further, during the current year, certain employees have exercised their right to exercise employee stock options.\n\n39. \u0007Revenue from operations for the year ended March 31, 2024 includes compensation accrued by the Company for the period \nunder discussion with the Original Equipment Manufacturer (“OEM”) in relation to the ongoing Aircraft on Ground (AOG) \nsituation experienced due to unavailability of engines for certain aircraft. While the company is still in discussions with the \nOEM to finalise a customized compensation plan, the accrual has been recorded in accordance with Ind AS 115, considering \nprinciples provided in the existing contract, past mechanism of agreed compensation and latest proposal for compensation \nfrom the OEM.",
+    "\u0007Major inspection costs relating to engine and airframe overhauls and other heavy maintenance are identified as separate \ncomponents for owned aircraft and owned engines and are depreciated over the expected lives between major overhauls \nand remaining useful life of the aircraft/engines, whichever is lower.\n\nDepreciation on property, plant and equipment has been charged based on the following useful lives:",
+    "\u0007Major inspection costs relating to engine and airframe overhauls and other heavy maintenance are identified as separate \ncomponents for owned aircraft and owned engines and are depreciated over the expected lives between major overhauls \nand remaining useful life of the aircraft/engines, whichever is lower.\n\n\u0007Depreciation on property, plant and equipment has been charged based on the following useful lives:",
+    "\u0007Aircraft repairs and maintenance includes additional accrual, beyond supplementary rentals, for the estimated future costs \nof engine maintenance checks. These accruals are based on past trends for costs incurred on such events, future expected \nutilization of engine, condition of the engine and expected maintenance interval and are recorded over the period of the \nnext expected maintenance visit.\n\n245\nInterGlobe Aviation Limited",
+    "(viii) Incentive - non-refundable\n\nCash incentives\n\n\u0007The Group receives non-refundable incentives in connection with the acquisition of aircraft and engines. In case of owned \naircraft and engines, incentives are recorded as a reduction to the cost of related aircraft and engines. In case of aircraft \nand engines held under leases, the incentives are recorded as reduction to the carrying amount of right of use assets at \nthe commencement of lease of the respective aircraft and engine.\n\n241\nInterGlobe Aviation Limited"
+   ],
+   "latency_s": 17.02,
+   "input_tokens": 2203,
+   "output_tokens": 359,
+   "tokens": 2562,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 1.0,
+   "answer_relevancy": 0.8622199693824455,
+   "context_recall": 1.0
+  },
+  {
+   "id": "infosys25-revenue",
+   "question": "What were Infosys's revenues in fiscal 2025 and the growth in reported and constant currency?",
+   "answer": "Infosys's fiscal 2025 revenue was **US$19,277 million**, up **3.9%** in reported currency versus fiscal 2024. In constant currency terms, revenue grew **4.2%** [1].\n\n- Reported currency growth: 3.9% (US$19,277 million in FY25) [1]\n- Constant currency growth: 4.2% [1]\n\nThe passages do not give the fiscal 2024 revenue figure, so I cannot show the growth arithmetic. The constant currency figure is stated as Infosys's own calculation, which compares current-period revenues in local currencies at prior-period exchange rates [1]. The 3.9% and 4.2% figures are the reported growth rates, not figures I derived.",
+   "reference": "Revenues were $19,277 million in fiscal 2025, growth of 3.9% in reported currency (from $18,562 million) and 4.2% in constant currency.",
+   "pages": [
+    [
+     "infosys_FY25",
+     66
+    ],
+    [
+     "infosys_FY25",
+     65
+    ],
+    [
+     "infosys_FY25",
+     38
+    ],
+    [
+     "infosys_FY25",
+     7
+    ],
+    [
+     "infosys_FY25",
+     76
+    ],
+    [
+     "infosys_FY25",
+     69
+    ]
+   ],
+   "cited_pages": [
+    [
+     "infosys_FY25",
+     66
+    ]
+   ],
+   "contexts": [
+    "revenue excluding the impact of currency fluctuations. We calculate constant currency growth by comparing \ncurrent period revenues in respective local currencies converted to US$ using prior-period exchange rates and \ncomparing the same to our prior period reported revenues. Our revenues in reported currency terms for fiscal 2025 \nis $19,277 million, a growth of 3.9% in comparison to fiscal 2024. As against this, our revenues in constant \ncurrency terms for fiscal 2025 grew by 4.2% in comparison to fiscal 2024.\n\nThe following table sets forth our business segment profit (revenues less identifiable operating expenses and \nallocated expenses) as a percentage of business segment revenue for fiscal 2025 and fiscal 2024 (see Note 2.21.1, \nunder Item 18 of this Annual Report on Form 20-F for additional information):",
+    "Revenue growth in fiscal 2025 was primarily attributable to an increase in realization on account of Value Based \nSelling (VBS), productivity benefit from Lean & Automation, acquisition and revenue mix partially offset by \ndecline in volumes and currency impact.\n\nRefer to the “Our Strategy” section under Item 4 of this Annual Report on Form 20-F for further details.\n\nThe following table sets forth our revenues by business segments for fiscal 2025 and fiscal 2024:",
+    "Our primary geographic markets are North America, Europe, Rest of the World, and India, which generated 57.9%, \n29.8%, 9.2% and 3.1% of our revenues in fiscal 2025 respectively. We serve clients in the following industries: \nfinancial services and insurance; retail, consumer packaged goods and logistics; communication; telecom original \nequipment manufacturer (“OEM”) and media; energy, utilities, resources and services; manufacturing; hi-tech; \nlife sciences and health care.\n\nOur revenues grew from $13,561 million in fiscal 2021 to $19,277 million in fiscal 2025, representing a compound \nannualized growth rate of 9.2%. Our net profit grew from $2,623 million to $3,162 million during the same period, \nrepresenting a compound annualized growth rate of 4.8%.\n\nBetween March 31, 2021, and March 31, 2025, our total employees grew from 259,619 to 323,578, representing \na compound annualized growth rate of 5.7%.",
+    "Our revenues are concentrated in a few geographies and client industry segments. In fiscal 2025, 57.9%, 29.8% \nand 9.2% of our revenues were derived from projects in North America, Europe and the rest of the world, \nrespectively. In fiscal 2025, we derived 27.7% of our revenues from the financial services and insurance industry.\n \nInstability and uneven growth in the global economy has had an adverse impact on the growth of the IT industry \nin the past and may continue to impact it in the future. This instability also impacts our business and results of \noperations and may continue to do so in the future. For instance, if the economies of the United States, United \nKingdom or the EU weaken or if their growth remains uneven, our clients may reduce or postpone their",
+    "Net cash provided by operating activities:\n\nOur cash flows are robust. Our operating cash flows have increased by $1,203 million in fiscal 2025 primarily on \naccount of an increase in net profits adjusted for non-cash items, better working capital management and lower \nnet income tax payments on account of higher tax refunds received during fiscal 2025.\n\nTrade receivables as a percentage of last 12 months’ revenues were 18.9% and 19.6% as of March 31, 2025, and \n2024, respectively. Days Sales Outstanding (DSO) based on last 12 months’ revenues were 69 days and 71 days \nas of March 31, 2025, and 2024, respectively. Days Sales Outstanding has decreased in the current year due to \nrobust collection.",
+    "The increase in operating profit as a percentage of revenue for fiscal 2025 from fiscal 2024 was primarily \nattributable to decrease in cost of sales by 0.4% as a percentage of revenue and a decrease in administrative expense \nof 0.2% as a percentage of revenue which was partially offset by an increase in selling and marketing expense of \n0.2% as a percentage of revenue."
+   ],
+   "latency_s": 8.97,
+   "input_tokens": 2438,
+   "output_tokens": 299,
+   "tokens": 2737,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 0.8333333333333334,
+   "answer_relevancy": 0.9593254899936792,
+   "context_recall": 0.0
+  },
+  {
+   "id": "tcs24-revenue",
+   "question": "What was TCS's revenue in FY24 and its growth rate?",
+   "answer": "TCS's FY 2024 revenue from operations was ₹240,893 crore, up 6.8% year on year.\n\n**Supporting detail:**\n- Revenue from operations: ₹240,893 crore in FY 2024 vs ₹225,458 crore in FY 2023 [4][3].\n- Growth: (240,893 − 225,458) ÷ 225,458 = 15,435 ÷ 225,458 = 6.8% [4][3].\n- The 6.8% growth is on a reported basis [1].\n- The figures in [4] are labelled as consolidated, and the passages do not say whether the ₹ crore figures in [3] are standalone or consolidated.\n- The asterisk in [4] marks \"Excludes settlement of legal claim,\" so the FY 2024 figures carry that exclusion [5]. The passages do not state how the legal-claim settlement affects the reported revenue figure.",
+   "reference": "TCS revenue from operations was Rs. 240,893 crore in FY 2024, up 6.8% from Rs. 225,458 crore in FY 2023 (versus 17.6% growth the year before).",
+   "pages": [
+    [
+     "tcs_FY24",
+     75
+    ],
+    [
+     "tcs_FY24",
+     69
+    ],
+    [
+     "tcs_FY24",
+     16
+    ],
+    [
+     "tcs_FY24",
+     75
+    ],
+    [
+     "tcs_FY24",
+     75
+    ],
+    [
+     "tcs_FY24",
+     77
+    ]
+   ],
+   "cited_pages": [
+    [
+     "tcs_FY24",
+     75
+    ],
+    [
+     "tcs_FY24",
+     16
+    ],
+    [
+     "tcs_FY24",
+     75
+    ],
+    [
+     "tcs_FY24",
+     75
+    ]
+   ],
+   "contexts": [
+    "Analysis of revenue growth and margin performance\nOn a reported basis, TCS’ revenue grew 6.8% in FY 2024, compared to 17.6% in the prior year. The company’s performance showed \na remarkable resilience against the backdrop of macro uncertainty and geo-political volatility. Demand for TCS’ services, particularly \naround cloud adoption, cost optimization, vendor consolidation and operating model transformation, resulted in record deal wins. The \nnewly won deals conversion into revenue continued as expected, but the revenue inflows kept getting neutralized by reduction in the \nexisting revenue base as some of the earlier projects got completed, optimized, or in some cases, downsized. This led to overall muted \nrevenue growth in FY 2024.\n\nEBIT margins were 24.6%* in FY 2024, compared to 24.1% in the previous year. Margin improvement was led by improved productivity, \nbetter utilization and reduction in subcontractor expenses.",
+    "Financial Capital\n \n16\n\nFinancial Capital\n\nTCS’ longevity is a testimony to the strength of our business model and our ability to reinvent ourselves in an ever-evolving technology \nlandscape to stay relevant to our customers while remaining focused on creating value for all our stakeholders.\n\nOutcomes \n• \nBest in class proﬁtability and strong \nbalance sheet provide greater ability \nto invest in newer capabilities and to \nweather economic downturns\n\n• \nSuperior Return \nRatios\n\n• \nSustained long term \ncashflow\n\n• \nConsistently high \nshareholder returns\n\n₹ crore\n\nTCS Value Creation and Distribution 1\n\nFY 2023\n\nFY 2024 \n% of FY 2024 Revenue \nY-o-Y Growth (%)\n\nRevenue from operations\nEmployee cost\n\n225,458\n240,893\n100.0\n6.8\n127,522\n140,131\n58.2\n9.9\n\nOther cost of operations *\n\n43,699\n41,451\n17.2\n(5.1)\n\nR&D and innovation expense\n\n2,500\n2,751\n1.1\n10.0\n866\n953\n0.4\n10.0\n14,604\n16,262\n6.8\n11.4\n\nCommunity Investments\nTax expense *\n\nShareholder payout including\nproposed final dividend",
+    "The following table gives an overview of the consolidated financial results of the company:\n\n( ` crore)\n\n|  | FY 2024* |  |  | FY 2024 |  | FY 2023 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Amount | FY 2024* % of  Revenue | % Growth | FY 2 Amount | 2024 % of  Revenue | FY 2 Amount | 2023  % of  Revenue |\n| Revenue from operations | 240,893 | Revenue 100.0 | 6.8 | 240,893 | Revenue 100.0 | 225,458 | Revenue 100.0 |\n| Earnings before interest and tax  (EBIT) (Before other income) | 59,311 | 24.6 | 9.4 | 58,353 | 24.2 | 54,237 | 24.1 |\n| Profit after tax attributable to  shareholders of the company | 46,585 | 19.3 | 10.5 | 45,908 | 19.1 | 42,147 | 18.7 |\n| Earnings per share (in ₹) | 127.74 |  | 10.9 | 125.88 |  | 115.19 |  |",
+    "Average currency exchange rates during FY 2024 for the three major currencies are given below:\n\n| Currency | Weightage (%) | FY 2024 ` | FY 2023 ` | % Change YoY |\n| --- | --- | --- | --- | --- |\n| USD | 53.3 | 82.83 | 80.74 | 2.6 |\n| GBP | 14.4 | 104.07 | 96.98 | 7.3 |\n| EUR | 11.1 | 89.80 | 84.01 | 6.9 |\n\nMovements in currency exchange rates through the year resulted in a positive impact of 3.4% on the reported revenue. The constant \ncurrency revenue growth for the year, which is the reported revenue growth stripped of the currency impact, was 3.4%.\n\n| Growth attributable to | FY 2024 (%) | FY 2023 (%) |\n| --- | --- | --- |\n| Growth attributable to Business growth | FY 2024 (%) 3.4 | FY 2023 (%) 13.7 |\n| Impact of exchange rate | 3.4 | 3.9 |\n| Total Growth | 6.8 | 17.6 |\n\n* Excludes settlement of legal claim\n\nIntegrated Annual Report 2023-24",
+    "69\nManagement Discussion and Analysis\n\nManagement \nDiscussion and \nAnalysis\n\nGlobal Spend on IT Services (US$ Bn)\n\n1.5x\nUS$ Billion\n\n1,385\n\n926\n\n29.1\n\n2.2x\n\n13.4\n\nOverview of the Industry\n\nTCS Revenue (US$ Bn)",
+    "| Industry Vertical | Segment  Revenue  FY 2024  (FY 2023)  ` crore | YoY  Revenue  Growth  % | Key Demand Drivers7 | Segment  Margin  FY 2024  (FY 2023)  % |\n| --- | --- | --- | --- | --- |"
+   ],
+   "latency_s": 8.63,
+   "input_tokens": 2803,
+   "output_tokens": 373,
+   "tokens": 3176,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 0.35714285714285715,
+   "answer_relevancy": 0.8726331739951713,
+   "context_recall": 1.0
+  },
+  {
+   "id": "indigo25-dividend",
+   "question": "What dividend did IndiGo's board recommend for FY25?",
+   "answer": "The Board recommended a **final dividend of ₹10 per equity share** (face value ₹10 each) for FY25 [1][2]. The Board's recommendation was made at its meeting held on May 21, 2025 [1][3], and it is subject to shareholder approval at the ensuing Annual General Meeting [1][2][6].\n\nPer passage [2], the dividend is taxable in the hands of shareholders, and the Company will deduct applicable tax at source before paying it. The passages do not give the total payout amount.",
+   "reference": "A final dividend of INR 10 (100%) per fully paid equity share of INR 10 each, subject to shareholder approval at the AGM.",
+   "pages": [
+    [
+     "indigo_FY25",
+     266
+    ],
+    [
+     "indigo_FY25",
+     59
+    ],
+    [
+     "indigo_FY25",
+     186
+    ],
+    [
+     "indigo_FY25",
+     228
+    ],
+    [
+     "indigo_FY25",
+     141
+    ],
+    [
+     "indigo_FY25",
+     263
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY25",
+     266
+    ],
+    [
+     "indigo_FY25",
+     59
+    ],
+    [
+     "indigo_FY25",
+     186
+    ],
+    [
+     "indigo_FY25",
+     263
+    ]
+   ],
+   "contexts": [
+    "*The Board of Directors at its meeting held on May 21, 2025 has recommended a final dividend of Rs. 10 per equity share (face \nvalue of Rs. 10 each) and same is subject to shareholder’s approval in the ensuing Annual General Meeting.\n\nc. \nOther reserves\n\n| Particulars | As at  March 31, 2025 | As at  March 31, 2024 |\n| --- | --- | --- |\n| Other comprehensive income - debt instruments through other comprehensive income  41   1  Other comprehensive income - Foreign currency translation reserve   (46)  -  Total  (5)  1 |  |  |\n| Other comprehensive income - Foreign currency translation reserve | (46) | - |\n| Total | (5) | 1 |\n\n(i) Other comprehensive income - debt instruments through other comprehensive income",
+    "The Board of Directors has recommended payment of final dividend of INR 10/- (100%) per fully paid equity share of INR 10 each \nfor FY 2025, subject to approval of members at the ensuing Annual General Meeting(AGM). In view of the applicable provisions \nof Income Tax Act, 1961, dividend paid or distributed by the Company is taxable in the hands of the shareholder. Consequently, \nthe Company will disburse the final dividend after deducting the applicable tax at source.\n\n6. Transfer to General Reserve\n\nThe Directors do not propose to transfer any amount to the general reserves.\n\n7. Employee Stock Option Schemes\n\nDuring FY 2025, there has been no change in the existing ESOP Schemes of the Company viz. ‘InterGlobe Aviation Limited - \nEmployee Stock Option Scheme 2015 and 2023. The schemes have been implemented in compliance with relevant/ applicable \nESOP Regulations/ Guidelines.",
+    "Retained earnings are the accumulated profits / (losses) earned by the Company till date, adjusted with impact of changes \nin accounting pronouncements and amount transferred from other comprehensive income and equity component of compound \nfinancial instruments, less transfer to general reserves, dividend (including applicable taxes) and other distributions made to \nthe shareholders.\n\n*The Board of Directors at its meeting held on May 21, 2025 has recommended a final dividend of Rs. 10 per equity share (face \nvalue of Rs. 10 each) and same is subject to shareholder’s approval in the ensuing Annual General Meeting.\n\n184 Annual Report 2024-25",
+    "d. \nTerms / rights attached to the equity shares\n\nThe Company has one class of equity share having a par value of Rs. 10 per share. Each holder of the equity share is entitled to \none vote per share and is entitled to dividend declared, if any. The paid up equity shares of the Company rank pari-passu in all \nrespects, including dividend. The final dividend proposed by the Board of Directors is subject to the approval of the shareholders \nin the ensuing Annual General Meeting. The interim dividend is declared by the Board of Directors. In the event of liquidation of \nthe Company, the holders of the equity shares will be entitled to receive the remaining assets of the Company, after distribution \nof all preferential amounts, if any. The distribution will be in proportion to the number of equity shares held by the shareholders.\n\ne. \nShareholders holding more than 5% equity shares in the Company:",
+    "v. \nAs stated in note 16 to the consolidated financial statements, the Board of Directors of the Holding Company has \nproposed final dividend for the year which is subject to the approval of the members at the ensuing Annual General \nMeeting. The dividend proposed is in accordance with section 123 of the Act as applicable.\n\nvi. \nBased on our examination which included test checks, as stated in Note 42 to the financial statements, the Holding \nCompany and its subsidiaries incorporated in India has used accounting software(s) for maintaining its books of \naccount which has a feature of recording audit trail facility and the same has operated throughout the year for all \nrelevant transactions recorded in the software at the application level.",
+    "v. \nAs stated in note 17 to the standalone financial statements, the Board of Directors of the Company have proposed \nfinal dividend for the year which is subject to the approval of the members at the ensuing Annual General Meeting. The \ndividend proposed is in accordance with section 123 of the Act as applicable.\n\nvi. \nBased on our examination which included test checks, as stated in Note 42 to the financial statements, the Company \nhas used accounting software(s) for maintaining its books of account which has a feature of recording audit trail \nfacility and the same has operated throughout the year for all relevant transactions recorded in the software at the \napplication level.\n\n139\nInterGlobe Aviation Limited"
+   ],
+   "latency_s": 7.57,
+   "input_tokens": 2635,
+   "output_tokens": 250,
+   "tokens": 2885,
+   "cited_page_hit": 1.0,
+   "hit@1": 0.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 0.5,
+   "faithfulness": 1.0,
+   "answer_relevancy": 0.899773413084275,
+   "context_recall": 1.0
+  },
+  {
+   "id": "indigo24-passengers",
+   "question": "How many passengers did IndiGo carry in FY24?",
+   "answer": "IndiGo carried **106.42 million passengers** in FY 2024 [1].\n\nOther passages give rounded or related figures:\n- The executive summary cites \"~106.7 mln passengers\" served in FY 2024 [3]. This differs slightly from the 106.42 million in [1]; the passages do not explain the gap.\n- The FY 2023 comparison base is 85.59 million passengers, and the reported increase is 24% [1].",
+   "reference": "IndiGo carried 106.42 million passengers in FY 2024, its first year above 100 million, a 24% increase over 85.59 million in FY 2023.",
+   "pages": [
+    [
+     "indigo_FY24",
+     60
+    ],
+    [
+     "indigo_FY24",
+     102
+    ],
+    [
+     "indigo_FY24",
+     101
+    ],
+    [
+     "indigo_FY24",
+     44
+    ],
+    [
+     "indigo_FY24",
+     60
+    ],
+    [
+     "indigo_FY24",
+     8
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY24",
+     60
+    ],
+    [
+     "indigo_FY24",
+     101
+    ]
+   ],
+   "contexts": [
+    "InterGlobe Aviation Ventures LLP\n\n\u0007Apart from the aforesaid subsidiaries of the Company, InterGlobe Aviation Ventures LLP has been incorporated as a Limited \nLiability Partnership between the Company and Agile during the year, on November 30, 2023, to engage with high potential \nstartups in order to provide early access to disruptive technologies, offering a competitive edge and market intelligence \nto IndiGo.\n\n4. Operational Performance\n\nA. Operations and growth\n\n\u0007IndiGo continued its growth in FY 2024 when it operated a total of 697,389 flights, a 17% increase compared to \nFY 2023. The Passenger Load Factor increased from 82.1% in FY 2023 to 85.9% in FY 2024, demonstrating strong \ndemand in the markets where IndiGo operates.\n\n\u0007In FY 2024, IndiGo also achieved the milestone of carrying more than 100 million passengers in one year, reaching \n106.42 million passengers. This represents a 24% increase compared to the 85.59 million passengers transported in \nFY 2023.",
+    "Executive Summary\n\ngradually phasing out diesel operated \nequipment and electrification of ground \noperations. In this direction, Ahmedabad \nbecame our first station to have 100% \nfleet of eco-friendly electric coaches.\n\nmaintaining the highest standards of \nsafety and excellence.\n\nInterGlobe Aviation Limited is a leading \nair transportation Company in India. As \nof March 2024, we had 367 aircraft in \nour fleet. With a presence in 88 domestic \nand 33 1 international cities, we served \n~106.7 mln passengers in FY 2024.",
+    "As we look at the future, we remain \nsteadfast in our commitment to ESG \nprinciples and the pursuit of sustainable \ngrowth. We invite all our stakeholders \nto read our ESG report and provide \nfeedback at esg@goindigo.in . Your \ninput is critical in helping us reach new \nheights on our ESG journey.\n\nReaffirming our unwavering commitment \nto making flying accessible to all citizens, \nwe aligned our efforts under the UDAN \ninitiative launched by the Government \nof India and the Ministry of Civil Aviation \nof India. Under this scheme, IndiGo has \nflown over 12,390 flights and 750,000 \npassengers in FY 2024. We continue to \nwork towards a future where air travel\n\n99\nInterGlobe Aviation Limited",
+    "3 rd Largest\n\nAviation market in the world \nSource: ACI\n184 million\n\nPassengers in FY 2024, up by 14.5% \nas compared to FY 2023\n10.3%\n\nPassenger traffic growth vs. pre-Covid \n(FY 2019)\n\nNumber of passengers for \ndomestic airlines\n\n(in million)\n\nUp 10.3% vs. pre-Covid\n\n184\n\n167\n\n164\n\n154\n30\n\n161\n\n142\n23\n\n26\n\n137\n24\n\n141\n\n95\n\n85 10\n\n5\n59\n\n54\n\nFY 20\n\nFY 19\n\nFY 21\n\nFY 22\n\nFY 23\n\nFY 24\n\nDomestic\nInternational\n\nSource: Director General of Civil Aviation (DGCA)\n\n41\nInterGlobe Aviation Limited",
+    "During the year, IndiGo:\n\n• \n\u0007Operated scheduled services to 118 destinations, including 10 new domestic and 7 new international destinations\n\n• \nCompleted 1,182 cargo flights, transporting more than 360,000 tons of cargo\n\n• \nPerformed 2,767 charter flights (2,733 Military Charter and 34 Pax Charter)\n\n\u0007Our peak operation reached 2,016 daily flights (2,001 in the commercial schedule and 15 military flights), which \nrepresents an 11% increase compared to the 1,815 peak daily flights operated in FY 2023.\n\n\u0007IndiGo's On-Time Performance (OTP) for FY 2024 was 81.3% on DGCA metros. IndiGo also maintained a technical \ndispatch reliability of 99.9% (as published by Airbus in February 2024), supporting the highest operational integrity.\n\nB. Inducting aircraft and procedures to save fuel",
+    "Our journey ever since the start of \nthe airline has been extraordinary, \nnot only in India but on a global \naviation stage too. IndiGo is playing \nin the global top league. Our roots \nand fundamentals are Indian but \nincreasingly, the world is where we \noperate. By the end of FY 2024, we \nare globally the 7 th largest by daily \nflights, 5 th largest by passengers \ncarried, and 5 th best for OTP (CY 2023). \nThese results are a testament to the \nloyalty of our customers, the execution \nof our strategy, and dedication of 6E \nemployees who worked relentlessly \nand collectively to build it.\n\nIn FY 2024, we could really see the \ngradual execution and unfolding of \nour strategy of 'Towards new heights \nand across new frontiers'. We have \nfocused on all three pillars of our \ngrowth strategy – Reassure, Develop \nand Create – in parallel, and on all \npillars, we have seen these initiatives \nyielding results:\n\nReassure"
+   ],
+   "latency_s": 6.88,
+   "input_tokens": 2780,
+   "output_tokens": 204,
+   "tokens": 2984,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 1.0,
+   "answer_relevancy": 0.9085241878706187,
+   "context_recall": 1.0
+  },
+  {
+   "id": "indigo24-scope1",
+   "question": "What were IndiGo's Scope 1 greenhouse gas emissions in FY24?",
+   "answer": "IndiGo's Scope 1 greenhouse gas emissions in FY 2024 were **8,414,458.31 metric tonnes of CO2 equivalent** [1].\n\nFor reference, the FY 2023 figure was 6,789,520.00 metric tonnes of CO2 equivalent [1]. The report does not break the Scope 1 figure down by gas (CO2, CH4, N2O, etc.) in these passages.",
+   "reference": "Total Scope 1 emissions were 8,414,458.31 tonnes of CO2 equivalent in FY 2024, up from 6,789,520.00 in FY 2023.",
+   "pages": [
+    [
+     "indigo_FY24",
+     128
+    ],
+    [
+     "indigo_FY24",
+     128
+    ],
+    [
+     "indigo_FY24",
+     51
+    ],
+    [
+     "indigo_FY24",
+     130
+    ],
+    [
+     "indigo_FY24",
+     51
+    ],
+    [
+     "indigo_FY24",
+     127
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY24",
+     128
+    ]
+   ],
+   "contexts": [
+    "7. \nProvide details of greenhouse gas emissions (Scope 1 and Scope 2 emissions) & its intensity, in the following format:\n\n| Parameter | Unit | FY 2024 | FY 2023 |\n| --- | --- | --- | --- |\n| Total Scope 1 emissions (Break-up of the GHG into CO2, CH4,  N2O, HFCs, FCs, SF6, NF3, if available) Metric tonnes of CO2 equivalent |  | 8,414,458.31 | 6,789,520.00 |\n| Total Scope 2 emissions (Break-up of the GHG into CO2, CH4,  N2O, HFCs, PFCs, SF6, NF3, if available) Metric tonnes of CO2 equivalent |  | 12,427.97 | 4,445.00 |\n| Total Scope 1 and Scope 2 emission intensity per rupee of  turnover adjusted for Purchasing Power Parity (PPP)  (Total Scope 1 and Scope 2 GHG emissions / Revenue from  operations adjusted for PPP) (tCO2e/USD) Metric tonnes of CO2 equivalent |  | 0.0003 | 0.0003 |\n| Total Scope 1 and Scope 2 emissions per ASK Grams of CO2 equivalent/ASK |  | 60.5 | 59.5 |",
+    "Note 1: Indicate if any independent assessment/ evaluation/assurance has been conducted by an external agency? (Y/N) If \nyes, name of the external agency: Yes, TUV India Pvt. Ltd.\n\nNote 2: Figures for FY 2024 scope 2 emission boundary has been increased to include electricity consumption at the airport \noperational locations (offices, operational areas, hangars, etc.)\n\nNote 3: The intensity number is revised basis the per rupee of turnover.\n\n8. \nDoes the entity have any project related to reducing Green House Gas emission? If yes, then provide details.\n\nResponse: IndiGo has undertaken the following mechanisms for GHG emission reduction and Ground CO2 reduction by \nminimising diesel consumption:\n\n1. \nBy using electrical vehicles and other ground equipment like electric baggage tugs\n\n2. \nBy using CNG vehicles.\n\n3. \nBy using other fuel economical diesel equipment.\n\n9. \nProvide details related to waste management by the entity, in the following format:",
+    "around 4 years has further helped us in reducing our \ngreenhouse gas emissions. Around 78% of our current \naircraft fleet belongs to the Airbus A320neo family. \nFor ground operations, we are making investments in \nelectric coaches and electric ground equipment. We \nare in active discussions with oil marketing companies \nregarding sustainable aviation fuel, supply of which is \nconstrained both globally and locally. These initiatives \nhave placed us in the category of one of the lowest \ncarbon-emitting airlines in the world and at the same \ntime one of the lowest noise producing airline. Our \nactive drive against solid waste generation is helped \nby numerous initiatives, including avoidance of single \nuse plastics in favour of biodegradable options for more \nthan 100 items in FY 2024.",
+    "Corporate overview\nValue creation for stakeholders\nFinancial statements\nStatutary reports\n\n2. \nPlease provide details of total Scope 3 emissions & its intensity, in the following format:\n\n\u0007Response: Nil\n\n3. \n\u0007With respect to the ecologically sensitive areas reported at Question 11 of Essential Indicators above, provide details \nof significant direct & indirect impact of the entity on biodiversity in such areas along-with prevention and remediation \nactivities.\n\n\u0007Response: Nil\n\n4. \n\u0007If the entity has undertaken any specific initiatives or used innovative technology or solutions to improve resource efficiency, \nor reduce impact due to emissions / effluent discharge / waste generated, please provide details of the same as well as \noutcome of such initiatives, as per the following format:",
+    "In the recent years there has been an increased focus on \nenvironmental issues, both in India and globally. In the \ncontext of the aviation sector, key areas of focus are \ngreenhouse gas emissions, noise, and waste management. \nThe regulators may require the aviation sector to offset \nits emissions, undertake noise abatement measures, and \nreduce solid waste. CORSIA, which is a carbon offsetting and \nreduction scheme for international aviation, will be applicable \nfor Indian airlines from 2027. Actions to mitigate these \nenvironmental issues may require airlines to invest in modern \ngeneration aircraft, use blends of sustainable aviation fuel \n(SAF), and/or purchase carbon offset units. Some of these \nmeasures like SAF may be available at a significantly higher \ncost compared to the current cost for airline companies. As \nmore institutional investors are considering ESG as a factor \nwhile making investment decisions, this may result in lower",
+    "A. \n\u0007Note: Indicate if any independent assessment/ evaluation/assurance has been carried out by an external agency? (Y/N) \nIf yes, name of the external agency.\n\nResponse: Yes\n\nB. \n\u0007Note: The scope of data for FY 2024 includes electricity consumption from airports and fugitive emissions from refrigerant \nrecharged in air conditioning units and CO2 extinguishers recharged during the reporting period\n\n2. \n\u0007Does the entity have any sites / facilities identified as designated consumers (DCs) under the Performance, Achieve and \nTrade (PAT) Scheme of the Government of India? (Y/N) If yes, disclose whether targets set under the PAT scheme have been \nachieved. In case targets have not been achieved, provide the remedial action taken, if any.\n\nResponse: Nil\n\n3. \nProvide details of the following disclosures related to water, in the following format:\n\nParameter\nFY 2024 (KL)\nFY 2023 (KL)\n\nWater withdrawal by source (in kilolitres)"
+   ],
+   "latency_s": 7.12,
+   "input_tokens": 3067,
+   "output_tokens": 213,
+   "tokens": 3280,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 1.0,
+   "answer_relevancy": 0.8816512142164484,
+   "context_recall": 1.0
+  },
+  {
+   "id": "cmp-headcount",
+   "question": "Compare the employee headcount of TCS, Infosys and IndiGo at the end of FY24.",
+   "answer": "**Answer:** TCS and Infosys headcounts are available for FY24, but the passages do not give IndiGo's employee count, so a three-way comparison isn't possible.\n\n| Company | Employees at end of FY24 | Source |\n|---|---|---|\n| TCS | 601,546 (total employee base) | [1] |\n| Infosys | 317,240 (at end of fiscal year 2024) | [5] |\n| IndiGo (InterGlobe Aviation) | Not in the passages | — |\n\n- **TCS vs. Infosys:** TCS's employee base was about 284,306 higher (601,546 − 317,240), roughly 1.9 times Infosys's headcount.\n- **IndiGo:** Passage [6] reports training numbers (for example, almost 120,000 individual training programs at iFly), not its employee count. Passages [3], [9], and [12] cover accounting policies and equity, not headcount. The IndiGo figure would need to come from its employee disclosures, which were not provided.",
+   "reference": "TCS had 601,546 employees, Infosys 317,240 and IndiGo 36,860 permanent employees, so TCS was almost twice Infosys and about 16 times IndiGo.",
+   "pages": [
+    [
+     "tcs_FY24",
+     72
+    ],
+    [
+     "infosys_FY24",
+     210
+    ],
+    [
+     "indigo_FY24",
+     245
+    ],
+    [
+     "tcs_FY24",
+     142
+    ],
+    [
+     "infosys_FY24",
+     61
+    ],
+    [
+     "indigo_FY24",
+     61
+    ],
+    [
+     "tcs_FY24",
+     74
+    ],
+    [
+     "infosys_FY24",
+     209
+    ],
+    [
+     "indigo_FY24",
+     169
+    ],
+    [
+     "tcs_FY24",
+     158
+    ],
+    [
+     "infosys_FY24",
+     232
+    ],
+    [
+     "indigo_FY24",
+     187
+    ]
+   ],
+   "cited_pages": [
+    [
+     "tcs_FY24",
+     72
+    ],
+    [
+     "indigo_FY24",
+     245
+    ],
+    [
+     "infosys_FY24",
+     61
+    ],
+    [
+     "indigo_FY24",
+     61
+    ],
+    [
+     "indigo_FY24",
+     169
+    ],
+    [
+     "indigo_FY24",
+     187
+    ]
+   ],
+   "contexts": [
+    "In FY 2024, the total employee base of TCS was 601,546 , \nrepresenting 152 nationalities, with 35.6% women in the \nworkforce.\n\n• \nTCS Sangam : “Meeting of Minds” is TCS’ flagship event \ncelebrating industry -academia collaboration. Sangam 2024 \nsaw participation from more than 80 leading academicians \nincluding distinguished Vice Chancellors and Directors \nrepresenting a diverse group of institutions including IITs, \nNITs, IIMs, and premium institutions.\n\nTalent Acquisition\nThe company remains the preferred employer and one of the \nlargest job creators in IT services in several major markets, \nfor both freshers and lateral hires. FY 2024 has been yet \nanother vibrant year for Talent Acquisition with strong business \npartnerships to meet talent requirements proactively, at scale \nand on-demand.",
+    "(x) Employee benefits\n\n\u0007Short-term employee benefits\n\n\u0007Employee benefit liabilities such as salaries, wages and bonus, etc. that are expected to be settled wholly within twelve \nmonths after the end of the reporting period in which the employees render the related service are recognised in respect \nof employees' services up to the end of the reporting period and are measured at an undiscounted amount expected to be \npaid when the liabilities are settled.\n\n\u0007Post-employment benefit plans\n\n\u0007Defined contribution plans\n\n\u0007The Group pays provident fund contributions to the appropriate government authorities. The Group has no further payment \nobligations once the contributions have been paid. The contributions are accounted for as defined contribution plans and \nthe contributions are recognised as employee benefits expense when an employee renders the related service.\n\n\u0007Defined benefit plans\n\n\u0007Defined benefit plans of the Group comprises gratuity.",
+    "|  | (Dollars in millions except per share and employee data) |  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |  | Compounded annual |  |  |\n|  |  | Fiscal 2024 |  | 4 |  | Fiscal 2020 |  | 0 |  | growth rate |  | e |\n| Revenues |  |  | 18,562 |  |  | 12,780 |  |  |  | 9.8% |\n| Operating profit |  |  | 3,834 |  |  | 2,724 |  |  |  | 8.9% |\n| Net profit |  |  | 3,169 |  |  | 2,338 |  |  |  | 7.9% |\n| Net profit attributable to Owners of the company |  |  | 3,167 |  |  | 2,331 |  |  |  | 8.0% |\n| Earnings per equity share (Basic) |  |  | 0.77 |  |  | 0.55 |  |  |  | 8.8% |\n| Earnings per equity share (Diluted) |  |  | 0.76 |  |  | 0.55 |  |  |  | 8.4% |\n| Number of employees at the end of the fiscal year |  |  | 317,240 |  |  | 242,371 |  |  |  | 7.0% |",
+    "\u0007We remain committed to providing outstanding training for our staff and in FY 2024, there was a 28% increase in the \ntotal headcount trained at iFly, our in-house training facility, completing almost 120,000 individual training programs. \nFollowing last year's launch of Competence-Based Training & Assessment (CBT) and Evidence-Based Training (EBT) \nin the Airbus fleet, this year IndiGo became the first airline operator globally to launch and implement the same \nprograms in the ATR fleet.\n\n\u0007IndiGo's Flight Operations team continued to pursue initiatives to increase safety, operational efficiency and reduce \ndisruptions caused by adverse weather. One such measure is DGCA's approval to reduce Landing Minimas under \ncertain conditions, which will safely allow a more reliable and efficient service to passengers during the winter season.",
+    "(x) Employee benefits\n\nShort-term employee benefits\n\n\u0007Employee benefit liabilities such as salaries, wages and bonus, etc. that are expected to be settled wholly within twelve \nmonths after the end of the reporting period in which the employees render the related service are recognised in respect \nof employees' services up to the end of the reporting period and are measured at an undiscounted amount expected to be \npaid when the liabilities are settled.\n\n\u0007Post-employment benefit plans\n\n\u0007Defined contribution plans\n\n\u0007The Company pays provident fund contributions to the appropriate government authorities. The Company has no further \npayment obligations once the contributions have been paid. The contributions are accounted for as defined contribution \nplans and the contributions are recognised as employee benefits expense when an employee renders the related service.\n\n\u0007Defined benefit plans\n\n\u0007Defined benefit plans of the Company comprises gratuity",
+    "(i) \nEmployee stock option outstanding account\n\n| Particulars |  | For the year ended  March 31, 2024 |  | For the year ended  March 31, 2023 |\n| --- | --- | --- | --- | --- |\n| Balance at the beginning of the year Employee stock option scheme expense (Refer to Note 39)* Amount utilised for issue of shares pursuant to exercise of employee stock options Balance at the end of the year |  | 481.21 | 485.58   172.45   (176.82)  481.21 |  |\n|  |  | 433.32 |  |  |\n|  |  | (305.98) |  |  |\n|  |  | 608.55 |  |  |\n\nEmployee stock option outstanding account is used to record the impact of employee stock option schemes. Refer to Note 39 \nfor further details of these plans.\n\n* Includes a reversal of employee stock option scheme expense of Rs. 37.15 (previous year Rs. 180.33) towards forfeiture of \nemployee stock options granted to certain employee[s].\n\n(ii) Securities premium",
+    "The Group contributed $152 million, $148 million and $118 million to the provident fund during fiscal 2024, 2023 \nand 2022, respectively. The same has been recognized in the net profit in the consolidated statement of comprehensive \nincome under the head employee benefit expense.",
+    "142\nBusiness Responsibility & Sustainability Report\n\n13. Number of Complaints on the following made by employees 57 :\n\n|  | FY 2023-24 |  |  | FY 2022-23* |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n|  | Filed during  the year | FY 2023-24 Pending  resolution at  the end of  year | Remarks | Filed during  the year | FY 2022-23* Pending  resolution at  the end of  year | Remarks |\n| Working Conditions | 652 | year 0 | NIL | 581 | year 0 | NIL |\n| Health & Safety |  |  |  |  |  |  |\n\n\u0007*Data excludes accounting for <2% headcount, where TCS does not have operational control. Human rights related complaints \ndisclosed under Principle 5.\n\n14. Assessments for the year 58 :",
+    "• \nEducation and Sensitization : TCS has mandatory online \ntraining designed to sensitize employees on key concepts \nof DEI. More than 500,000 employees completed this in FY \n2024.\n\nEmployee Retention\n\n• \nEmployee Resource Groups: Platforms for under-\nrepresented communities and their allies to share \nconcerns, experiences, stories and strategic solutions. TCS \nhas 13 voluntary, employee-led groups that have come \ntogether based on shared diversity identity characteristics \nor interest.",
+    "| Fair value of plan assets at the beginning |  |  | 1,239 |  |  |  | 1,195 |\n| Interest income |  |  | 89 |  |  | 76 |\n| Remeasurements- Return on plan assets excluding amounts included in interest |  |  |  |  |  |  |  |  |\n| income |  |  | 28 |  |  | (23) |\n| Employee contribution |  |  | 200 |  |  | 210 |\n| Employer contribution |  |  | 126 |  |  | 104 |\n| Benefits paid |  |  | (246 | ) |  |  | (226) |\n| Translation differences |  |  | (20) |  |  | (97) |\n| Fair value of plan assets at the end |  |  | 1,416 |  |  |  | 1,239 |\n| Accrued defined benefit plan liability |  |  | (8) |  |  | (42) |",
+    "*Data excludes accounting for <2% headcount, where TCS does not have operational control.\n\nNote: Indicate if any independent assessment/ evaluation/assurance has been carried out by an external agency? (Y/N) If yes, \nname of the external agency.\n\nYes. This data has been subject to independent assurance by KPMG",
+    "The table below describes the related party transactions with key management personnel which comprises directors \nand executive officers under IAS 24:\n\n| (Dollars in millions) |  |  |  |  |  |  |  |  |  |  |  | ) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  | Year ended March 31, |  |  |  |  |  |  |  |  |  |  |\n|  |  | 2024 |  |  |  | 2023 |  | 3 |  | 2022 |  | 2 |\n| Salaries and other short term employee benefits to whole-time |  |  |  |  |  |  |  |  |  |  |  |  |\n| directors and executive officers(1)(2) |  |  | 14 |  |  |  | 14 |  | 18 |  | 8 |\n| Commission and other benefits to non-executive / independent |  |  |  |  |  |  |  |  |  |  |  |  |\n| directors |  |  | 2 |  |  |  | 2 |  |  | 2 |  |  |\n| Total |  |  | 16 |  |  |  | 16 |  |  | 20 |"
+   ],
+   "latency_s": 22.55,
+   "input_tokens": 4533,
+   "output_tokens": 819,
+   "tokens": 5352,
+   "cited_page_hit": 0.0,
+   "hit@1": 0.0,
+   "hit@3": 0.0,
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "mrr": 0.0,
+   "faithfulness": 0.35294117647058826,
+   "answer_relevancy": 0.9148534099057483,
+   "context_recall": 0.6
+  },
+  {
+   "id": "infosys24-employees",
+   "question": "How many employees did Infosys have as of March 31, 2024?",
+   "answer": "As of March 31, 2024, Infosys had **317,240 employees**, of which 299,814 were professionals involved in service delivery to clients [1][3].\n\nBy location, 244,217 were in India, 36,118 in the Americas, 20,194 in Europe and 16,711 in the rest of the world [1].",
+   "reference": "Infosys had 317,240 employees as of March 31, 2024, up from 242,371 in 2020.",
+   "pages": [
+    [
+     "infosys_FY24",
+     99
+    ],
+    [
+     "infosys_FY24",
+     14
+    ],
+    [
+     "infosys_FY24",
+     55
+    ],
+    [
+     "infosys_FY24",
+     109
+    ],
+    [
+     "infosys_FY24",
+     217
+    ],
+    [
+     "infosys_FY24",
+     90
+    ]
+   ],
+   "cited_pages": [
+    [
+     "infosys_FY24",
+     99
+    ],
+    [
+     "infosys_FY24",
+     55
+    ]
+   ],
+   "contexts": [
+    "The ESG Committee met four times during fiscal 2024. \n \nThe main responsibility of the ESG committee is to guide the ESG journey of the Company which was embarked \nfrom \n2011. \nThe \nESG \nCommittee \ncharter \nis \navailable \non \nour \nwebsite \nat \nhttps://www.infosys.com/investors/corporate-governance/documents/environment-social-governance-\ncommittee-charter.pdf\n\nEMPLOYEES\n\nAs of March 31, 2024, we had 317,240 employees, of which 299,814 were professionals involved in service \ndelivery to clients. As of March 31, 2023, we had 343,234 employees, of which 324,816 were professionals \ninvolved in service delivery to clients. As of March 31, 2022, these numbers stood at 314,015 and 297,859 \nrespectively.\n\nAs of March 31, 2024, we had 244,217 employees in India, 36,118 employees in the Americas, 20,194 employees \nin Europe and 16,711 employees in the rest of the world.",
+    "HUMAN CAPITAL \n \nOur employees are our most important assets. We are committed to hiring and retaining the best talent and being \namong the industry’s leading employers. For this, we focus on promoting a collaborative, transparent and \nparticipative organization culture, and rewarding merit and sustained high performance. Our human resources \nmanagement focuses on allowing our employees to develop their skills, grow in their career and navigate their \nnext. \n \nAs of March 31, 2024, we employed 317,240 employees, of which 299,814 are professionals involved in service \ndelivery to clients, including trainees. Our culture and reputation as a leader in consulting, technology, outsourcing \nand next-generation digital services enable us to attract and retain some of the best talent. \n \nWe have built our global talent pool by recruiting fresh graduates from premier universities, colleges and institutes",
+    "well as the construction of new facilities globally. Between March 31, 2020, and March 31, 2024, our total \nemployee count grew from 242,371 to 317,240. We expect our growth to place significant demands on our \nmanagement team and other resources. Our growth will require us to continuously develop and improve our \noperational, financial and other internal controls globally. Inadequate financial controls may increase the \npossibility of fraud and/or negatively impact the accuracy of our financial reporting and shareholder relationships. \nIn addition, continued growth increases the challenges involved in:",
+    "Controlled trust holds 10,916,829 and 12,172,119 shares as of March 31, 2024, and March 31, 2023, respectively, \nunder the 2015 Plan, out of which 200,000 equity shares each have been earmarked for welfare activities of the \nemployees as of March 31, 2024, and March 31, 2023.\n\n2019 Plan",
+    "Fiscal 2024 \nFiscal 2023\nFiscal 2022\n2015 Plan \nRSU - Equity settled \n \nKMPs \n494,650 \n367,479\n284,543\nEmployees other than KMPs \n4,644,720 \n1,784,975\n1,305,880\n5,139,370 \n2,152,454\n1,590,423\n \nRSU - Incentive units (cash settled) \n \nKMPs \n— \n—\n—\nOther employees \n176,990 \n92,400\n49,960\n176,990 \n92,400\n49,960\n2019 Plan \n \nEquity settled Performance based RSU \n \nKMPs \n139,271 \n207,893\n146,962\nEmployees other than KMPs \n4,048,631 \n3,706,764\n2,703,667\n4,187,902 \n3,914,657\n2,850,629\n \nTotal grants \n9,504,262 \n6,159,511\n4,491,012\n \nRefer to Note 2.20 for details on appointment and resignation of KMPs \n \nNotes on grants to KMP \n \nCEO & MD: \n \nBased on the recommendations of the Board and the approval of the shareholders at the AGM held on June 25, 2022, \nSalil Parekh was reappointed as the CEO and MD of the Company for a term commencing on July 1, 2022, and ending \non March 31, 2027. The remuneration was approved by the shareholders at the 2022 AGM. The revised employment",
+    "Total \n464,894 \n309,566\n\n(1) \nShaji Mathew was appointed as Group Head - Human Resources and as an executive officer effective March \n22, 2023, accordingly the exercises in the above table are for the period March 22, 2023, to March 31, 2023\n\n(2) \nMohit Joshi, President resigned effective March 11, 2023, and was on leave till June 9, 2023 which was his \nlast date with the company\n\n(3) \nRavi Kumar S resigned as President effective October 11, 2022.\n\n(4) \nKrishnamurthy Shankar retired as Group Head – Human Resources and Infosys Leadership Institute effective \nMarch 21, 2023."
+   ],
+   "latency_s": 7.49,
+   "input_tokens": 2632,
+   "output_tokens": 179,
+   "tokens": 2811,
+   "cited_page_hit": 0.0,
+   "hit@1": 0.0,
+   "hit@3": 0.0,
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "mrr": 0.0,
+   "faithfulness": 1.0,
+   "answer_relevancy": 0.9569755338648515,
+   "context_recall": 1.0
+  },
+  {
+   "id": "tcs24-employees",
+   "question": "How many employees did TCS have in FY24 and what was its attrition?",
+   "answer": "**Employees (FY24):** TCS had a total employee base of **601,546** [1][2]. Passage [1] states this as \"a strength of 601,546 employees.\"\n\n**Attrition (FY24):** LTM attrition in IT services was **12.5%**, down by 760 bps over the previous year [1].\n\nNote: Passage [6] contains a performance-review table with employee counts (5,28,926 total eligible for review), but that is a different measure (employees eligible for performance review, excluding new joiners with under a year's tenure) and is not the total employee base, so I have not used it for headcount.",
+   "reference": "TCS had 601,546 employees, with LTM attrition in IT services of 12.5%, down 760 bps over the previous year.",
+   "pages": [
+    [
+     "tcs_FY24",
+     9
+    ],
+    [
+     "tcs_FY24",
+     72
+    ],
+    [
+     "tcs_FY24",
+     74
+    ],
+    [
+     "tcs_FY24",
+     73
+    ],
+    [
+     "tcs_FY24",
+     6
+    ],
+    [
+     "tcs_FY24",
+     139
+    ]
+   ],
+   "cited_pages": [
+    [
+     "tcs_FY24",
+     9
+    ],
+    [
+     "tcs_FY24",
+     72
+    ],
+    [
+     "tcs_FY24",
+     139
+    ]
+   ],
+   "contexts": [
+    "We have a strength of 601,546 employees, and our LTM attrition \nin IT services was 12.5%, down by 760 bps over the previous \nyear. Our workforce continued to be very diverse, with over 152 \nnationalities represented and with women making up 35.6% of \nthe employee base.\n\nIntegrated Annual Report 2023-24",
+    "In FY 2024, the total employee base of TCS was 601,546 , \nrepresenting 152 nationalities, with 35.6% women in the \nworkforce.\n\n• \nTCS Sangam : “Meeting of Minds” is TCS’ flagship event \ncelebrating industry -academia collaboration. Sangam 2024 \nsaw participation from more than 80 leading academicians \nincluding distinguished Vice Chancellors and Directors \nrepresenting a diverse group of institutions including IITs, \nNITs, IIMs, and premium institutions.\n\nTalent Acquisition\nThe company remains the preferred employer and one of the \nlargest job creators in IT services in several major markets, \nfor both freshers and lateral hires. FY 2024 has been yet \nanother vibrant year for Talent Acquisition with strong business \npartnerships to meet talent requirements proactively, at scale \nand on-demand.",
+    "*For FY 2022-23 information mentioned are for TCS’ global operations, excluding non-wholly owned subsidiaries.\n\n9. \nDetails of performance and career development reviews of employees 51 :\n\n| Category | FY 2023-24 |  |  | FY 2022-23* |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n|  | Total (A)# | FY 2023-24 No. (B) | % (B/A) | Total (C) | FY 2022-23* No. (D) | % (D/C) |\n| Employees | Total (A) | No. (B) | % (B/A) | Total (C) | No. (D) | % (D/C) |\n| Employees Male | 3,42,187 | 3,26,639 | 95.5 | 2,53,389 | 2,48,055 | 97.9 |\n| Female | 1,86,739 | 1,72,919 | 92.6 | 1,43,140 | 1,36,061 | 95.1 |\n| Total | 5,28,926 | 4,99,558 | 94.4 | 3,96,529 | 3,84,116 | 96.9 |\n\n*For FY 2022-23 information mentioned are for TCS’ India operations, excluding non-wholly owned subsidiaries.\n\n# \n\u0007Column A represents employees eligible for annual performance review and excludes new joiners with less than a year in the \ncompany.\n\n10. Health and safety management system:",
+    "• \nEducation and Sensitization : TCS has mandatory online \ntraining designed to sensitize employees on key concepts \nof DEI. More than 500,000 employees completed this in FY \n2024.\n\nEmployee Retention\n\n• \nEmployee Resource Groups: Platforms for under-\nrepresented communities and their allies to share \nconcerns, experiences, stories and strategic solutions. TCS \nhas 13 voluntary, employee-led groups that have come \ntogether based on shared diversity identity characteristics \nor interest.",
+    "• \nTCS Contextual Masters: TCS’ program to identify tenured \nemployees with contextual knowledge of the customer’s \nbusiness and technology landscape, continues to expand \nwith over 73,000 Contextual Masters who are being \ngroomed to be next generation transformation leaders.\n\nWith TCS encouraging 100% employees returning to work, \nvarious programs are being run to enable higher levels of \nengagement. Employees were engaged through town halls and \nproject confluences with an emphasis on Living my Values, \nBuild my Career and Lifelong Learning . The company enabled \nmore than 33,000 one-on-one mentoring sessions and over \n255,000 one-on-one HR career conversations.\n\nKey Metrics:\n\n• \nMore than 147,000 external certificates were acquired in \nFY 2024.",
+    "In FY 2024, your company has continued to deliver strong \nperformance. I am pleased to share with you that your company \nhas crossed annual revenues of ₹240,893 crore, a growth of \n6.8%, over the previous year. With relentless focus on operational \nexcellence, this growth has come at an industry leading operating \nmargin of 24.6%*, an increase from 24.1% last year. The order \nbook for FY 2024 came at an all-time high of US$ 42.7 billion \nsupported by strong client relationships and engagement. Client \nmetrics continue to exhibit healthy progress with strong client \nadditions. Employee retention continues to be at benchmark \nlevels in the industry. TCS has been selected as a Top Employer of \nChoice in 32 countries. TCS has retained its ranking as the second \nmost valuable global IT services brand, valued at US$19.2 billion, \nan increase of US$2 billion from last year."
+   ],
+   "latency_s": 7.99,
+   "input_tokens": 2650,
+   "output_tokens": 265,
+   "tokens": 2915,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 0.9090909090909091,
+   "answer_relevancy": 0.863629002009099,
+   "context_recall": 1.0
+  },
+  {
+   "id": "infosys24-revenue",
+   "question": "What were Infosys's revenues in fiscal 2024 and how much did they grow?",
+   "answer": "Infosys's revenue from operations in fiscal 2024 was **US$18,562 million**, up **1.9%** in reported currency terms from fiscal 2023 [3].\n\n- **Reported-currency growth:** 1.9% [3]. The passage gives the growth rate directly, and no fiscal 2023 revenue figure is printed to recompute it.\n- **Constant-currency growth:** 1.4% [3]. This strips out currency fluctuations, so it measures underlying growth.\n- **Five-year context:** Revenue rose from $12,780 million in fiscal 2020 to $18,562 million in fiscal 2024, a compound annual growth rate of 9.8% [1].\n\nThese are consolidated figures; the passages do not state whether they are standalone or consolidated, so I have not assumed either.",
+   "reference": "Revenues were $18,562 million in fiscal 2024, up $350 million or 1.9% from $18,212 million in fiscal 2023.",
+   "pages": [
+    [
+     "infosys_FY24",
+     36
+    ],
+    [
+     "infosys_FY24",
+     73
+    ],
+    [
+     "infosys_FY24",
+     63
+    ],
+    [
+     "infosys_FY24",
+     61
+    ],
+    [
+     "infosys_FY24",
+     64
+    ],
+    [
+     "infosys_FY24",
+     179
+    ]
+   ],
+   "cited_pages": [
+    [
+     "infosys_FY24",
+     36
+    ],
+    [
+     "infosys_FY24",
+     63
+    ]
+   ],
+   "contexts": [
+    "Our primary geographic markets are North America, Europe, rest of the World, and India, which generated 60.1%, \n27.6%, 9.8% and 2.5% of our revenues in fiscal 2024 respectively. We serve clients in the following industries: \nfinancial services and insurance; retail; consumer packaged goods and logistics; communication; telecom original \nequipment manufacturer (“OEM”) and media; energy, utilities, resources and services; manufacturing; hi-tech; \nlife sciences and health care.\n\nOur revenues grew from $12,780 million in fiscal 2020 to $18,562 million in fiscal 2024, representing a compound \nannualized growth rate of 9.8%. Our net profit grew from $2,338 million to $3,169 million during the same period, \nrepresenting a compound annualized growth rate of 7.9%.\n\nBetween March 31, 2020, and March 31, 2024, our total employees grew from 242,371 to 317,240, representing \na compound annualized growth rate of 7.0%.",
+    "Constant currency (non-IFRS measure): We report revenue growth both in reported currency terms and in constant \ncurrency terms. Revenue growth in reported currency terms includes impact of currency fluctuations. We, \ntherefore, additionally report the revenue growth in constant currency terms which represents the real growth in \nrevenue excluding the impact of currency fluctuations. We calculate constant currency growth by comparing \ncurrent period revenues in respective local currencies converted to US$ using prior-period exchange rates and \ncomparing the same to our prior period reported revenues. Our revenues in reported currency terms for fiscal 2024 \nis $18,562 million, a growth of 1.9%. As against this, our revenues in constant currency terms for fiscal 2024 grew \nby 1.4% in comparison to fiscal 2023.",
+    "Our cash flows are robust. Our operating cash flows have increased to $3,148 million in fiscal 2024 from $2,853 \nmillion in fiscal 2023 mainly on account of increase in net profit adjusted for non-cash items and better working \ncapital management partially offset by higher income tax payments. \n \nTrade receivables as a percentage of last 12 months’ revenues were 19.6% and 17.0% as of March 31, 2024, and \n2023, respectively. Days Sales Outstanding (DSO) based on last 12 months’ revenues were 71 days and 62 days \nas of March 31, 2024, and 2023, respectively. Days Sales Outstanding has increased in the current year due to the \nhigher billing as per the scheduled milestones. \n \nIn fiscal 2024, income tax paid under protest, consequent to demand from tax authorities in major tax jurisdictions \nwas $161 million, relating to fiscal 2012 to fiscal 2013, fiscal 2016 to fiscal 2018 and fiscal 2020 to fiscal 2022.",
+    "Revenue growth in reported numbers was attributable to a number of factors, including an increase in the volume \nof business as well as an expansion in the solutions that we provide to our clients. We added 385 new customers \n(gross) during fiscal 2024 as compared to 458 new customers (gross) during fiscal 2023 and 451 new customers \n(gross) during fiscal 2022.",
+    "Fiscal 2024\nFiscal 2023\n \nOnsite effort \n24.5% \n24.4% \nOffshore effort \n75.5% \n75.6% \n \nRevenues from software services including BPM services represented 94.5% and 93.7% of total revenues for fiscal \n2024 and fiscal 2023, respectively. We also generate revenue from products and platforms, which represented \n5.5% and 6.3% of our total revenues for fiscal 2024 and fiscal 2023, respectively. \n \nThe percentage of revenue from fixed price contracts for fiscal 2024 and fiscal 2023 was approximately 53% and \n52%, respectively. \n \nRevenues and gross profits are also affected by employee utilization rates. We define employee utilization for IT \nservices as the proportion of total billed person months to total available person months, excluding sales, \nadministrative and support personnel. We manage utilization by monitoring project requirements and timetables. \nThe number of technology professionals that we assign to a project will vary according to the size, complexity,",
+    "(In %)\n \nYear ended March 31, \n \n \n2024 \n2023\n2022\nRevenue from top five customers \n13.3 \n12.7\n11.4\nRevenue from top ten customers \n20.0 \n20.2\n19.3\n \nCredit risk exposure \n \nTrade receivables ageing schedule for fiscal 2024 is as follows:"
+   ],
+   "latency_s": 8.01,
+   "input_tokens": 2569,
+   "output_tokens": 325,
+   "tokens": 2894,
+   "cited_page_hit": 0.0,
+   "hit@1": 0.0,
+   "hit@3": 0.0,
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "mrr": 0.0,
+   "faithfulness": 0.8461538461538461,
+   "answer_relevancy": 0.9296411796251673,
+   "context_recall": 0.0
+  },
+  {
+   "id": "tcs24-growth-why",
+   "question": "Why was TCS's revenue growth muted in FY24 despite record deal wins?",
+   "answer": "TCS's revenue growth was muted in FY24 because new deal inflows were offset by shrinkage in the existing revenue base. Per the management analysis, the newly won deals converted into revenue as expected, but those inflows \"kept getting neutralized by reduction in the existing revenue base as some of the earlier projects got completed, optimized, or in some cases, downsized\" [1].\n\nSupporting detail:\n- Reported revenue growth was 6.8% in FY24, down from 17.6% in the prior year [1].\n- Demand was strong: the company cited record deal wins driven by cloud adoption, cost optimization, vendor consolidation and operating model transformation [1]. The FY24 order book reached an all-time high of US$42.7 billion [2].\n- Consolidated revenue was ₹2,40,893 crore in FY24 versus ₹2,25,458 crore in FY23, up 6.8% [3][4]. (Calculation: (240,893 − 225,458) / 225,458 = 6.8%.)",
+   "reference": "New deals converted into revenue as expected, but those inflows were offset by reductions in the existing revenue base as earlier projects were completed, optimised or downsized, amid macro uncertainty and geopolitical volatility.",
+   "pages": [
+    [
+     "tcs_FY24",
+     75
+    ],
+    [
+     "tcs_FY24",
+     6
+    ],
+    [
+     "tcs_FY24",
+     56
+    ],
+    [
+     "tcs_FY24",
+     16
+    ],
+    [
+     "tcs_FY24",
+     71
+    ],
+    [
+     "tcs_FY24",
+     311
+    ]
+   ],
+   "cited_pages": [
+    [
+     "tcs_FY24",
+     75
+    ],
+    [
+     "tcs_FY24",
+     6
+    ],
+    [
+     "tcs_FY24",
+     56
+    ],
+    [
+     "tcs_FY24",
+     16
+    ]
+   ],
+   "contexts": [
+    "Analysis of revenue growth and margin performance\nOn a reported basis, TCS’ revenue grew 6.8% in FY 2024, compared to 17.6% in the prior year. The company’s performance showed \na remarkable resilience against the backdrop of macro uncertainty and geo-political volatility. Demand for TCS’ services, particularly \naround cloud adoption, cost optimization, vendor consolidation and operating model transformation, resulted in record deal wins. The \nnewly won deals conversion into revenue continued as expected, but the revenue inflows kept getting neutralized by reduction in the \nexisting revenue base as some of the earlier projects got completed, optimized, or in some cases, downsized. This led to overall muted \nrevenue growth in FY 2024.\n\nEBIT margins were 24.6%* in FY 2024, compared to 24.1% in the previous year. Margin improvement was led by improved productivity, \nbetter utilization and reduction in subcontractor expenses.",
+    "In FY 2024, your company has continued to deliver strong \nperformance. I am pleased to share with you that your company \nhas crossed annual revenues of ₹240,893 crore, a growth of \n6.8%, over the previous year. With relentless focus on operational \nexcellence, this growth has come at an industry leading operating \nmargin of 24.6%*, an increase from 24.1% last year. The order \nbook for FY 2024 came at an all-time high of US$ 42.7 billion \nsupported by strong client relationships and engagement. Client \nmetrics continue to exhibit healthy progress with strong client \nadditions. Employee retention continues to be at benchmark \nlevels in the industry. TCS has been selected as a Top Employer of \nChoice in 32 countries. TCS has retained its ranking as the second \nmost valuable global IT services brand, valued at US$19.2 billion, \nan increase of US$2 billion from last year.",
+    "4. \nCompany’s performance\n \nOn a consolidated basis, the revenue for FY 2024 was \n₹2,40,893 crore, higher by 6.8 percent over the previous \nyear’s revenue of ₹2,25,458 crore. The profit after tax (PAT) \nattributable to shareholders and non-controlling interests \nfor FY 2024 and FY 2023 was ₹46,099 crore and ₹42,303 \ncrore, respectively.\n\nTCS has received multiple external awards this year, a few \nof which are mentioned here.\n\n• \nThe Data Security Council of India (DSCI) Excellence \nAward 2023 in category Best Privacy Practices by Data \nProcessors;\n\nThe PAT attributable to shareholders for FY 2024 was \n₹45,908 crore registering a growth of 8.9 percent over the \nPAT of ₹42,147 crore in FY 2023.\n\n• \nPICCASO Privacy Awards Europe 2023 for International \nPrivacy Protection;\n\n• \nBest DevOps Cloud Project in DevOps Awards 2023, \nUK;",
+    "Financial Capital\n \n16\n\nFinancial Capital\n\nTCS’ longevity is a testimony to the strength of our business model and our ability to reinvent ourselves in an ever-evolving technology \nlandscape to stay relevant to our customers while remaining focused on creating value for all our stakeholders.\n\nOutcomes \n• \nBest in class proﬁtability and strong \nbalance sheet provide greater ability \nto invest in newer capabilities and to \nweather economic downturns\n\n• \nSuperior Return \nRatios\n\n• \nSustained long term \ncashflow\n\n• \nConsistently high \nshareholder returns\n\n₹ crore\n\nTCS Value Creation and Distribution 1\n\nFY 2023\n\nFY 2024 \n% of FY 2024 Revenue \nY-o-Y Growth (%)\n\nRevenue from operations\nEmployee cost\n\n225,458\n240,893\n100.0\n6.8\n127,522\n140,131\n58.2\n9.9\n\nOther cost of operations *\n\n43,699\n41,451\n17.2\n(5.1)\n\nR&D and innovation expense\n\n2,500\n2,751\n1.1\n10.0\n866\n953\n0.4\n10.0\n14,604\n16,262\n6.8\n11.4\n\nCommunity Investments\nTax expense *\n\nShareholder payout including\nproposed final dividend",
+    "productivity. | Outcomes •  Strong deal flow resulting in a robust  order book that gives better visibility of  medium to long-term growth. •  Market share gains in vendor  consolidation led deals. •  Efficiency gains helping fund client’s  transformation programs in some  instances.  •  TCS Cognix recognized as a means of  driving quicker realization of RoI. |",
+    "| Innovation Forum Inorganic Growth | TCS’ thought leadership event that is held in major and emerging markets. It brings together researchers from  academia, innovators from the start-up ecosystem, technology watchers, futurists and customers to brainstorm  around emerging technologies. |\n| Inorganic Growth Intellectual | Growth in revenue due to mergers, acquisitions or takeovers, rather than due to an increase in the company’s  own business activity. |\n| Intellectual  Property  Interactive | An asset that is the result of a creative design or idea, such as patents, copyrights, reusable code, software  products and platforms, and gives the owner exclusive rights over its usage, such that no one can copy or reuse  the creation without the owner’s permission. |"
+   ],
+   "latency_s": 8.56,
+   "input_tokens": 2844,
+   "output_tokens": 394,
+   "tokens": 3238,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 0.9166666666666666,
+   "answer_relevancy": 0.9243509751302372,
+   "context_recall": 1.0
+  },
+  {
+   "id": "indigo25-revenue",
+   "question": "What was IndiGo's revenue from operations in FY25?",
+   "answer": "IndiGo's FY25 revenue from operations was **₹808,029 million** [3][4].\n\n- **Comparison:** FY24 was ₹689,043 million [3][4], so growth was about 17.3% ((808,029 − 689,043) ÷ 689,043). [3] also reports this as +17.3% YoY.\n- **Standalone vs. consolidated:** The passages don't explicitly label the ₹808,029 million figure. Another statement in the annual report shows ₹808,030 million for the same line [5], a one-million-rupee difference. Passage [6] refers to \"the Group's revenue\", which suggests [5] is the consolidated presentation, but the passages don't say so directly. The source of the ₹808,029 million figure is therefore unconfirmed.",
+   "reference": "Consolidated revenue from operations was INR 808,029 million in FY 2025 versus INR 689,043 million in FY 2024, growth of about 17.3%.",
+   "pages": [
+    [
+     "indigo_FY25",
+     49
+    ],
+    [
+     "indigo_FY25",
+     195
+    ],
+    [
+     "indigo_FY25",
+     19
+    ],
+    [
+     "indigo_FY25",
+     233
+    ],
+    [
+     "indigo_FY25",
+     153
+    ],
+    [
+     "indigo_FY25",
+     290
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY25",
+     19
+    ],
+    [
+     "indigo_FY25",
+     233
+    ],
+    [
+     "indigo_FY25",
+     153
+    ],
+    [
+     "indigo_FY25",
+     290
+    ]
+   ],
+   "contexts": [
+    "Corporate overview\nStatutory reports\nFinancial statements\n\nEBITDAR margin\n\nRevenue from operations\n\n(%)\n\n( D million)\n\n808,029\n\n146,406\n\n259,309\n\n544,465\n\n689,043\n\n4.3\n\n4.4\n\n13.4\n\n25.5\n\n26.3\n\n+0.8 pts \n YoY\n\n+17.3% \n YoY\n\nFY21\n\nFY23\nFY22\nFY24\nFY25\n\nFY21\nFY23\nFY22\nFY24\nFY25\n\nTotal cash\n\nProfit after tax\n\n( D million)\n\n( D million)\n\n72,584\n\n81,725\n\n481,705\n\n185,685\n\n182,275\n\n234,243\n\n347,376\n\n(58,064)\n\n(61,618)\n\n(3,058)\n\n-11.2%\n YoY\n\n+38.7%\n YoY\n\nFY21\nFY23\nFY22\nFY24\nFY25\n\nFY23\nFY22\nFY24\nFY25\n\nFY21\n\n17\nInterGlobe Aviation Limited",
+    "| Income Revenue from operations 22  808,029   689,043  Other income 23  32,953   23,269  Total income  840,982   712,312  Expenses Aircraft fuel expenses  261,973   239,046  Aircraft and engine rentals  30,103   10,752  Supplementary rentals and aircraft repair and maintenance (net)  112,185   99,316  Airport fees and charges   57,531   46,239  Purchase of stock-in-trade (In-flight)  3,834   3,369  Changes in inventories of stock-in-trade 24  (2)  54  Employee benefits expense 25  74,725   64,618  Finance costs 26  50,800   41,694  Depreciation and amortisation expense 27  86,802   64,257  Foreign exchange loss (net)  16,179   7,174  Other expenses 28  70,918   55,300  Total expenses  765,048   631,819  Profit before tax   75,934   80,493  Tax expense 21.a Current tax  3,346   10  Deferred tax charge / (credit)   4   (1,242) Total tax expense / (credit)  3,350   (1,232) Profit for the year  72,584   81,725  Other comprehensive income Items that will not be reclassified to profit or",
+    "| Income Revenue from operations 23  808,030  689,043 Other income 24  33,068   23,256  Total income  841,098   712,299  Expenses Aircraft fuel expenses  261,973   239,046  Aircraft and engine rentals   30,103   10,752  Supplementary rentals and aircraft repair and maintenance (net)  112,227   99,316  Airport fees and charges  57,531   46,239  Purchase of stock-in-trade (In-flight)  3,834   3,369  Changes in inventories of stock-in-trade 25  (2)  54  Employee benefits expense 26  67,301   58,377  Finance costs 27  50,889   41,694  Depreciation and amortisation expense 28  86,366   64,056  Foreign exchange loss (net)  16,189   7,174  Other expenses 29  78,812   61,790  Total expenses  765,223   631,867  Profit before tax   75,875   80,432  Tax expense 22.a Current tax  3,338   -  Deferred tax charge / (credit)  4   (1,243) Total tax expense / (credit)  3,342   (1,243) Profit for the year  72,533   81,675  Other comprehensive income Items that will not be reclassified to profit or loss",
+    "The revenues from international operations in UAE and Saudi Arabia are more than 10% of the total revenue attributed to all \nforeign countries.\n\nNon-current assets, other than financial instruments, deferred tax assets (net) and income tax assets (net), primarily comprises \nof right of use assets, property, plant and equipment and other non-current assets which cannot be bifurcated between domestic \nand international locations, as such assets are used interchangeably. Accordingly, the same has not been bifurcated between \ndomestic and international locations.\n\nNo single external customer amounts to 10% or more of the Group’s revenue. Accordingly, information about major customer \nis not provided.\n\n35. Related party disclosures\n\na. \nList of related parties and nature of relationship with whom transactions have taken place during the current / \nprevious year\n\n(i) \nEntity / person with direct or indirect significant influence over the Group\n\nInterGlobe Enterprises Private Limited",
+    "Corporate overview\nStatutory reports\nFinancial statements\n\nFinancial performance analysis\n\nIncome\nBalance sheet\n\nPassenger ticket revenue: Passenger ticket revenue increased by 14.6% \nfrom Rs. 608,228 million in FY 2024 to Rs. 696,962 million in FY 2025.\n\nIndiGo’s total cash increased by 38.7% to Rs. 481,705 million as of \nMarch 31, 2025, comprising of free cash of Rs. 331,531 million and \nrestricted cash of Rs. 150,174 million. Total debt for the Company \nwas Rs. 668,098 million, including capitalised operating lease \nliability of Rs. 650,098 million, as of March 31, 2025.\n\nRevenue from ancillary products and services: Revenue from ancillary \nproducts and services primarily include cargo, excess baggage, special \nservice requests, ticket modification and cancellation, in-flight sales and \ntours. Revenue from ancillary products and services increased by 20.7% \nfrom Rs. 65,789 million in FY 2024 to Rs. 79,440 million in FY 2025.\n\nCredit rating",
+    "The temporary differences associated with investment in subsidiary for which a deferred tax liability has not been recognised \namounts to Rs. 188 (previous year Rs. 162). The Company has determined that undistributed profits of its subsidiary will not be \ndistributed in the foreseeable future.\n\n23. Revenue from operations"
+   ],
+   "latency_s": 10.35,
+   "input_tokens": 2990,
+   "output_tokens": 693,
+   "tokens": 3683,
+   "cited_page_hit": 0.0,
+   "hit@1": 0.0,
+   "hit@3": 0.0,
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "mrr": 0.0,
+   "faithfulness": 0.75,
+   "answer_relevancy": 0.9583354248811082,
+   "context_recall": 1.0
+  },
+  {
+   "id": "indigo25-cask",
+   "question": "What happened to IndiGo's CASK in FY25?",
+   "answer": "IndiGo's CASK (cost per available seat kilometre) rose 6.4% in FY25.\n\n- CASK went from Rs. 4.38 in FY 2024 to Rs. 4.66 in FY 2025 [1][2].\n- Growth: (4.66 − 4.38) / 4.38 = 6.4% [1][2].\n\nThe increase was primarily driven by annual escalation in maintenance charges, increased airport charges, and higher depreciation related to finance lease, partly offset by a decline in fuel prices [1].\n\nRelated detail: CASK Ex-Fuel rose 12.5%, from Rs. 2.66 to Rs. 3.00 [2]. CASK Ex-Fuel Ex-Forex rose 10.8%, from Rs. 2.61 to Rs. 2.89 [2]. These figures suggest that fuel prices were a partial offset, since total CASK grew more slowly than CASK Ex-Fuel.",
+   "reference": "CASK increased 6.4% from Rs. 4.38 in FY 2024 to Rs. 4.66 in FY 2025, mainly due to escalation in maintenance charges, higher airport charges and higher depreciation, partly offset by lower fuel prices.",
+   "pages": [
+    [
+     "indigo_FY25",
+     49
+    ],
+    [
+     "indigo_FY25",
+     48
+    ],
+    [
+     "indigo_FY25",
+     115
+    ],
+    [
+     "indigo_FY25",
+     298
+    ],
+    [
+     "indigo_FY25",
+     96
+    ],
+    [
+     "indigo_FY25",
+     49
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY25",
+     49
+    ],
+    [
+     "indigo_FY25",
+     48
+    ]
+   ],
+   "contexts": [
+    "• \nShort-term rating: A1+ (Reaffirmed)\n\nCost per Available Seat Kilometer (CASK): CASK increased by 6.4% \nfrom Rs. 4.38 in FY 2024 to Rs. 4.66 in FY 2025, primarily driven \nby annual escalation in maintenance charges, increased airport \ncharges, higher depreciation related to finance lease offset by \ndecline in fuel prices.\n\nICRA in its rating upgrade factored in the sustenance of a healthy \ndemand environment and consequent improvement in Company’s \noperational and financial performance. ICRA, in its rating rationale, \nhas acknowledged Company’s scale, extensive network, low-cost \npositioning, steady yields and strong liquidity position.\n\nThe Company reported a net profit of Rs. 72,584 million in FY 2025, \n11.2% lower than Rs. 81,725 million profit in FY 2024\n\n47\nInterGlobe Aviation Limited",
+    "*Operational destinations\n\nFinancial highlights\n\n| Particulars | Year ended  March 31, 2025 | Year ended  March 31, 2024 | Change |\n| --- | --- | --- | --- |\n| Revenue from operations (in million) | 808,029 | 689,043 +17.3% |  |\n| EBITDAR Margin | 26.3% | 25.5%  +0.8pts |  |\n| Net Profit Margin | 9.0% | 11.9%  -2.9pts |  |\n| RASK (Rs.) | 5.14 | 4.96  +3.7% |  |\n| CASK (Rs.) | 4.66 | 4.38  +6.4% |  |\n| CASK Ex-Fuel (Rs.) | 3.00 | 2.66  +12.5% |  |\n| CASK Ex-Fuel Ex-Forex (Rs.) | 2.89 | 2.61 +10.8% |  |\n| Return on Net Worth*(%) | 127.7% | NA NA |  |\n| Debt Equity Ratio (x) | 7.1 | 25.7  +18.6 |  |\n| Net Debt** to EBITDAR (x) | 1.6 | 1.7  +0.1 |  |\n| ROCE (%) | 14.0% | 21.3% -7.3pts |  |\n\n*This ratio is non-determinable for the year ended 31 March 2024 due to negative average shareholder’s equity on account of losses of previous years. The closing \nshareholder’s equity is Rs. 19,319 million as at 31 March 2024.\n\n**total debt includes lease liabilities\n\n46\nAnnual Report 2024-25",
+    "Each occurrence is investigated in collaboration with concerned stakeholders, including flight operations, engineering, \ninflight services, airport operations & customer services, OEMs, and airport operators to determine the root cause(s) and \ncontributory factor(s). Based on the findings, mitigation actions are formulated to prevent future occurrences. IndiGo's \nPermanent Investigation Board, in collaboration with the regulatory authority, investigates all major events.",
+    "|  |  |  |  |  | 7.13 | 25.69 (72.25%) Increase in  shareholder's equity  has resulted in  decrease in the ratio. |  |  |\n|  |  |  |  |  | 1.71 | 1.84  (7.07%) |  |  |",
+    "IndiGo remains unwavering in its commitment to \nsustainability, responsibility, and ethical governance. \nOur ESG journey reflects our core values and our vision \nfor a more sustainable future. We continue to embed ESG \nprinciples into every facet of our business, ensuring a \npositive impact at every level. In FY2025, we continued \nto make significant strides toward decarbonisation \nby adding 58 new Airbus A320neo aircraft, which are \n15% more fuel-efficient, bringing our neo fleet to 76% \nof our total fleet despite supply chain constraints. Our \nGHG emission intensity stood at 61.7 grams of CO2e \nper Available Seat Kilometer (ASK), 17.3% lower than \nthe 2016 baseline. This places us among the lowest \nemitting airlines, globally. In our ground operations, we \ncontinue to transition towards electric-powered ground \nservice equipment and refining operational procedures \nto enhance our environmental footprint. Our commitment \nto environmental stewardship was recognised with the",
+    "Credit rating\n\nOther income: Other income is primarily comprised of financial \nincome on cash and other non-operating income. Other income \nincreased by 41.6% from Rs. 23,269 million in FY 2024 to \nRs. 32,953 million in FY 2025.\n\nBased on IndiGo’s solid balance sheet position, IndiGo has been \nassigned a long-term investment grade rating by Moody’s with a \nstable outlook at par with India’s sovereign credit rating.\n\nRevenue per Available Seat Kilometre (RASK): RASK increased by \n3.7% from Rs. 4.96 in FY 2024 to Rs. 5.14 in FY 2025, largely driven \nby increase in yields.\n\n• \nLong term investment rating: Baa3 with Stable outlook\n\nMoody’s highlighted several strengths behind the rating, including \nIndia’s robust economic growth, IndiGo’s dominant market position, \nhealthy financials, and industry-best cost efficiency.\n\nExpenses\n\nIndiGo also received acknowledgement from CRISIL & ICRA that \ndefines the company’s creditworthiness and strong balance \nsheet position:"
+   ],
+   "latency_s": 8.62,
+   "input_tokens": 2936,
+   "output_tokens": 395,
+   "tokens": 3331,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 0.9090909090909091,
+   "answer_relevancy": 0.7579299854313288,
+   "context_recall": 1.0
+  },
+  {
+   "id": "infosys25-leaders",
+   "question": "Who were Infosys's chairman and CEO according to its fiscal 2025 annual report?",
+   "answer": "According to the FY25 annual report, the Chairman was Nandan M. Nilekani and the CEO was Salil Parekh.\n\n- **Chairman:** Nandan M. Nilekani is the Non-Executive, Non-Independent Chairman, effective August 24, 2017 [2]. He voluntarily chose not to receive any remuneration for his services in fiscal 2025 [1].\n- **CEO:** Salil Parekh is the Chief Executive Officer and Managing Director (CEO & MD), effective January 2, 2018 [2].",
+   "reference": "Nandan Nilekani was the non-executive, non-independent Chairman and Salil Parekh the Chief Executive Officer and Managing Director.",
+   "pages": [
+    [
+     "infosys_FY25",
+     87
+    ],
+    [
+     "infosys_FY25",
+     94
+    ],
+    [
+     "infosys_FY25",
+     93
+    ],
+    [
+     "infosys_FY25",
+     91
+    ],
+    [
+     "infosys_FY25",
+     236
+    ],
+    [
+     "infosys_FY25",
+     83
+    ]
+   ],
+   "cited_pages": [
+    [
+     "infosys_FY25",
+     87
+    ],
+    [
+     "infosys_FY25",
+     94
+    ]
+   ],
+   "contexts": [
+    "Non-Executive and Non-Independent Chairman’s Compensation\n\nNandan M. Nilekani, Chairman, voluntarily chose not to receive any remuneration for his services rendered to the \nCompany in fiscal 2025.",
+    "Board Leadership Structure\n\nNandan M. Nilekani is the Non-Executive, Non-Independent Chairman of the Board (“Chairman”) effective \nAugust 24, 2017, and Salil Parekh is the Chief Executive Officer and Managing Director (“CEO & MD”) effective \nJanuary 2, 2018. The Board appointed D. Sundaram as the Lead Independent Director effective March 23, 2023. \nD. Sundaram is also the Chairperson of the Nomination and Remuneration and Risk Management Committees.\n\nThe responsibilities and authority of the Chairman, the CEO & MD and the Lead Independent Director are as \nfollows:\n\nChairman",
+    "(1)\nJayesh Sanghrajka was appointed as Chief Financial Officer of the Company effective April 01, 2024.\n\nTerm of Office",
+    "(1)\nNilanjan Roy resigned as Chief Financial Officer of the Company effective March 31, 2024.\n\n(2)\nMohit Joshi, resigned as President effective March 11, 2023, and was on leave till June 9, 2023 which was \nhis last date with the company.",
+    "Inderpreet Sawhney, Chief Legal Officer and Chief Compliance Officer\n\nShaji Mathew, Chief Human Resources Officer (appointed effective March 22, 2023)\n\nKrishnamurthy Shankar (retired as Group Head - Human Resources and Infosys Leadership Institute effective March 21, \n2023)\n\nMohit Joshi (resigned as President effective March 11, 2023, and was on leave till June 9, 2023 which was his last date with \nthe Company)\n\nRavi Kumar S (resigned as President effective October 11, 2022)",
+    "Nandan M. Nilekani (Nandan) is the Chairman of Infosys Limited, which he co-founded in 1981, and EkStep, a \nnot-for-profit effort to create a learner-centric, technology-based platform to improve basic literacy and numeracy \nfor millions of children. In January 2023, he was appointed as the co- chair of the “G20 Task Force on Digital \nPublic Infrastructure for Economic Transformation, Financial Inclusion and Development”. He was previously the \nChairman of the Unique Identification Authority of India (UIDAI) in the rank of a Cabinet Minister. Nandan \nreceived his bachelor’s degree from IIT, Bombay. Fortune Magazine conferred on him the title of “Asia’s \nBusinessman of the Year – 2003”. In 2005, he received the prestigious Joseph Schumpeter Prize for innovative \nservices in economy, economic sciences and politics. In 2006, he was awarded the Padma Bhushan. The same \nyear, he was named Businessman of the Year by Forbes Asia. Time magazine listed him as one of the 100 most"
+   ],
+   "latency_s": 7.85,
+   "input_tokens": 2037,
+   "output_tokens": 273,
+   "tokens": 2310,
+   "cited_page_hit": 0.0,
+   "hit@1": 0.0,
+   "hit@3": 0.0,
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "mrr": 0.0,
+   "faithfulness": 1.0,
+   "answer_relevancy": 0.72339694840184,
+   "context_recall": 1.0
+  },
+  {
+   "id": "indigo24-revenue",
+   "question": "What was InterGlobe Aviation's consolidated revenue from operations in FY24 and how much did it grow?",
+   "answer": "**Consolidated revenue from operations rose about 26.6% to ₹689,043.42 million in FY24.**\n\n- **FY24:** ₹689,043.42 million [4]\n- **FY23:** ₹544,464.53 million [4]\n- **Growth:** (689,043.42 − 544,464.53) ÷ 544,464.53 = 144,578.89 ÷ 544,464.53 ≈ 26.55%, or about 26.6%.\n\nThe consolidated table [4] doesn't state its units. The company's revenue chart is labelled in ₹ million [3], which supports the unit. Standalone revenue from operations is identical in both years [4].",
+   "reference": "Consolidated revenue from operations was Rs. 689,043.42 million in FY 2024, up from Rs. 544,464.53 million in FY 2023, a growth of about 26.6%.",
+   "pages": [
+    [
+     "indigo_FY24",
+     49
+    ],
+    [
+     "indigo_FY24",
+     269
+    ],
+    [
+     "indigo_FY24",
+     19
+    ],
+    [
+     "indigo_FY24",
+     59
+    ],
+    [
+     "indigo_FY24",
+     196
+    ],
+    [
+     "indigo_FY24",
+     271
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY24",
+     19
+    ],
+    [
+     "indigo_FY24",
+     59
+    ]
+   ],
+   "contexts": [
+    "Key performance indicators\nFinancial highlights\n\nAt IndiGo, we closely monitor and track critical indicators to \nensure alignment with our growth objectives. Our operations are \ncontinuously optimised to deliver value to our stakeholders and \nmaintain our cost advantage.\n\nRevenue from operations\n\nEBITDAR margin\n\n(‡in million)\n\n(%)\n\n689,043\n\n25.5\n\n544,465\n\n18.3\n\n13.4\n\n357,560\n\n14.2\n\n284,968\n\n259,309\n\n146,406\n\n4.3\n\n4.4\n\nFY 20\nFY 19\nFY 21\nFY 22\nFY 23\nFY 24\n\nFY 20\nFY 19\nFY 21\nFY 22\nFY 23\nFY 24\n\nProfit after tax\n\nTotal cash\n\n(‡in million)\n\n(‡in million)\n\n347,375\n\n(58,064)\n\n(61,618)\n\n(3,058)\n\n(2,337)\n\n234,243\n\n81,725\n\n1,572\n\n203,769\n\n185,685\n\n182,275\n\n153,237\n\nFY 20\nFY 19\nFY 21\nFY 22\nFY 23\nFY 24\n\nFY 19\n\nFY 20\nFY 21\nFY 22\nFY 23\nFY 24\n\n16\nAnnual Report 2023-24",
+    "| Particulars | Consolidated |  | Standalone |  |\n| --- | --- | --- | --- | --- |\n|  | Year ended |  | Year ended |  |\n|  | March 31, 2024 | March 31, 2023 | March 31, 2024 | March 31, 2023 |\n| Revenue from operations | 689,043.42 | 544,464.53 | 689,043.42 | 544,464.53 |\n| Other Income | 23,268.21 | 14,349.65 | 23,255.72 | 14,314.35 |\n| Total Income | 712,311.63 | 558,814.18 | 712,299.14 | 558,778.88 |\n| Profit / (Loss) before Tax | 80,493.09 | (3,043.85) | 80,432.41 | (3,167.16) |\n| Current Tax | 10.85 | 14.04 | - | - |\n| Deferred tax credit / (charge) | (1,242.44) | - | (1,242.44) | - |\n| Profit / (Loss) after Tax | 81,724.68 | (3,057.89) | 81,674.85 | (3,167.16) |\n| Other Comprehensive Income / (Loss) net of tax | (145.92) | 77.24 | (174.92) | 92.60 |\n| Total Comprehensive Income / (Loss) | 81,578.76 | (2,980.65) | 81,499.93 | (3,074.56) |\n| Earnings per equity share of the face value of Rs. 10  each |  |  |  |  |\n| Basic (Rs.) | 211.84 | (7.93) | 211.71 | (8.22) |",
+    "Financial performance\n\nIncome\n\nPassenger ticket revenue\nPassenger ticket revenue increased by 26.3% from \n` 481,743.71 million in FY 2023 to ` 608,227.74 \nmillion in FY 2024.\n\nRevenue from ancillary products and services\nRevenue from ancillary products and services primarily \ninclude cargo, excess baggage, special service requests, \nticket modification and cancellation, in-flight sales, and tours. \nRevenue from ancillary products and services increased by \n20.9% from ` 54,415.21 million in FY 2023 to \n` 65,789.01 million in FY 2024.\n\nOther income\nOther income is primarily comprised of financial income \non cash and other non-operating income. Other income \nincreased by 62.2% from ` 14,349.65 million in FY 2023 \nto ` 23,268.21 million in FY 2024.\n\nRevenue per Available Seat Kilometre (RASK)\nRASK increased by 3.2% from ` 4.80 in FY 2023 to \n` 4.96 in FY 2024, driven by increase in yields and \npassenger load.",
+    "Revenue recognised from amount included in contract liabilities (forward sales) at the beginning of the year amounts to \nRs. 27,181.87 (previous year Rs. 19,255.31) (excludes amount collected on behalf of third parties and amount refunded due to \ncancellations).\n\n21. Tax expense\n\na. \nAmounts recognised in the Consolidated Statement of Profit and Loss comprises:\n\n| Particulars | For the year ended March 31, 2024 | For the year ended March 31, 2023 |\n| --- | --- | --- |\n| Current tax: |  |  |\n| - Current year | 10.87 | 13.16 |\n| - Previous years | (0.02) | 0.88 |\n|  | 10.85 | 14.04 |\n| Deferred tax: |  |  |\n| Attributable to- |  |  |\n| Deferred tax charge / (credit) for current year | (1,242.44) | - |\n| Total tax expense | (1,231.59) | 14.04 |\n\nIncome tax recognised in other comprehensive income",
+    "23. Revenue from operations\n\n| Particulars | For the year ended  March 31, 2024 | For the year ended  March 31, 2023 |\n| --- | --- | --- |\n| Sale of services |  |  |\n| -  Passenger services | 646,089.29 | 512,577.60 |\n| -  Cargo services | 17,943.97 | 15,837.01 |\n| Sale of products |  |  |\n| -  In-flight sales (traded goods) | 9,835.39 | 7,662.06 |\n| Other operating revenue |  |  |\n| -  Incentives | 476.04 | 476.04 |\n| -  Subsidies received under various schemes | 4,113.34 | 3,600.19 |\n| -  Others (Refer to Note 40) | 10,585.39 | 4,311.63 |\n| Total | 689,043.42 | 544,464.53 |\n\n193\nInterGlobe Aviation Limited",
+    "22. Revenue from operations\n\n| Particulars | For the year ended March 31, 2024 | For the year ended March 31, 2023 |\n| --- | --- | --- |\n| Sale of services |  |  |\n| -  Passenger services | 646,089.29 | 512,577.60 |\n| -  Cargo services | 17,943.97 | 15,837.01 |\n| Sale of products |  |  |\n| -  In-flight sales (traded goods) | 9,835.39 | 7,662.06 |\n| Other operating revenue |  |  |\n| -  Incentives | 476.04 | 476.04 |\n| -  Subsidies received under various schemes | 4,113.34 | 3,600.19 |\n| -  Others (Refer to Note 39) | 10,585.39 | 4,311.63 |\n| Total | 689,043.42 | 544,464.53 |\n\n268\nAnnual Report 2023-24"
+   ],
+   "latency_s": 10.59,
+   "input_tokens": 3337,
+   "output_tokens": 875,
+   "tokens": 4212,
+   "cited_page_hit": 1.0,
+   "hit@1": 0.0,
+   "hit@3": 0.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 0.25,
+   "faithfulness": 0.6363636363636364,
+   "answer_relevancy": 0.7737476554583573,
+   "context_recall": 0.6666666666666666
+  },
+  {
+   "id": "tcs24-dividend",
+   "question": "What dividend and buyback did TCS return to shareholders for FY24?",
+   "answer": "Tata Consultancy Services returned a total of ₹47,445 crore to shareholders in FY24, made up of dividends and a buyback.\n\n**Dividends**\n- Total dividend for FY24: ₹73 per share, involving a total cash outflow of ₹26,486 crore [2]. This comprises three interim dividends of ₹9 per share and a special dividend of ₹18 per share, aggregating ₹45 per share (cash outflow ₹16,355 crore), plus a recommended final dividend of ₹28 per share (cash outflow ₹10,131 crore) [2].\n\n**Buyback**\n- The fifth buyback returned ₹17,000 crore to shareholders [1][4][5]. The settlement was made on December 12, 2023 [5].\n\n**Total payout**\n- The shareholder payout for dividend and buyback, including tax on buyback, was ₹47,445 crore, equal to 108.9% of standalone profits [5]. This figure includes the proposed final dividend [3].\n\nNote: the ₹26,486 crore dividend outflow plus the ₹17,000 crore buyback comes to ₹43,486 crore, which differs from the ₹47,445 crore payout. The passages do not explain the gap, which may relate to buyback tax and the timing or basis of the dividend figures, so I have not reconciled it.",
+   "reference": "A final dividend of Rs. 28 per share took the total dividend for the year to Rs. 73 per share, and TCS completed its fifth buyback returning Rs. 17,000 crore.",
+   "pages": [
+    [
+     "tcs_FY24",
+     11
+    ],
+    [
+     "tcs_FY24",
+     55
+    ],
+    [
+     "tcs_FY24",
+     16
+    ],
+    [
+     "tcs_FY24",
+     8
+    ],
+    [
+     "tcs_FY24",
+     55
+    ],
+    [
+     "tcs_FY24",
+     112
+    ]
+   ],
+   "cited_pages": [
+    [
+     "tcs_FY24",
+     11
+    ],
+    [
+     "tcs_FY24",
+     55
+    ],
+    [
+     "tcs_FY24",
+     16
+    ],
+    [
+     "tcs_FY24",
+     8
+    ],
+    [
+     "tcs_FY24",
+     55
+    ]
+   ],
+   "contexts": [
+    "11\n\nThe Year Gone By\n\nThe Year Gone By\n\nAnnounced a 15-year expansion of its\n\npartnership with Aviva , the UK’s leading\n\nQ4\n\ninsurance, wealth and retirement provider,\n\nto transform Aviva’s UK life business and\n\nenhance customer experience leveraging \nthe TCS BaNCS TM platform. As part of this, \nthe end-to-end policy administration and \nservicing will expand to cover over 5.5 \nmillion policies.\n\nFeatured on FORTUNE® \nMagazine’s 2024 list \nof the World’s Most \nAdmired Companies , also \nfeatured in the Forbes \nGlobal 2000 Rankings of \nthe largest companies in \nthe world.\n\nAnnounced a final dividend of ₹28 per \nshare, taking the total dividend for the year to ₹73 per share. \nThe company also completed its fifth successful buyback \nreturning ₹17,000 crore to shareholders, wherein the buyback \nprocess was completed in record time of 63 days. The total \nshareholder payout for the year was ₹47,445 crore.",
+    "2. \nReturn of surplus funds to Shareholders\n \nIn line with the practice of returning substantial free \ncash flow to shareholders and based on the Company’s \nperformance, the Directors have declared three interim \ndividends of ₹9 per equity share and a special dividend \nof ₹18 aggregating to ₹45 per equity share involving \na cash outflow of ₹16,355 crore during the year. The \nDirectors have also recommended a final dividend of ₹28 \nper equity share. The final dividend on equity shares, if \napproved by the Members, would involve a cash outflow \nof ₹10,131 crore. The total dividend for FY 2024 amounts \nto ₹73 per equity share and would involve a total cash \noutflow of ₹26,486 crore, resulting in a dividend payout of \n60.8 percent of the standalone profits of the Company.",
+    "Community Investments\nTax expense *\n\nShareholder payout including\nproposed final dividend\n\n42,079\n47,445\n19.7\n12.8\n\n* Excludes settlement of legal claim in FY 2024\n\nAbsolute Share Price Return\n(20 Years of Listing 2004-2024)\n\n3,655\n\n4000\n\n3500\n\nClosing Price as on 31st Mar 2024: ₹3,884\n\n3000\n\nIssue Price on 25th Aug 2004: ₹850\n\n2500\n\n1,775\n\n2000\n\n1500\n\n1000\n\nBaseline 2 \n= 100\n\n500\n\nAug\n\n04\nMar\n\n0\n\n24\n\nMar\n\n05\nAug\n\n06\nMar\n\n07\nMar\n\n08\nMar\n\n09\nMar\n\n10\nMar\n\n11\nMar\n\n12\nMar\n\n13\nMar\n\n14\nMar\n\n15\nMar\n\n16\nMar\n\n17\nMar\n\n18\nMar\n\n19\nMar\n\n20\nMar\n\n21\nMar\n\n22\nMar\n\n23\nMar\n\n24\nMar\n\n04\n\nTCS\nBSE IT\n\n3 Times\n1:1 Bonus \n5 Times\nShare Buyback #\n\n₹4,186 per share\n\nDividends paid #\n\n1 GRI 201-1\n2 Adjusted for Bonus shares\n# From listing till Jan’2024, not considered\n\nwhile calculating share price return\n\nIntegrated Annual Report 2023-24",
+    "We had a strong finish to the fiscal year FY 2024, with revenue \nfor the year at ₹240,893 crore. This is, a growth of 6.8% over \nthe previous year ( 3.4% in constant currency). Demand for \nour services showed remarkable resilience as macroeconomic \nuncertainties and geopolitical volatilities continued in major \nmarkets through the year.\n\nIn keeping with our capital allocation policy of returning \nsubstantial free cashflow to shareholders, the Board has \nrecommended a final dividend of ₹28 per share, bringing the \ntotal dividend for the year to ₹73 per share. The company also \nsuccessfully completed its fifth buyback program, distributing \n₹17,000 crore to shareholders. For the full year, the company’s \nshareholder payout was ₹47,445 crore, which will be our largest \npayout to date. Our average shareholder payout has been more \nthan 100% during the last 5 years.",
+    "for an aggregate consideration of ₹17,000 crore. The offer \nsize of the Buyback was 24.5% and 20.5% of the aggregate \nfully paid-up share capital and free reserves as per audited \ncondensed standalone interim financial statements and \naudited condensed consolidated interim financial statements \nof the Company as on September 30, 2023, respectively. \n The Buyback represented 1.1% of the total issued and paid-\nup Equity Share capital of the Company, as on September \n30, 2023. The settlement of bids and payment of buyback \nconsideration was made on December 12, 2023 and the \nshares were extinguished on December 13, 2023.\n\nThe Shareholders’ payout with respect to dividend and \nbuyback including tax on buyback (excluding transaction \ncosts, other incidental and related expenses) aggregated to \n₹47,445 crore, resulting in a payout of 108.9 percent of the \nstandalone profits of the Company.",
+    "In the interest of the shareholders, the Company sends periodical reminders to the shareholders to claim their dividends \nin order to avoid transfer of dividends/shares to IEPF Authority. Notices in this regard are also published in the newspapers \nand the details of unclaimed dividends and shareholders whose shares are liable to be transferred to the IEPF Authority, are \nuploaded on the Company’s website https://iepfinvestorinfo.tcsapps.com/#/home .\n\nThe details of unclaimed dividends and shares transferred to IEPF during FY 2024 are as follows:\n\n| Financial year | Amount of unclaimed dividend transferred | Number of shares transferred |\n| --- | --- | --- |\n| Financial year 2015-16 | Amount of unclaimed dividend transferred  2,60,32,185 | Number of shares transferred 41,294 |\n| 2016-17 | 2,16,37,364 | 15,191 |\n| TOTAL | 4,76,69,549 | 56,485 |\n\nIntegrated Annual Report 2023-24"
+   ],
+   "latency_s": 9.45,
+   "input_tokens": 3099,
+   "output_tokens": 519,
+   "tokens": 3618,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 0.85,
+   "answer_relevancy": 0.865387545870056,
+   "context_recall": 1.0
+  },
+  {
+   "id": "indigo24-cask",
+   "question": "What was IndiGo's cost per available seat kilometre (CASK) in FY24 and why did it change?",
+   "answer": "**Answer:** IndiGo's CASK was ₹4.38 in FY24, down 9.3% from ₹4.83 in FY23 [1].\n\n- **Change:** CASK fell by 9.3% from ₹4.83 (FY23) to ₹4.38 (FY24) [1].\n- **Reason given:** The decrease was \"primarily driven by lower fuel cost and lower foreign exchange losses\" [1].\n- **Supporting context:** Aircraft fuel expenses rose only 1.1%, from ₹236,460.17 million to ₹239,045.78 million, against a 21.8% increase in capacity, which the report attributes mainly to lower ATF prices [1]. Capacity (available seat kilometres) reached 139,281 million in FY24 [4].\n\nThe passages do not state whether the CASK figures are standalone or consolidated.",
+   "reference": "CASK decreased by 9.3% from Rs. 4.83 in FY 2023 to Rs. 4.38 in FY 2024, primarily driven by lower fuel cost and lower foreign exchange losses.",
+   "pages": [
+    [
+     "indigo_FY24",
+     49
+    ],
+    [
+     "indigo_FY24",
+     101
+    ],
+    [
+     "indigo_FY24",
+     3
+    ],
+    [
+     "indigo_FY24",
+     20
+    ],
+    [
+     "indigo_FY24",
+     11
+    ],
+    [
+     "indigo_FY24",
+     31
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY24",
+     49
+    ],
+    [
+     "indigo_FY24",
+     20
+    ]
+   ],
+   "contexts": [
+    "Other expenses\nOther expenses increased by 30.2% from ` 42,469.61 million in \nFY 2023 to ` 55,299.07 million in FY 2024.\n\nExpenses\n\nTotal expenses increased by 12.5% from ` 561,858.03 million \nin FY 2023 to ` 631,818.54 million in FY 2024.\n\nCost per Available Seat Kilometre (CASK)\nCASK decreased by 9.3% from ` 4.83 in FY 2023 to \n` 4.38 in FY 2024, primarily driven by lower fuel cost and \nlower foreign exchange losses.\n\nAircraft fuel expenses\nAircraft fuel expenses increased by 1.1% from ` 236,460.17 \nmillion in FY 2023 to ` 239,045.78 million in FY 2024, against \na 21.8% increase in capacity, primarily due to decrease in \nATF prices.\n\nThe Company reported a net profit of ` 81,724.68 million in \nFY 2024 against a net loss of ` 3,057.89 million in FY 2023.",
+    "Corporate overview\nValue creation for stakeholders\nFinancial statements\nStatutary reports\n\nAvailable seat kilometres\n\nLoad factor\n\n(in million)\n\n(%)\n\n139,281\n\n114,359\n\n96,240\n\n86.2\n\n81,028\n\n85.9\n\n85.8\n\n82.1\n\n70,386\n\n73.6\n\n69.4\n\n45,425\n\nFY 20\nFY 19\nFY 21\nFY 22\nFY 23\nFY 24\n\nFY 20\nFY 19\nFY 21\nFY 22\nFY 23\nFY 24\n\nEmployees\n\nFleet size\n\n37,200\n\n367\n\n32,407\n\n304\n\n285\n\n27,812\n\n275\n\n262\n\n26,164\n\n23,531\n\n23,711\n\n217\n\nFY 20\nFY 21\nFY 22\nFY 23\nFY 24\n\nFY 19\n\nFY 20\nFY 21\nFY 22\nFY 23\nFY 24\n\nFY 19\n\n17\nInterGlobe Aviation Limited",
+    "One of our most significant actions has \nbeen the investment in a modern fleet \nof fuel-efficient aircraft. Our investment \nin the latest generation of fuel-efficient \nA320 neo family aircraft enable us to \nreduce our carbon emissions making us \none of the lowest CO2, per available \nseat kilometre, emitting airlines in the \nworld. These also enhance operational \nefficiency, leading to cost savings. \nOur \ndedication \nto \nenvironmental \nresponsibility \nenabled \nus \nto \nbe \nrecognised with the prestigious ‘Asia \nEnvironmental Sustainability Airline of \nthe Year 2023’ award by the Centre \nfor Asia Pacific Aviation (CAPA). This \naward underscores the effectiveness of \nour initiatives.",
+    "3.7 million+\nTotal employee training\n\n139.3 billion\nAvailable seat kilometres\n22%\n\nhours \n5.1%\n\ny-o-y growth\n\ny-o-y decline\n\nFlat vs y-o-y\n\nAll figures are as on March 31, 2024.",
+    "Our sustainability \ncommitment\n\nAt IndiGo, we are dedicated to \ndelivering our customer promises in the \nmost sustainable manner possible. \nAs reducing fuel emissions is \ncurrently our most effective lever \nfor CO 2 reduction, a key element of \nour strategy is renewing the fleet. \nAlready around 78% of our fleet is \nAirbus A320neo and A321neo, making \nus one of the lowest CO 2 emitting \nairlines in the world. We also have the \nyoungest fleet in the world (of 100+ \naircraft airlines) by ch-aviation, with \nan average age of around 4.4 years, \nincluding wet leased aircraft. We have \nrealised a CO 2 reduction of 19% per \navailable seat kilometre between\n\n8\nAnnual Report 2023-24",
+    "Fleet efficiency\n\nNoise reduction\n\nOur operations team continuously \nmonitors and optimises our fuel-related \nstandard operating procedures (SOPs) \nand practices, such as single-engine \ntaxiing, optimal flap settings, and \nefficient climb and descent profiles. \nThese efforts help us maintain a low \ncarbon emissions profile.\n\nAs reducing fuel emissions is currently \nour most effective lever for CO 2 \nreduction, a key element of our \nstrategy is renewing the fleet with \nAirbus A320neo and A321neo aircraft. \nAlready around 78% of our fleet is \nAirbus A320neo, making it 15% more \nfuel efficient and 50% quieter than the \nolder generation aircraft. This has led \nto a CO 2 reduction of 19% per available \nseat kilometre between FY 2016 and \nFY 2024. That itself speaks volumes to \nthe commitment and actual reductions \nrealised. We will continue on this track \nand in next few years, we expect our \nentire fleet to be Airbus A320neo."
+   ],
+   "latency_s": 8.14,
+   "input_tokens": 2729,
+   "output_tokens": 353,
+   "tokens": 3082,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 0.6666666666666666,
+   "answer_relevancy": 0.8428953015295628,
+   "context_recall": 1.0
+  },
+  {
+   "id": "indigo24-dividend",
+   "question": "Did IndiGo's board recommend a dividend for FY24?",
+   "answer": "No. The Board did not recommend a dividend on the equity shares for FY 2024. It cited the Company's performance, cash flow position and losses carried forward from previous years [1].\n\nThe passages also note that the Dividend Distribution Policy was unchanged during the year [4], and that any final dividend would require shareholder approval at the AGM [2]. None of these passages give a dividend amount, so there is nothing further to report on this point.",
+   "reference": "No. Based on performance, cash flow and losses carried forward from previous years, the Board did not recommend any dividend on equity shares for FY 2024.",
+   "pages": [
+    [
+     "indigo_FY24",
+     61
+    ],
+    [
+     "indigo_FY24",
+     185
+    ],
+    [
+     "indigo_FY24",
+     261
+    ],
+    [
+     "indigo_FY24",
+     61
+    ],
+    [
+     "indigo_FY24",
+     93
+    ],
+    [
+     "indigo_FY24",
+     80
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY24",
+     61
+    ],
+    [
+     "indigo_FY24",
+     185
+    ],
+    [
+     "indigo_FY24",
+     61
+    ]
+   ],
+   "contexts": [
+    "\u0007Based on the Company’s performance, cash flow position and the losses carried forward from the previous years, the Board \nhas not recommended any dividend on the equity shares of the Company for FY 2024.\n\n6. Transfer to General Reserve\n\nThe Directors do not propose to transfer any amount to reserves.\n\n7. \nEmployee Stock Option Schemes\n\n\u0007During the year under review, the members of the Company approved the ‘InterGlobe Aviation Limited - Employee Stock \nOption Scheme 2023’.\n\n\u0007There has been no material change in the existing ESOP Schemes of the Company viz. ‘InterGlobe Aviation Limited - \nEmployee Stock Option Scheme 2015 and 2023’ and the Schemes have been implemented in compliance with relevant/ \napplicable ESOP Regulations/ Guidelines.",
+    "d. \nTerms / rights attached to the equity shares\n\n\u0007The Company has one class of equity share having a par value of Rs. 10 per share. Each holder of the equity share is entitled \nto one vote per share and is entitled to dividend declared, if any. The paid up equity shares of the Company rank pari-\npassu in all respects, including dividend. The final dividend proposed by the Board of Directors is subject to the approval \nof the shareholders in the ensuing Annual General Meeting. The interim dividend is declared by the Board of Directors. In \nthe event of liquidation of the Company, the holders of the equity shares will be entitled to receive the remaining assets \nof the Company, after distribution of all preferential amounts, if any. The distribution will be in proportion to the number of \nequity shares held by the shareholders.\n\n182\nAnnual Report 2023-24",
+    "\u0007Our Airport Operations and Customer Service team are integrating fuel-efficient Combo Units (Ground Power + Air \nconditioning) to serve aircraft during airport turnarounds. We are also introducing environmentally friendly equipment \nin our operations, with more than 220 green passenger coaches, light vehicles and baggage tugs introduced this year, \nreplacing older equipment.\n\n5. Dividend\n\n\u0007The Dividend Distribution Policy of the Company is available on the website of the Company and can be accessed at \nhttps://www.goindigo.in/content/dam/goindigo/investor-relations/policies/2021/InterGlobe-Aviation-Limited-Dividend-\nDistribution-Policy.pdf The Policy sets out the parameters and factors to be considered by the Board in determining the \ndistribution of dividend to its members and/or retaining profits of the Company. There has been no change in this Policy \nduring the year under review.",
+    "d. \nTerms / rights attached to the equity shares\n\nThe Company has one class of equity share having a par value of Rs. 10 per share. Each holder of the equity share is entitled to \none vote per share and is entitled to dividend declared, if any. The paid up equity shares of the Company rank pari-passu in all \nrespects, including dividend. The final dividend proposed by the Board of Directors is subject to the approval of the shareholders \nin the ensuing Annual General Meeting. The interim dividend is declared by the Board of Directors. In the event of liquidation of \nthe Company, the holders of the equity shares will be entitled to receive the remaining assets of the Company, after distribution \nof all preferential amounts, if any. The distribution will be in proportion to the number of equity shares held by the shareholders.\n\ne. \nShareholders holding more than 5% equity shares in the Company:",
+    "The Company has separate posts of the Chairperson, Managing Director and Chief Executive Officer.\n\nv. \nDividend Distribution Policy\n\n\u0007The Company has adopted ‘InterGlobe Aviation Limited - Dividend Distribution Policy’ in compliance with Regulation \n43A of the SEBI LODR Regulations. The policy sets out the parameters and factors to be considered by the Board \nin determining the distribution of dividend to shareholders and/or retaining profits of the Company. This policy is \navailable on the Investor Relations section of the website of the Company at https://www.goindigo.in/content/dam/\ngoindigo/investor-relations/policies/2021/InterGlobe-Aviation-Limited-Dividend-Distribution-Policy.pdf\n\nvi. Policy for determining material subsidiary",
+    "for an individual’s appointment on the Board, including Executive and Independent Directors, has been laid down in the \nNomination and Remuneration Policy of the Company. The NRC recommends the appointment of a candidate based on the \ndefined criteria. The Board, on recommendation of the NRC, considers and approves appointment of the candidate as a \nDirector on the Board and recommends his/her appointment to the members of the Company for their approval."
+   ],
+   "latency_s": 7.55,
+   "input_tokens": 2634,
+   "output_tokens": 212,
+   "tokens": 2846,
+   "cited_page_hit": 1.0,
+   "hit@1": 1.0,
+   "hit@3": 1.0,
+   "hit@5": 1.0,
+   "hit@10": 1.0,
+   "mrr": 1.0,
+   "faithfulness": 0.6666666666666666,
+   "answer_relevancy": 0.8273073450552815,
+   "context_recall": 1.0
+  },
+  {
+   "id": "cmp-indigo-yoy",
+   "question": "How did IndiGo's revenue growth in FY25 compare with FY24?",
+   "answer": "IndiGo's revenue from operations grew **17.3%** in FY25 over FY24.\n\n- **FY25:** ₹808,029 million\n- **FY24:** ₹689,043 million\n- **Growth:** (808,029 − 689,043) / 689,043 = 118,986 / 689,043 ≈ **17.3%**\n\n[4]\n\nThe passage's chart labels are garbled, so the year mapping is inferred. The chart shows \"+17.3% YoY\" next to these two figures, and the arithmetic confirms that 808,029 is FY25 and 689,043 is FY24. The passage does not say whether these figures are standalone or consolidated.\n\nDo not confuse this with the \"annual total income of around ₹841 billion (+18%)\" in [3]. That is total income, not revenue from operations, so it is not used here.",
+   "reference": "Growth slowed from about 26.6% in FY 2024 (to Rs. 689,043 million) to about 17.3% in FY 2025 (to Rs. 808,029 million).",
+   "pages": [
+    [
+     "indigo_FY25",
+     49
+    ],
+    [
+     "indigo_FY25",
+     49
+    ],
+    [
+     "indigo_FY25",
+     7
+    ],
+    [
+     "indigo_FY25",
+     19
+    ],
+    [
+     "indigo_FY25",
+     298
+    ],
+    [
+     "indigo_FY25",
+     195
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY25",
+     7
+    ],
+    [
+     "indigo_FY25",
+     19
+    ]
+   ],
+   "contexts": [
+    "first Indian airline to have a fleet of \nover 400 aircraft.\n\nWe reported a strong financial \nperformance in FY 2025, resulting in \nIndiGo becoming a $10 billion revenue \nCompany – a first for us, and among \nonly about 20 other airlines globally. \nA strong first quarter was followed by \na seasonally weak second quarter that \nincluded additional costs to mitigate \nthe impact of peak AOGs. We turned \nthe corner with the third and fourth \nquarter results. During the financial \nyear, we achieved a capacity growth \nof 13% and reported an annual total \nincome of around ` 841 billion (+18%) \nand a net profit of ` 73 billion. Further, \nin recognition of these results and \nour confidence in the future, we have \nproposed a dividend of ` 10 per share, \nsubject to approval in the AGM.",
+    "Corporate overview\nStatutory reports\nFinancial statements\n\nEBITDAR margin\n\nRevenue from operations\n\n(%)\n\n( D million)\n\n808,029\n\n146,406\n\n259,309\n\n544,465\n\n689,043\n\n4.3\n\n4.4\n\n13.4\n\n25.5\n\n26.3\n\n+0.8 pts \n YoY\n\n+17.3% \n YoY\n\nFY21\n\nFY23\nFY22\nFY24\nFY25\n\nFY21\nFY23\nFY22\nFY24\nFY25\n\nTotal cash\n\nProfit after tax\n\n( D million)\n\n( D million)\n\n72,584\n\n81,725\n\n481,705\n\n185,685\n\n182,275\n\n234,243\n\n347,376\n\n(58,064)\n\n(61,618)\n\n(3,058)\n\n-11.2%\n YoY\n\n+38.7%\n YoY\n\nFY21\nFY23\nFY22\nFY24\nFY25\n\nFY23\nFY22\nFY24\nFY25\n\nFY21\n\n17\nInterGlobe Aviation Limited",
+    "Corporate overview\nStatutory reports\nFinancial statements\n\nFinancial performance analysis\n\nIncome\nBalance sheet\n\nPassenger ticket revenue: Passenger ticket revenue increased by 14.6% \nfrom Rs. 608,228 million in FY 2024 to Rs. 696,962 million in FY 2025.\n\nIndiGo’s total cash increased by 38.7% to Rs. 481,705 million as of \nMarch 31, 2025, comprising of free cash of Rs. 331,531 million and \nrestricted cash of Rs. 150,174 million. Total debt for the Company \nwas Rs. 668,098 million, including capitalised operating lease \nliability of Rs. 650,098 million, as of March 31, 2025.\n\nRevenue from ancillary products and services: Revenue from ancillary \nproducts and services primarily include cargo, excess baggage, special \nservice requests, ticket modification and cancellation, in-flight sales and \ntours. Revenue from ancillary products and services increased by 20.7% \nfrom Rs. 65,789 million in FY 2024 to Rs. 79,440 million in FY 2025.\n\nCredit rating",
+    "Credit rating\n\nOther income: Other income is primarily comprised of financial \nincome on cash and other non-operating income. Other income \nincreased by 41.6% from Rs. 23,269 million in FY 2024 to \nRs. 32,953 million in FY 2025.\n\nBased on IndiGo’s solid balance sheet position, IndiGo has been \nassigned a long-term investment grade rating by Moody’s with a \nstable outlook at par with India’s sovereign credit rating.\n\nRevenue per Available Seat Kilometre (RASK): RASK increased by \n3.7% from Rs. 4.96 in FY 2024 to Rs. 5.14 in FY 2025, largely driven \nby increase in yields.\n\n• \nLong term investment rating: Baa3 with Stable outlook\n\nMoody’s highlighted several strengths behind the rating, including \nIndia’s robust economic growth, IndiGo’s dominant market position, \nhealthy financials, and industry-best cost efficiency.\n\nExpenses\n\nIndiGo also received acknowledgement from CRISIL & ICRA that \ndefines the company’s creditworthiness and strong balance \nsheet position:",
+    "|  |  |  |  |  | 7.13 | 25.69 (72.25%) Increase in  shareholder's equity  has resulted in  decrease in the ratio. |  |  |\n|  |  |  |  |  | 1.71 | 1.84  (7.07%) |  |  |",
+    "The temporary differences associated with investment in subsidiary for which a deferred tax liability has not been recognised \namounts to Rs. 188 (previous year Rs. 162). The Company has determined that undistributed profits of its subsidiary will not be \ndistributed in the foreseeable future.\n\n23. Revenue from operations"
+   ],
+   "latency_s": 10.27,
+   "input_tokens": 2635,
+   "output_tokens": 925,
+   "tokens": 3560,
+   "cited_page_hit": 0.0,
+   "hit@1": 0.0,
+   "hit@3": 0.0,
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "mrr": 0.0,
+   "faithfulness": 0.42857142857142855,
+   "answer_relevancy": 0.9558130031075871,
+   "context_recall": 0.0
+  },
+  {
+   "id": "cmp-indigo-infosys-growth",
+   "question": "Compare the revenue growth of InterGlobe Aviation and Infosys in FY24.",
+   "answer": "**Answer:** In FY24, IndiGo's revenue from operations grew about 26.6%, while Infosys's reported revenue grew 1.9% (1.4% in constant currency).\n\n| Company | FY23 revenue from operations | FY24 revenue from operations | FY24 growth (reported) | Constant-currency growth |\n|---|---|---|---|---|\n| InterGlobe Aviation (IndiGo) | ₹544,464.53 million [12] | ₹689,043.42 million [12] | 26.6% [10] | Not reported |\n| Infosys | Not stated in passages | US$18,562 million [3] | 1.9% [3] | 1.4% [3] |\n\n**IndiGo:** Growth is (689,043.42 − 544,464.53) / 544,464.53 = 144,578.89 / 544,464.53 ≈ 26.6%, which matches the 26.6% stated in the highlights [10]. The passages do not say whether these figures are standalone or consolidated. Passenger ticket revenue alone rose 26.3%, from ₹481,743.71 million to ₹608,227.74 million [2].\n\n**Infosys:** The passages give only the FY24 dollar revenue and its growth rates. They do not give the FY23 dollar revenue, so I cannot recompute the growth from the amounts. The company reports 1.9% growth in reported currency and 1.4% in constant currency, which excludes currency fluctuations [3].\n\n**Comparison:**\n- On a reported basis, IndiGo's revenue growth was about 24.7 percentage points higher than Infosys's (26.6% vs 1.9%).\n- The two figures are in different currencies (₹ for IndiGo, US$ for Infosys). Only the growth rates are directly comparable, not the absolute amounts.\n- Infosys's growth is reported in US$ terms, so it reflects dollar-denominated revenue, not rupee-denominated revenue as IndiGo's does. The passages do not give enough information to say how much currency movements affected IndiGo's rupee growth.",
+   "reference": "IndiGo's revenue from operations grew about 26.6% (Rs. 544,465 million to Rs. 689,043 million) while Infosys's revenues grew 1.9% ($18,212 million to $18,562 million), so IndiGo grew far faster.",
+   "pages": [
+    [
+     "infosys_FY24",
+     61
+    ],
+    [
+     "indigo_FY24",
+     49
+    ],
+    [
+     "infosys_FY24",
+     63
+    ],
+    [
+     "indigo_FY24",
+     42
+    ],
+    [
+     "infosys_FY24",
+     78
+    ],
+    [
+     "indigo_FY24",
+     221
+    ],
+    [
+     "infosys_FY24",
+     64
+    ],
+    [
+     "indigo_FY24",
+     19
+    ],
+    [
+     "infosys_FY24",
+     179
+    ],
+    [
+     "indigo_FY24",
+     3
+    ],
+    [
+     "infosys_FY24",
+     7
+    ],
+    [
+     "indigo_FY24",
+     196
+    ]
+   ],
+   "cited_pages": [
+    [
+     "indigo_FY24",
+     49
+    ],
+    [
+     "infosys_FY24",
+     63
+    ],
+    [
+     "indigo_FY24",
+     3
+    ],
+    [
+     "indigo_FY24",
+     196
+    ]
+   ],
+   "contexts": [
+    "Financial performance\n\nIncome\n\nPassenger ticket revenue\nPassenger ticket revenue increased by 26.3% from \n` 481,743.71 million in FY 2023 to ` 608,227.74 \nmillion in FY 2024.\n\nRevenue from ancillary products and services\nRevenue from ancillary products and services primarily \ninclude cargo, excess baggage, special service requests, \nticket modification and cancellation, in-flight sales, and tours. \nRevenue from ancillary products and services increased by \n20.9% from ` 54,415.21 million in FY 2023 to \n` 65,789.01 million in FY 2024.\n\nOther income\nOther income is primarily comprised of financial income \non cash and other non-operating income. Other income \nincreased by 62.2% from ` 14,349.65 million in FY 2023 \nto ` 23,268.21 million in FY 2024.\n\nRevenue per Available Seat Kilometre (RASK)\nRASK increased by 3.2% from ` 4.80 in FY 2023 to \n` 4.96 in FY 2024, driven by increase in yields and \npassenger load.",
+    "Constant currency (non-IFRS measure): We report revenue growth both in reported currency terms and in constant \ncurrency terms. Revenue growth in reported currency terms includes impact of currency fluctuations. We, \ntherefore, additionally report the revenue growth in constant currency terms which represents the real growth in \nrevenue excluding the impact of currency fluctuations. We calculate constant currency growth by comparing \ncurrent period revenues in respective local currencies converted to US$ using prior-period exchange rates and \ncomparing the same to our prior period reported revenues. Our revenues in reported currency terms for fiscal 2024 \nis $18,562 million, a growth of 1.9%. As against this, our revenues in constant currency terms for fiscal 2024 grew \nby 1.4% in comparison to fiscal 2023.",
+    "| Value creation for stakeholders Ensuring a hassle-free experience  Powering growth together | 18 20 |\n| --- | --- |\n| Powering growth together  Reaching out to the community | 20 24 |\n| Reaching out to the community  Charting a sustainable course | 24 28 |\n| Charting a sustainable course  Navigating good governance | 28 30 |\n| Navigating good governance  Turning miles into milestones | 30 34 |\n| Turning miles into milestones | 34 |\n\nFY 2024 at a glance\n\nA record year\n\nFinancial highlights\n\n107 million customers\n25%\n\n‡81,725 million\nProfit after tax\n\n‡689,043 million\nRevenue from operations\n26.6%\n\n121 destinations\n17\n\n‡175,447 million\nEBITDAR\n\n‡212 \nEarnings per share\n\n140%\n\n2,016 daily flights\n11%\n\nNon-financial highlights\n85.9%\nLoad factor\n3.8 pp\n\n367 aircraft\n63\n\n37,200 \nEmployees\n14.8%\n\n44% \nWomen in the workforce\n\n697,500\nDepartures\n17%\n\n3.7 million+\nTotal employee training\n\n139.3 billion\nAvailable seat kilometres\n22%\n\nhours \n5.1%\n\ny-o-y growth\n\ny-o-y decline\n\nFlat vs y-o-y",
+    "23. Revenue from operations\n\n| Particulars | For the year ended  March 31, 2024 | For the year ended  March 31, 2023 |\n| --- | --- | --- |\n| Sale of services |  |  |\n| -  Passenger services | 646,089.29 | 512,577.60 |\n| -  Cargo services | 17,943.97 | 15,837.01 |\n| Sale of products |  |  |\n| -  In-flight sales (traded goods) | 9,835.39 | 7,662.06 |\n| Other operating revenue |  |  |\n| -  Incentives | 476.04 | 476.04 |\n| -  Subsidies received under various schemes | 4,113.34 | 3,600.19 |\n| -  Others (Refer to Note 40) | 10,585.39 | 4,311.63 |\n| Total | 689,043.42 | 544,464.53 |\n\n193\nInterGlobe Aviation Limited",
+    "Revenue growth in reported numbers was attributable to a number of factors, including an increase in the volume \nof business as well as an expansion in the solutions that we provide to our clients. We added 385 new customers \n(gross) during fiscal 2024 as compared to 458 new customers (gross) during fiscal 2023 and 451 new customers \n(gross) during fiscal 2022.",
+    "Corporate overview\nValue creation for stakeholders\nFinancial statements\nStatutary reports\n\nIndustry overview\n\nGlobal aviation industry\n\ngrowth rate. Industry-wide international revenue passenger \nkilometres (RPKs) reached 88.6% of 2019 levels.\n\nIn 2023, global demand for air travel continued to be strong, \nsustaining the rebound from the impact of COVID-19. As \nper the International Air Transport Association (IATA), the \nindustry witnessed growth of 36.9% year-over-year in 2023, \nmeasured in revenue passenger-kilometres (RPKs), reaching \n94.1% of pre-Covid (2019) levels. This is a significant increase \nfrom 2022, when it stood at 68.7%. Capacity has also \nrecovered, resulting in an industry-wide load factor of 82.3%, \nwhich was 0.3 points lower than the load factor in 2019.",
+    "revenues denominated in the Australian dollar represented 5.0% and 5.6% of total revenues while \nrevenues denominated in the United Kingdom Pound Sterling represented 4.1% and 4.4% of total \nrevenues. Our exchange rate risk primarily arises from our foreign currency revenues, receivables, and \npayables.",
+    "|  |  |  |  | 12.12% | (0.58%) 2189.66% Increase  in  revenue  on account of higher load factor and better yield coupled  with  favorable  average fuel costs and lesser rupee  depreciation from last year has resulted in improvement of net profit ratio. |  |  |\n|  |  |  |  | 18.40% | 4.28% 329.91% Increase in net profit after tax  has resulted in improvement in ROCE. |  |  |\n|  |  |  |  | 6.43% | 3.50% 83.71% Higher  returns  along  with increase in average  investments  and  bank  deposits has resulted in  increase in the ratio. |  |  |",
+    "fluctuate from period-to-period. \n \nOnsite revenue mix has started increasing on account of an increase in travel to onsite locations.",
+    "Key performance indicators\nFinancial highlights\n\nAt IndiGo, we closely monitor and track critical indicators to \nensure alignment with our growth objectives. Our operations are \ncontinuously optimised to deliver value to our stakeholders and \nmaintain our cost advantage.\n\nRevenue from operations\n\nEBITDAR margin\n\n(‡in million)\n\n(%)\n\n689,043\n\n25.5\n\n544,465\n\n18.3\n\n13.4\n\n357,560\n\n14.2\n\n284,968\n\n259,309\n\n146,406\n\n4.3\n\n4.4\n\nFY 20\nFY 19\nFY 21\nFY 22\nFY 23\nFY 24\n\nFY 20\nFY 19\nFY 21\nFY 22\nFY 23\nFY 24\n\nProfit after tax\n\nTotal cash\n\n(‡in million)\n\n(‡in million)\n\n347,375\n\n(58,064)\n\n(61,618)\n\n(3,058)\n\n(2,337)\n\n234,243\n\n81,725\n\n1,572\n\n203,769\n\n185,685\n\n182,275\n\n153,237\n\nFY 20\nFY 19\nFY 21\nFY 22\nFY 23\nFY 24\n\nFY 19\n\nFY 20\nFY 21\nFY 22\nFY 23\nFY 24\n\n16\nAnnual Report 2023-24",
+    "(In %)\n \nYear ended March 31, \n \n \n2024 \n2023\n2022\nRevenue from top five customers \n13.3 \n12.7\n11.4\nRevenue from top ten customers \n20.0 \n20.2\n19.3\n \nCredit risk exposure \n \nTrade receivables ageing schedule for fiscal 2024 is as follows:",
+    "revenue and profitability. \n \nAdditionally, any sudden resurgence of the COVID-19 or any other pandemic in the geographies where we have \nsignificant exposure or our clients have exposure or where a majority of our employees are located may impact \nour revenues and profitability. \n \nAn economic slowdown or other factors may affect the economic health of the United States, the United \nKingdom, the European Union (“EU”), Australia or various industries from where our revenues are derived. \n \nOur revenues are concentrated in a few geographies and client industry segments. In fiscal 2024, 60.1%, 27.6% \nand 9.8% of our revenues were derived from projects in North America, Europe and the rest of the world, \nrespectively. In fiscal 2024, we derived 27.4% of our revenues from the financial services and insurance industry. \n \nInstability and uneven growth in the global economy has had an adverse impact on the growth of the IT industry"
+   ],
+   "latency_s": 17.6,
+   "input_tokens": 4220,
+   "output_tokens": 1368,
+   "tokens": 5588,
+   "cited_page_hit": 0.0,
+   "hit@1": 0.0,
+   "hit@3": 0.0,
+   "hit@5": 0.0,
+   "hit@10": 0.0,
+   "mrr": 0.0,
+   "faithfulness": 0.5185185185185185,
+   "answer_relevancy": 0.819161892133722,
+   "context_recall": 0.4
+  }
+ ]
+}

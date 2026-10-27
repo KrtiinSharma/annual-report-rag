@@ -23,7 +23,7 @@ Infosys in FY24"* and get an answer grounded in the reports, with **page-level c
 | FR-2.2 | Detect tables and convert them to Markdown so numbers stay aligned with their row/column labels. |
 | FR-2.3 | Support **two chunking strategies**: (a) *fixed* — recursive character splitting within a page; (b) *structure-aware* — heading-led sections with tables kept as whole chunks and a section breadcrumb prepended. |
 | FR-2.4 | Every chunk carries metadata: `company`, `fiscal_year`, `page`, `chunk_type` (text/table), `section`, `strategy`, `source_url`. |
-| FR-2.5 | A comparison report shows retrieval quality (hit-rate@k, MRR) and RAGAS context scores for both strategies on the same test set. |
+| FR-2.5 | A comparison report shows retrieval quality (hit-rate@k, MRR, all questions) and RAGAS scores of full hybrid RAG (fixed 20-question sample) for both strategies. |
 
 ### FR-3 Retrieval
 | ID | Requirement |
@@ -49,14 +49,14 @@ Infosys in FY24"* and get an answer grounded in the reports, with **page-level c
 |----|-------------|
 | FR-5.1 | For one long report, build a hierarchical **table-of-contents tree** (sections → sub-sections with page ranges and LLM summaries) without embeddings. |
 | FR-5.2 | At query time the LLM reasons over the tree, picks the relevant nodes, reads those pages and answers with page citations. |
-| FR-5.3 | A comparison report contrasts vectorless and vector RAG on the same questions: RAGAS scores, latency and tokens used. |
+| FR-5.3 | A comparison report contrasts vectorless and vector RAG on the same questions: RAGAS scores, latency and LLM tokens per question (input + output of every LLM call, excluding one-off indexing). |
 
 ### FR-6 Evaluation and observability (LangSmith)
 | ID | Requirement |
 |----|-------------|
 | FR-6.1 | All chains are **traced** in LangSmith (query rewriting, retrieval, reranking, generation). |
 | FR-6.2 | A **test dataset of 30–50 questions**, each with reference answer, company, fiscal year and reference page(s), is stored in the repo and uploaded to LangSmith. |
-| FR-6.3 | Evaluation runs report **RAGAS** metrics: faithfulness, answer relevancy, context precision and context recall, logged as LangSmith experiment feedback. |
+| FR-6.3 | Evaluation runs report **RAGAS** metrics: faithfulness, answer relevancy and context recall, logged as LangSmith experiment feedback. Context precision was dropped: it needs one judge call per passage, and page-level hit@k / MRR against the reference pages measure ranking directly. RAGAS runs use a fixed 20-question sample plus the 17 vectorless questions to keep judge cost low. The judge sees up to 6 passages of 4,000 characters each, cited passages first. |
 | FR-6.4 | Results are also written to `docs/results/` and shown in the web UI. |
 
 ### FR-7 API and UI
@@ -77,8 +77,8 @@ Infosys in FY24"* and get an answer grounded in the reports, with **page-level c
 | Layer | Choice | Why |
 |-------|--------|-----|
 | Language | Python 3.11, managed with `uv` | Reproducible installs |
-| Orchestration | LangChain (`langchain-core`, `langchain-community`, `langchain-groq`) | Required by the brief |
-| LLM | Groq: `openai/gpt-oss-120b` for answers, `openai/gpt-oss-20b` for rewriting, `qwen/qwen3.8-27b` as a last-resort fallback; Claude Haiku 5.5 (Anthropic API) answers and judges the RAGAS runs (configurable) | Free tier, fast |
+| Orchestration | LangChain (`langchain-core`, `langchain-community`, `langchain-groq`, `langchain-anthropic`) | Required by the brief |
+| LLM | Live site, Groq: `openai/gpt-oss-120b` for answers, `openai/gpt-oss-20b` for rewriting, `qwen/qwen3.8-27b` as a last-resort fallback. Evaluation: Claude Haiku 5.5 (Anthropic API) answers and judges the RAGAS runs, with `gpt-oss-20b` still rewriting queries. Any model name starting with `claude` runs on the Anthropic API | Groq: free tier, fast. Claude for evaluation: Groq's 200K tokens/day per model ran out after ~16 evaluated questions |
 | PDF parsing | PyMuPDF (`pymupdf`) — text blocks with font sizes, `find_tables()` for tables, `get_toc()` for outlines | Fast, handles tables, pure wheel |
 | Embeddings | `BAAI/bge-small-en-v1.5` via FastEmbed (ONNX, CPU) | Free, runs locally and on a free CPU host |
 | Vector store | Chroma (persistent, metadata `where` filters) | Native filtering |
@@ -125,18 +125,19 @@ docs/results/          evaluation outputs (committed)
 
 ### TR-4 Configuration
 Read from environment / `.env` (never committed):
-`GROQ_API_KEY`, `LANGSMITH_API_KEY`, `LANGSMITH_TRACING=true`, `LANGSMITH_PROJECT`,
-`ANSWER_MODEL`, `FAST_MODEL`, `JUDGE_MODEL`, `CHUNK_STRATEGY`, `ALLOWED_ORIGINS`.
+`GROQ_API_KEY`, `ANTHROPIC_API_KEY` (evaluation only), `LANGSMITH_API_KEY`,
+`LANGSMITH_TRACING=true`, `LANGSMITH_PROJECT`, `ANSWER_MODEL`, `FAST_MODEL`, `JUDGE_MODEL`,
+`CHUNK_STRATEGY`, `ALLOWED_ORIGINS`.
 
 ### TR-5 Non-functional
 | ID | Requirement |
 |----|-------------|
-| NFR-1 | Total hosting and model cost: ₹0 (free tiers only). |
+| NFR-1 | Hosting and the live site's models cost ₹0 (free tiers only). The evaluation is the one paid part: Claude Haiku 5.5 for answers and judging, under US$1 in total. |
 | NFR-2 | p50 answer latency under ~8 s on the free host, excluding cold start. |
 | NFR-3 | Embedding and reranking run on CPU in under 1 GB RAM (reranker batches of 4). |
 | NFR-4 | API keys stay server-side. The public API has a simple per-IP rate limit to protect the free LLM quota. |
 | NFR-5 | Ingestion is idempotent and can be re-run. Index artifacts are rebuilt from PDFs with one command. |
-| NFR-6 | Groq free-tier rate limits are handled with retries/backoff. Evaluation can run in batches (`--limit`, resume). |
+| NFR-6 | Groq free-tier rate limits are handled with retries/backoff and fallback models. Evaluation can run in batches (`--limit`, resume) and re-judge saved answers without regenerating them (`--rescore`). |
 
 ### TR-6 Deployment (free)
 | Part | Host | Notes |

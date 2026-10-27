@@ -11,6 +11,7 @@ RAG_COLS = [
     ("hit@5", "Page hit@5"),
     ("cited_page_hit", "Cited page hit"),
     ("latency_s", "Latency (s)"),
+    ("tokens", "Tokens / question"),
 ]
 RETRIEVAL_COLS = [
     ("hit@1", "hit@1"),
@@ -22,7 +23,11 @@ RETRIEVAL_COLS = [
 
 
 def _fmt(v) -> str:
-    return "–" if v is None else f"{v:.3f}" if isinstance(v, float) else str(v)
+    if v is None:
+        return "–"
+    if isinstance(v, (int, float)) and v > 100:  # token counts
+        return f"{v:,.0f}"
+    return f"{v:.3f}" if isinstance(v, float) else str(v)
 
 
 def _table(rows: list[dict], cols) -> str:

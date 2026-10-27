@@ -15,6 +15,8 @@ const RETRIEVAL = [
   ['mrr', 'MRR'],
 ] as const
 
+const tokens = (v: number | null | undefined) => (v != null ? Math.round(v).toLocaleString('en-IN') : '–')
+
 function BarCell({ value }: { value: number | null | undefined }) {
   if (value == null) return <td className="px-3 py-2 text-right text-muted">–</td>
   return (
@@ -43,6 +45,11 @@ function Table({ rows, cols, extra }: { rows: Experiment[]; cols: readonly (read
               </th>
             ))}
             {extra && <th className="px-3 py-2 text-right font-medium">Latency</th>}
+            {extra && (
+              <th className="px-3 py-2 text-right font-medium" title="LLM tokens per question (input + output)">
+                Tokens / q
+              </th>
+            )}
           </tr>
         </thead>
         <tbody>
@@ -58,6 +65,7 @@ function Table({ rows, cols, extra }: { rows: Experiment[]; cols: readonly (read
                   {e.aggregate.latency_s != null ? `${e.aggregate.latency_s.toFixed(1)}s` : '–'}
                 </td>
               )}
+              {extra && <td className="px-3 py-2 text-right font-mono text-xs text-ink-2">{tokens(e.aggregate.tokens)}</td>}
             </tr>
           ))}
         </tbody>
@@ -107,7 +115,18 @@ function VersusChart({ vector, vectorless }: { vector: Experiment; vectorless: E
             <div className="text-muted">Vectorless latency</div>
             <div className="font-mono text-ink">{vectorless.aggregate.latency_s?.toFixed(1) ?? '–'}s</div>
           </div>
+          <div>
+            <div className="text-muted">Vector tokens / question</div>
+            <div className="font-mono text-ink">{tokens(vector.aggregate.tokens)}</div>
+          </div>
+          <div>
+            <div className="text-muted">Vectorless tokens / question</div>
+            <div className="font-mono text-ink">{tokens(vectorless.aggregate.tokens)}</div>
+          </div>
         </div>
+        <p className="text-xs text-muted">
+          Tokens are LLM input + output per question. Neither count includes one-off indexing: vector RAG embeds the report locally, and vectorless summarises its sections once with an LLM.
+        </p>
       </div>
     </div>
   )
@@ -128,6 +147,7 @@ export function EvalView() {
   const retrieval = data.filter((e) => e.kind === 'retrieval')
   const vectorless = rag.find((e) => e.config.mode === 'vectorless')
   const vectorOnSame = rag.find((e) => e.config.mode === 'hybrid' && e.config.subset === 'vectorless')
+  const chunking = rag.filter((e) => e.config.mode === 'hybrid' && e.config.subset === 'sample')
 
   if (!data.length)
     return <p className="text-sm text-ink-2">No evaluation results yet. Run <code>uv run arr-eval</code> and <code>arr-eval report</code>.</p>
@@ -144,11 +164,17 @@ export function EvalView() {
 
       {retrieval.length > 0 && (
         <section>
-          <h2 className="text-lg font-semibold text-ink">Chunking strategies (retrieval only)</h2>
+          <h2 className="text-lg font-semibold text-ink">Chunking strategies</h2>
           <p className="mb-4 text-sm text-ink-2">
-            How often a page holding the answer is among the top-k retrieved passages, for fixed-size versus structure-aware chunks.
+            How often a page holding the answer is among the top-k retrieved passages, for fixed-size versus structure-aware chunks (all questions).
           </p>
           <Table rows={retrieval} cols={RETRIEVAL} />
+          {chunking.length > 1 && (
+            <>
+              <p className="mt-6 mb-4 text-sm text-ink-2">The same comparison end to end: RAGAS scores of full hybrid RAG with each chunking strategy (20-question sample).</p>
+              <Table rows={chunking} cols={RAGAS} />
+            </>
+          )}
         </section>
       )}
 
