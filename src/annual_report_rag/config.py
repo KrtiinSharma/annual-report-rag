@@ -38,6 +38,11 @@ class Settings(BaseSettings):
     chunk_strategy: str = "structure"  # "fixed" | "structure"
     candidates_per_retriever: int = 20
     rerank_top_n: int = 6
+    # The cross-encoder is the slowest step on a 1-CPU host. Reranking the top 20 fused candidates
+    # instead of 40 cuts its time ~45% at the same hit@5 / MRR; cutting passages to 800-1200
+    # characters is faster still but loses hit@5 (answers often sit further down a chunk).
+    rerank_candidates: int = 20  # fused candidates per search target that get reranked
+    rerank_max_chars: int = 0  # characters of each candidate the reranker reads (0 = all)
     max_context_chunks: int = 12
     rrf_k: int = 60
 

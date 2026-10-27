@@ -118,3 +118,21 @@ def test_split_number_cells_are_cleaned():
 
     row = "| Revenues | 18,562 | 2 | 18,212 | 2 | 1.9 | 9 % | (0.3 | 3 ) |"
     assert clean_table_text(row) == "| Revenues | 18,562 | 18,212 | 1.9% | (0.3) |"
+
+
+def test_reranker_sees_only_the_top_candidates(monkeypatch):
+    from annual_report_rag.retrieval import hybrid
+    from annual_report_rag.retrieval.query_analysis import SearchTarget
+
+    docs = [doc(f"passage {i}", page=i, idx=i) for i in range(30)]
+    monkeypatch.setattr(hybrid, "bm25_search", lambda *a: docs)
+    monkeypatch.setattr(hybrid, "vector_search", lambda *a: docs[::-1])
+    seen = []
+
+    def fake_rerank(query, candidates, top_n):
+        seen.extend(candidates)
+        return [(d, 1.0) for d in candidates[:top_n]]
+
+    monkeypatch.setattr(hybrid, "rerank", fake_rerank)
+    hybrid.retrieve_target(SearchTarget(queries=["q"]), Filters(), hybrid.RetrievalOptions())
+    assert len(seen) == hybrid.get_settings().rerank_candidates

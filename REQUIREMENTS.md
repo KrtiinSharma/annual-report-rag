@@ -31,7 +31,7 @@ Infosys in FY24"* and get an answer grounded in the reports, with **page-level c
 | FR-3.1 | **Keyword search** with BM25. |
 | FR-3.2 | **Vector search** with a dense embedding model. |
 | FR-3.3 | **Hybrid fusion** of BM25 and vector results with Reciprocal Rank Fusion (RRF). |
-| FR-3.4 | A **cross-encoder reranker** reorders the fused candidates. |
+| FR-3.4 | A **cross-encoder reranker** reorders the top 20 fused candidates per search target (`RERANK_CANDIDATES`). Reranking 20 instead of 40 cut its time ~45% on one CPU at the same hit@5 and MRR; truncating passages was faster but lost hit@5, so passages are reranked in full. |
 | FR-3.5 | **Multi-query rewriting**: the LLM rewrites the question into several search queries and splits comparison questions into one sub-query per company/year. |
 | FR-3.6 | **Filters** for company and fiscal year, applied to both BM25 and vector search. Filters can be set explicitly (UI) or inferred from the question. |
 | FR-3.7 | Each pipeline stage (BM25, vector, rerank, multi-query) can be switched on/off per request for ablation. |

@@ -93,6 +93,7 @@ def retrieve_target(target: SearchTarget, filters: Filters, opts: RetrievalOptio
     fused = rrf(lists, s.rrf_k)[: 2 * k]
     if not opts.use_rerank:
         return fused[: opts.top_n]
+    fused = fused[: s.rerank_candidates]
     by_key = {doc_key(h.doc): h for h in fused}
     reranked = rerank(target.queries[0], [h.doc for h in fused], opts.top_n)
     out = []

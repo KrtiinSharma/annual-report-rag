@@ -59,7 +59,9 @@ The RAGAS runs answer with Claude Haiku 5.5 (`ANSWER_MODEL=claude-haiku-5-5`) an
 same model: Groq's free 200K tokens/day ran out after ~16 evaluated questions, and the whole
 evaluation costs well under $1 on Claude. The live site keeps answering with gpt-oss-120b on Groq.
 RAGAS runs on a fixed 20-question sample (`--subset sample`) plus the 17 vectorless questions; the
-chunking comparison (`retrieval`) uses all 48. Each row also records latency and the LLM tokens
+chunking comparison (`retrieval`) uses all 48. The RAGAS runs reranked 40 candidates per target;
+the site now reranks 20, which keeps hit@5 and MRR on all 48 questions (`retrieval`) and cuts
+reranking time ~45%. Each row also records latency and the LLM tokens
 the question used. Runs resume where they stopped, a row whose judging failed is re-scored without
 regenerating its answer, and `--rescore` re-judges every saved answer.
 
